@@ -4,45 +4,49 @@
 
 /* Font */
 @font-face {
-font-family: 'Fantasque';
-src: url('fantasque.woff') format('woff');
+	font-family: 'Fantasque';
+	src: url('fantasque.woff') format('woff');
 }
 
 /* Desktop view */
 	html {
-		align-items:        center;
-		font:               14px fantasque, monospace;
-		color:              var(--fg1);
-		display:            flex;
+		align-items:			center;
+		font:				14px fantasque, monospace;
+		color:				var(--fg1);
+		display:			flex;
 	}
 
 	body {
-		background-color:   var(--bg0h);
-		display:            grid;
+		background-color:		var(--bg0h);
+		display:			grid;
 	}
 
-	html,body{height:100%;width:100%;}
+	html,
+	body {
+		height:				100%;
+		width:				100%;
+	}
 
 	.window {
-		background-color:   var(--bg0);
-		padding:            1em 1ch;
-		border:             2px solid var(--purple);
-		margin:             auto;
-		text-align:         justify;
-		box-shadow:	1ch 1em var(--dpurple);
+		background-color:		var(--bg0);
+		padding:			1em 1ch;
+		border:				2px solid var(--purple);
+		margin:				auto;
+		text-align:			justify;
+		box-shadow:			1ch 1em var(--dpurple);
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		text-align:	center;
+		text-align:			center;
 	}
 
 	a {
-		text-decoration:    none;
-		text-weight:        bold;
-		color:              var(--aqua);
+		text-decoration:		none;
+		text-weight:			bold;
+		color:				var(--aqua);
 	}
 		a:hover {
-			color:            var(--bg0);
-			background-color: var(--aqua);
-			transition:       0.25s all;
+			color:			var(--bg0);
+			background-color:	var(--aqua);
+			transition:		0.25s all;
 		}
