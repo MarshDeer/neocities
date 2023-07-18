@@ -15,4 +15,4 @@ jobs:
         with:
           api_token: ${{ secrets.APIKEY }}
           dist_dir: _build
-          cleanup: true
+          cleanup: false
