@@ -1,0 +1,18 @@
+name: Build site
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: make
+
+      - uses: bcomnes/deploy-to-neocities@v1
+        if: ${{ success() && github.ref == 'refs/heads/deer' }}
+        with:
+          api_token: ${{ secrets.APIKEY }}
+          dist_dir: _build
+          cleanup: true
