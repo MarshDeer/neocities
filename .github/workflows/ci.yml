@@ -11,7 +11,7 @@ jobs:
       - run: make
 
       - uses: bcomnes/deploy-to-neocities@v1
-        if: ${{ success() && github.ref == 'refs/heads/deer' }}
+        if: ${{ github.ref == 'refs/heads/deer' }}
         with:
           api_token: ${{ secrets.APIKEY }}
           dist_dir: _build
