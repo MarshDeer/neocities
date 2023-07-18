@@ -23,7 +23,7 @@ body {
 
 html,body{height:100%;width:100%;}
 
-main {
+.content {
   background-color:   var(--bg0);
   padding:            1em 1ch;
   border:             2px solid var(--purple);
