@@ -18,7 +18,7 @@
 	body {
 		background-color:		var(--bg0h);
 		display:			grid;
-		background-image:		url(wall.png);
+		background-image:		url(img/wall.png);
 		background-size:		cover;
 	}
 
