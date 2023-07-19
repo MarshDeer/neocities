@@ -4,7 +4,7 @@
 /* Font */
 @font-face {
 	font-family: 'Fantasque';
-	src: url('fantasque.woff') format('woff');
+	src: url('../font/fantasque.woff') format('woff');
 }
 
 /* Desktop view */
