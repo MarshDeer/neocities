@@ -3,10 +3,11 @@ TITLE := $(shell head -n 1 .git/COMMIT_EDITMSG)
 COMMENT := $(shell tail -n 1 .git/COMMIT_EDITMSG)
 
 log: site/changelog.txt
-	echo "$(DATE):" >> changelog.txt
-	echo "$(TITLE)" >> changelog.txt
-	echo "($(COMMENT))" >> changelog.txt
-	echo "n" >> changelog.txt
+	echo "~~o~~" >> site/changelog.txt
+	echo "$(DATE):" >> site/changelog.txt
+	echo "$(TITLE)" >> site/changelog.txt
+	echo "($(COMMENT))" >> site/changelog.txt
+	echo "" >> site/changelog.txt
 
 build:	site/index.html
 	mkdir -p _build
