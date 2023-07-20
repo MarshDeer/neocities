@@ -21,16 +21,13 @@
 		background-image:		url(../img/wall.png);
 		background-size:		cover;
 		background-attachment:		fixed;
-	}
-
-	html,
-	body {
-		width:				100%;
+		margin:				auto;
 	}
 
 	footer {
 		width:				30%;
 		text-align:			center;
+		padding-top:			1em !important;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -59,23 +56,54 @@
 			}
 
 	nav {
-		display:			grid;
-		width:				25%;
+		margin:				2em auto;
+	}
+
+	main {
+		display: 			grid;
 		margin:				1em auto;
-		grid-template-columns:		auto auto auto;
-		row-gap:			2em;
+		width:				fit-content;
+		grid-template-columns:		auto auto;
+		grid-row-gap:			2em;
 	}
 
 	.window {
-		background-color:		var(--bg0);
-		padding:			1em 1ch;
+		position:			relative;
+		background-color:		var(--bg0t);
+		backdrop-filter:		blur(2px);
+		padding:			2em 1ch 1em;
 		border:				2px solid var(--purple);
 		margin:				1em auto;
 		box-shadow:			1ch 1em var(--dpurple);
 		max-width:			75%;
+		height:				fit-content;
 	}
 		.window.button {
+			margin:			1em 1ch;
+			padding:		1em 1ch;
+		}
+
+		main>.window {
 			margin:			auto;
+		}
+
+	.titlebar {
+		position:			absolute;
+		top:				-2px;
+		left:				0;
+		background-color:		var(--purple);
+		color:				var(--bg0);
+		width:				100%;
+		text-align:			left;
+	}
+		.titlebar::after {
+			content:		"X";
+			position:		absolute;
+			right:			1ch;
+			background-color:	var(--dred);
+			width:			3ch;
+			text-align:		center;
+			color:			var(--fg0);
 		}
 
 	.button:hover {
@@ -83,7 +111,7 @@
 		top:				1em;
 		left:				1ch;
 		box-shadow:			none;
-		border-color:			var(--aqua);
+		border-color:			var(--orange);
 		transition:			none;
 	}
 
