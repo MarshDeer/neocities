@@ -8,3 +8,8 @@ Wed Jul 19 12:02 -04 2023:
 Added About Me page
 (It's mostly a port of my old Tumblr about page, just rewritten in HTML here.
 Stamps section to come!)
+
+~~o~~
+Thu Jul 20 16:02 -04 2023:
+Design overhaul
+(Made things to look like little windows)
