@@ -3,3 +3,8 @@ Wed Jul 19 20:10:41 -04 2023:
 Added changelog
 (And code to automate it!)
 
+~~o~~
+Wed Jul 19 12:02 -04 2023:
+Added About Me page
+(It's mostly a port of my old Tumblr about page, just rewritten in HTML here.
+Stamps section to come!)
