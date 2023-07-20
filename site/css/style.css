@@ -25,7 +25,6 @@
 
 	html,
 	body {
-		height:				100%;
 		width:				100%;
 	}
 
@@ -62,7 +61,7 @@
 	nav {
 		display:			grid;
 		width:				25%;
-		margin:				auto;
+		margin:				1em auto;
 		grid-template-columns:		auto auto auto;
 		row-gap:			2em;
 	}
@@ -75,6 +74,9 @@
 		box-shadow:			1ch 1em var(--dpurple);
 		max-width:			75%;
 	}
+		.window.button {
+			margin:			auto;
+		}
 
 	.button:hover {
 		position:			relative;
