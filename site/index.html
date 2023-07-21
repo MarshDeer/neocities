@@ -32,7 +32,7 @@
 		<main>
 			<section class="window" style="display: flex; width: 60ch;">
 				<span class="titlebar">intro.txt</span>
-				<img src="img/deer.gif" style="height: 82px; margin: auto 2ch;">
+				<img id="mybanner" src="img/deer.gif" style="height: 82px; margin: auto 2ch;">
 				<p style="margin: auto;">
 					Hi! I'm Lena, a deer from somewhere in Latin America. Welcome to my homepage!<br>
 					<br>
@@ -56,11 +56,17 @@
 			</div>
 
 			<section class="window">
-				<span class="titlebar">wannalinkhere?.html</span>
+				<span class="titlebar">howtolinkhere.js</span>
 				<p style="text-align: center;">
-					<img src="img/roly/lensdeer1.gif"><img src="img/roly/lensdeer2.gif"><br>
-					Use my buttons!<br>
-					(Click the one you want to copy the code!)
+					<a onclick="navigator.clipboard.writeText('<a href=http://lensdeer.neocities.org><img src=http://lensdeer.neocities.org/img/roly/lensdeer.gif></a>')">
+						<img src="img/roly/lensdeer.gif">
+					</a>
+					<!--<a onclick="navigator.clipboard.writeText('<a href=http://lensdeer.neocities.org/deadend><img src=http://lensdeer.neocities.org/img/roly/deadend.gif></a>')">
+						<img src="img/roly/deadend.gif">
+					</a>-->
+					<br>
+					Use my button!<br>
+					(Click to copy the code!)
 				</p>
 		</main>
 
@@ -78,6 +84,7 @@
 				<a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="img/roly/css.gif" class="roly"></a>
 				<a href="https://archive.org/details/ty2kep/mode/2up"><img src="img/roly/y2k.png"></a>
 				<a href="https://dev.deluge-torrent.org/"><img src="img/roly/seed.gif" class="roly"></a>
+				<a href=http://lensdeer.neocities.org><img src=http://lensdeer.neocities.org/img/roly/lensdeer.gif></a>
 			</marquee>
 		</footer>
 	</body>
