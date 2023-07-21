@@ -7,7 +7,7 @@
 	src: url('../font/fantasque.woff') format('woff');
 }
 
-/* Desktop view */
+/* Rules */
 	html {
 		align-items:			center;
 		font:				14px fantasque, monospace;
