@@ -42,15 +42,18 @@
 		text-decoration:		none;
 		color:				var(--aqua);
 	}
+
 		a:hover {
 			color:			var(--bg0);
 			background-color:	var(--aqua);
 			transition:		0.25s all;
 		}
+
 		a.button {
 			color:			unset;
 			background-color:	var(--bg0t);
 		}
+
 			a.button:active {
 				background-color:	var(--aqua);
 			}
@@ -79,6 +82,7 @@
 		height:				fit-content;
 		border-radius:			3px;
 	}
+
 		.window.button {
 			margin:			1em 1ch;
 			padding:		1em 1ch;
@@ -97,6 +101,7 @@
 		width:				100%;
 		text-align:			left;
 	}
+
 		.titlebar::after {
 			content:		"X";
 			position:		absolute;
@@ -120,4 +125,26 @@
 		border:				1px solid var(--purple);
 		color:				unset;
 		background-color:		unset;
+	}
+
+	#intro {
+		display:			flex;
+		width:				60ch;
+	}
+
+		#intro p {
+			margin:			auto;
+		}
+
+	#ascii {
+		width:				30ch;
+	}
+
+		#ascii pre {
+			text-align:		left;
+			margin:			0;
+		}
+
+	#buttons p {
+		text-align:			center;
 	}
