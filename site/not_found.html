@@ -6,13 +6,21 @@
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 
 		<title>Not Found</title>
+
+		<style>
+			body { height: 100% }
+			.window { border-color: var(--red); box-shadow: 1ch 1em var(--dred); text-align: center; width: 30ch;}
+			.titlebar { background-color: var(--red);}
+			pre { text-align: left;}
+			footer { width: fit-content;}
+		</style>
 	</head>
 
-	<body style="height: 100%;">
-		<section class="window" style="border-color: var(--red); box-shadow: 1ch 1em var(--dred); text-align: center; width: 30ch;">
-			<span class="titlebar" style="background-color: var(--red);">error404.sh</span>
+	<body>
+		<section class="window">
+			<span class="titlebar">error404.sh</span>
 			<pre> Page not found! </pre>
-			<pre style="text-align: left;">(             )
+			<pre>(             )
  `--(_   _)--'
       Y-Y
      /xx \
@@ -21,7 +29,7 @@
 	|   `._____/)</pre>
 		</section>
 
-		<footer class="window" style="width: fit-content; border-color: var(--red); box-shadow: 1ch 1em var(--dred);">
+		<footer class="window">
 			<a href="index.html">Go back home</a>
 		</footer>
 	</body>
