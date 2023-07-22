@@ -77,6 +77,7 @@
 		box-shadow:			1ch 1em var(--dpurple);
 		max-width:			75%;
 		height:				fit-content;
+		border-radius:			3px;
 	}
 		.window.button {
 			margin:			1em 1ch;
