@@ -127,6 +127,18 @@
 		background-color:		unset;
 	}
 
+	.maximize {
+		background-color:		var(--aqua);
+		width:				3ch;
+		text-align:			center;
+		color:				var(--bg0);
+		line-height:			1.2;
+		height:				15px;
+		position:			absolute;
+		top:				-2px;
+		right:				5ch;
+	}
+
 	#intro {
 		display:			flex;
 		width:				60ch;
@@ -144,7 +156,26 @@
 			text-align:		left;
 			margin:			0;
 		}
-
-	#buttons p {
-		text-align:			center;
+	
+	#microblog {
+		width:				40ch;
+		height:				9em;
+		padding:			1em 1ch 0;
 	}
+
+		#microblog embed {
+			overflow:		scroll;
+			width:			100%;
+			height:			100%;
+
+			margin:			0;
+		}
+
+	#buttons {
+		width:				22ch;
+	}
+
+		#buttons p {
+			text-align:		center;
+			margin:			0;
+		}
