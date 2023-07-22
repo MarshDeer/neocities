@@ -56,7 +56,8 @@
 		}
 
 			a.button:active {
-				background-color:	var(--aqua);
+				background-color:var(--blue);
+				color:		var(--bg0);
 			}
 
 	nav {
@@ -89,6 +90,16 @@
 			padding:		1em 1ch;
 		}
 
+		.window.button:hover {
+			position:		relative;
+			top:			1em;
+			left:			1ch;
+			box-shadow:		none;
+			border-color:		var(--blue);
+			transition:		none;
+		}
+
+
 		main>.window {
 			margin:			auto;
 		}
@@ -112,15 +123,6 @@
 			text-align:		center;
 			color:			var(--fg0);
 		}
-
-	.button:hover {
-		position:			relative;
-		top:				1em;
-		left:				1ch;
-		box-shadow:			none;
-		border-color:			var(--orange);
-		transition:			none;
-	}
 
 	img.roly {
 		border:				1px solid var(--purple);
