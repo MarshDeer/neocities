@@ -1,5 +1,6 @@
 <!doctype HTML>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Microblog</title>
 </head>
 <style>
@@ -9,15 +10,15 @@
 	h3{ margin-bottom: 0;}
 	time{ border-radius: 2px; background-color: #ebdbb2; color: #282828;}
 	time::before{ content: "🗓️ ";}
-	b{ margin-left: 1ch; border-radius: 2px; background-color: #83a598; color: #282828;}
-	b::before { content: "#"; font-style: italic;}
+	.tag{ margin-right: 1ch; border-radius: 2px; background-color: #83a598; color: #282828;}
+	.tag::before { content: "#"; font-style: italic;}
 </style>
 <body>
 	<!-- vim: set tw=53 -->
 	<article>
 		<h3>Fun</h3>
 		<time>2023-07-22</time>
-		<b>thoughts</b>
+		<span class="tag">thoughts</span>
 		<br>
 		<p>
 		It's raining!<br>
@@ -36,7 +37,7 @@
 	<article>
 		<h3>Hi, world!</h3>
 		<time>2023-07-21</time>
-		<b>code</b><b>update</b><br>
+		<span class="tag">code</span><span class="tag">update</span><br>
 		<p>
 		Hi! I just created this small
 		microblog window.  It's a single-page
