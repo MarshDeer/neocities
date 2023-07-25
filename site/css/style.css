@@ -9,10 +9,8 @@
 
 /* Rules */
 	html {
-		align-items:			center;
 		font:				14px fantasque, monospace;
 		color:				var(--fg1);
-		display:			flex;
 	}
 
 	body {
@@ -21,21 +19,18 @@
 		background-image:		url(../img/wall.png);
 		background-size:		cover;
 		background-attachment:		fixed;
-		margin:				auto;
+		margin:				2em auto 1em;
+		max-width:			800px;
 	}
 
 	footer {
 		width:				30%;
 		text-align:			center;
-		padding-top:			1em !important;
+		margin:				1em auto;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		text-align:			center;
-	}
-
-	p {
-		text-align:			justify;
 	}
 
 	a {
@@ -46,82 +41,103 @@
 		a:hover {
 			color:			var(--bg0);
 			background-color:	var(--aqua);
-			transition:		0.25s all;
+			transition:		0.25s color background-color;
 			border-radius:		2px;
 		}
 
-		a.button {
-			color:			unset;
-			background-color:	var(--bg0t);
+	nav {
+		margin:				calc(2em + 2px) auto !important;
+		display:			flex;
+		flex-wrap:			wrap;
+		max-width:			80%;
+	}
+
+		nav a {
+			width:			64px;
+			text-align:		center;
+			color:			var(--fg1);
 		}
 
-			a.button:active {
+			nav a img {
+				image-rendering:	pixelated;
+			}
+
+		nav .button {
+			color:			unset;
+			background-color:	var(--bg0t);
+			margin:			0 1ch;
+			padding:		1em 1ch;
+		}
+
+			nav .button:hover {
+				top:		1em;
+				left:		1ch;
+				box-shadow:	none;
+				border-color:	var(--blue);
+				transition:	none;
+			}
+
+			nav .button:active {
 				background-color:var(--blue);
 				color:		var(--bg0);
 			}
 
-	nav {
-		margin:				2em auto;
-	}
-
 	main {
 		display: 			grid;
 		margin:				1em auto;
-		width:				fit-content;
+		width:				80%;
 		grid-template-columns:		auto auto;
-		grid-row-gap:			2em;
 	}
+
+		main.index,
+		main.links {
+			grid-template-columns:	auto auto;
+			grid-row-gap:		calc(3em + 4px);
+		}
+
+		main.blog,
+		main.about {
+			grid-template-columns:	auto;
+			grid-row-gap:		calc(1em + 4px);
+		}
 
 	.window {
 		position:			relative;
 		background-color:		var(--bg0t);
 		backdrop-filter:		blur(2px);
-		padding:			2em 1ch 1em;
-		border:				2px solid var(--purple);
+		-webkit-backdrop-filter:	blur(2px);
+		padding:			1em 1ch;
 		margin:				1em auto;
+		border:				2px solid var(--purple);
 		box-shadow:			1ch 1em var(--dpurple);
-		max-width:			75%;
-		height:				fit-content;
 		border-radius:			3px;
 	}
 
-		.window.button {
-			margin:			1em 1ch;
-			padding:		1em 1ch;
-		}
-
-		.window.button:hover {
-			position:		relative;
-			top:			1em;
-			left:			1ch;
-			box-shadow:		none;
-			border-color:		var(--blue);
-			transition:		none;
-		}
-
-
-		main>.window {
+		main.index .window {
 			margin:			auto;
 		}
 
 	.titlebar {
 		position:			absolute;
-		top:				-2px;
-		left:				0;
+		top:				calc(-2ch - 4px);
+		left:				-2px;
 		background-color:		var(--purple);
 		color:				var(--bg0);
 		width:				100%;
 		text-align:			left;
+		border:				2px solid var(--purple);
+		border-radius:			3px 3px 0 0;
 	}
 
 		.titlebar::after {
 			content:		"X";
 			position:		absolute;
-			right:			1ch;
+			right:			0;
 			background-color:	var(--dred);
 			width:			3ch;
 			text-align:		center;
 			color:			var(--fg0);
+			border-radius:		2px;
 		}
 
 	img.roly {
@@ -139,13 +155,14 @@
 		line-height:			1.2;
 		height:				15px;
 		position:			absolute;
-		top:				-2px;
-		right:				5ch;
+		top:				calc(-1em - 2px);
+		right:				calc(3ch + 2px);
+		border-radius:			2px;
 	}
 
 	#intro {
 		display:			flex;
-		width:				60ch;
+		max-width:			50ch;
 	}
 
 		#intro p {
@@ -153,7 +170,7 @@
 		}
 
 	#ascii {
-		width:				30ch;
+		max-width:			30ch;
 	}
 
 		#ascii pre {
@@ -162,16 +179,15 @@
 		}
 	
 	#microblog {
-		width:				40ch;
+		max-width:			40ch;
 		height:				9em;
-		padding:			1em 1ch 0;
+		padding:			0 1ch;
 	}
 
 		#microblog embed {
 			overflow:		scroll;
 			width:			100%;
 			height:			100%;
-
 			margin:			0;
 		}
 
@@ -182,4 +198,15 @@
 		#buttons p {
 			text-align:		center;
 			margin:			0;
+		}
+
+	#stampcollection {
+		max-width:			440px;
+		display:			flex;
+		flex-wrap:			wrap;
+		justify-content:		center;
+	}
+
+		#stampcollection img {
+			margin:			2px;
 		}
