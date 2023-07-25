@@ -50,36 +50,31 @@
 		display:			flex;
 		flex-wrap:			wrap;
 		max-width:			80%;
+		image-rendering:		pixelated;
+		height:				84px;
+		align-items:			center;
 	}
 
 		nav a {
 			width:			64px;
 			text-align:		center;
 			color:			var(--fg1);
+			margin:			auto;
 		}
 
 			nav a img {
-				image-rendering:	pixelated;
+				width:	32px;
+				transition:		ease-out 0.2s width;
 			}
 
-		nav .button {
-			color:			unset;
-			background-color:	var(--bg0t);
-			margin:			0 1ch;
-			padding:		1em 1ch;
-		}
-
-			nav .button:hover {
-				top:		1em;
-				left:		1ch;
-				box-shadow:	none;
-				border-color:	var(--blue);
-				transition:	none;
+			nav a:hover {
+				background-color:unset;
+				color:		var(--aqua);
 			}
 
-			nav .button:active {
-				background-color:var(--blue);
-				color:		var(--bg0);
+			nav a:hover img {
+				width:		64px;
+				filter:		brightness(0) saturate(100%) invert(74%) sepia(17%) saturate(746%) hue-rotate(59deg) brightness(93%) contrast(91%);
 			}
 
 	main {
