@@ -14,10 +14,9 @@
 	}
 
 	body {
-		background-color:		var(--bg0h);
+		background-color:		var(--bg0);
 		display:			grid;
-		background-image:		url(../img/wall.png);
-		background-size:		cover;
+		background-image:		url(../img/ditherbg.png);
 		background-attachment:		fixed;
 		margin:				2em auto 1em;
 		max-width:			800px;
@@ -29,24 +28,33 @@
 		margin:				1em auto;
 	}
 
+		footer.window {
+			box-shadow:		1ch 1em var(--dpurple);
+			padding:		0.5em 0;
+		}
+
+		footer span {
+			padding:		0 1ch;
+		}
+
 	h1, h2, h3, h4, h5, h6 {
 		text-align:			center;
 	}
 
 	a {
-		text-decoration:		none;
-		color:				var(--aqua);
+		text-decoration:		underline dashed;
+		color:				var(--purple);
 	}
 
-		a:hover {
+		p a:hover {
 			color:			var(--bg0);
-			background-color:	var(--aqua);
-			transition:		0.25s color background-color;
+			background-color:	var(--purple);
+			transition:		ease-in-out 0.25s all;
 			border-radius:		2px;
 		}
 
 	nav {
-		margin:				calc(2em + 2px) auto !important;
+		margin:				1em auto !important;
 		display:			flex;
 		flex-wrap:			wrap;
 		max-width:			80%;
@@ -60,21 +68,23 @@
 			text-align:		center;
 			color:			var(--fg1);
 			margin:			auto;
+			transition:		ease-in-out 0.15s width;
+			text-decoration:	none;
 		}
 
 			nav a img {
 				width:	32px;
-				transition:		ease-out 0.2s width;
+				transition:	ease-out 0.2s width;
 			}
 
 			nav a:hover {
 				background-color:unset;
-				color:		var(--aqua);
+				color:		var(--purple);
 			}
 
 			nav a:hover img {
 				width:		64px;
-				filter:		brightness(0) saturate(100%) invert(74%) sepia(17%) saturate(746%) hue-rotate(59deg) brightness(93%) contrast(91%);
+				filter:		brightness(0) saturate(100%) invert(82%) sepia(4%) saturate(7152%) hue-rotate(297deg) brightness(93%) contrast(75%);
 			}
 
 	main {
@@ -87,13 +97,14 @@
 		main.index,
 		main.links {
 			grid-template-columns:	auto auto;
-			grid-row-gap:		calc(3em + 4px);
+			grid-row-gap:		calc(2em + 2px);
 		}
 
 		main.blog,
 		main.about {
 			grid-template-columns:	auto;
-			grid-row-gap:		calc(1em + 4px);
+			grid-row-gap:		calc(1em + 2px);
+			margin:			auto;
 		}
 
 	.window {
@@ -101,10 +112,11 @@
 		background-color:		var(--bg0t);
 		backdrop-filter:		blur(2px);
 		-webkit-backdrop-filter:	blur(2px);
-		padding:			1em 1ch;
+		padding:			2em 1ch 1em;
 		margin:				1em auto;
-		border:				2px solid var(--purple);
-		box-shadow:			1ch 1em var(--dpurple);
+		border:				1px solid var(--purple);
+		box-shadow:			1ch calc(1em + 2px) var(--dpurple),
+						inset 0 calc(1em + 2px) var(--purple);
 		border-radius:			3px;
 	}
 
@@ -114,13 +126,12 @@
 
 	.titlebar {
 		position:			absolute;
-		top:				calc(-2ch - 4px);
-		left:				-2px;
+		top:				0;
+		left:				0;
 		background-color:		var(--purple);
 		color:				var(--bg0);
 		width:				100%;
 		text-align:			left;
-		border:				2px solid var(--purple);
 		border-radius:			3px 3px 0 0;
 	}
 
@@ -128,7 +139,7 @@
 			content:		"X";
 			position:		absolute;
 			right:			0;
-			background-color:	var(--dred);
+			background-color:	var(--bg0);
 			width:			3ch;
 			text-align:		center;
 			color:			var(--fg0);
@@ -143,16 +154,17 @@
 	}
 
 	.maximize {
-		background-color:		var(--aqua);
+		background-color:		var(--bg0);
 		width:				3ch;
 		text-align:			center;
-		color:				var(--bg0);
+		color:				var(--fg1);
 		line-height:			1.2;
 		height:				15px;
 		position:			absolute;
-		top:				calc(-1em - 2px);
-		right:				calc(3ch + 2px);
+		top:				0;
+		right:				calc(3ch + 1px);
 		border-radius:			2px;
+		text-decoration:		none;
 	}
 
 	#intro {
@@ -168,15 +180,16 @@
 		max-width:			30ch;
 	}
 
-		#ascii pre {
+		pre {
 			text-align:		left;
 			margin:			0;
+			font:			inherit;
 		}
 	
 	#microblog {
 		max-width:			40ch;
 		height:				9em;
-		padding:			0 1ch;
+		padding:			calc(1em + 2px) 1ch 0;
 	}
 
 		#microblog embed {
