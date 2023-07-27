@@ -218,3 +218,8 @@
 		#stampcollection img {
 			margin:			2px;
 		}
+	
+	::selection {
+		background-color:		var(--dpurple);
+		color:				var(--bg0);
+	}
