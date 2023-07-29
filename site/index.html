@@ -9,7 +9,10 @@
 	<body>
 		<!-- Header -->
 		<header class="window">
-			<span class="titlebar">header.html</span>
+			<div class="titlebar">
+				<span>header.html</span>
+				<span class="button close" aria-hidden="true">X</span>
+			</div>
 			<h1> Hi! Welcome!</h1>
 			<p> This website is <s>obviously</s> still under construction. Sorry about all the broken links! I'm working on it! </p>
 			<marquee> All Cops Are Bastards, All Cats Are Beautiful, and All Cervids Are Bottoms </marquee>
@@ -17,7 +20,10 @@
 
 		<!-- Navigation -->
 		<nav class="window">
-			<span class="titlebar">/home/lena/navigation/</span>
+			<div class="titlebar">
+				<span>/home/lena/navigation/</span>
+				<span class="close" aria-hidden="true">X</span>
+			</div>
 			<a href="index.html">
 				<img src="img/nav/home.svg"><br>
 				Home
@@ -55,7 +61,10 @@
 		<!-- Content -->
 		<main class="index">
 			<section class="window" id="intro">
-				<span class="titlebar">intro.txt</span>
+				<div class="titlebar">
+					<span>intro.txt</span>
+					<span class="close" aria-hidden="true">X</span>
+				</div>
 				<img src="img/deer.gif" style="height: 164px; margin: auto 2ch; image-rendering: pixelated;">
 				<p>
 					Hi! I'm Lena, a deer from somewhere in Latin America. Welcome to my homepage!<br>
@@ -64,8 +73,11 @@
 				</p>
 			</section>
 
-			<section class="window" id="ascii" aria-hidden:"true">
-				<span class="titlebar">asciideer.txt</span>
+			<section class="window" id="ascii" aria-hidden="true">
+				<div class="titlebar">
+					<span>asciideer.txt</span>
+					<span class="close" aria-hidden="true">X</span>
+				</div>
 				<pre>
 (             )
  `--(_   _)--'
@@ -77,13 +89,19 @@
 			</section>
 
 			<section class="window" id="microblog">
-				<span class="titlebar">microblog.html</span>
-				<a href="microblog.html" class="maximize">⬒</a>
+				<div class="titlebar">
+					<span>microblog.html</span>
+					<a href="microblog.html" class="maximize">⬒</a>
+					<span class="close" aria-hidden="true">X</span>
+				</div>
 				<embed type="text/html" src="microblog.html">
 			</section>
 
 			<section class="window" id="buttons">
-				<span class="titlebar">linktomyprojects.js</span>
+				<div class="titlebar">
+					<span>linktomyprojects.js</span>
+					<span class="close">X</span>
+				</div>
 				<p>
 					<a onclick="navigator.clipboard.writeText('<a href=https://lensdeer.neocities.org><img src=https://lensdeer.neocities.org/img/roly/lensdeer.gif></a>')">
 						<img src="img/roly/lensdeer.gif">
@@ -113,12 +131,14 @@
 				<a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="img/roly/css.gif" class="roly"></a>
 				<a href="https://archive.org/details/ty2kep/mode/2up"><img src="img/roly/y2k.png" class="roly"></a>
 				<a href="https://dev.deluge-torrent.org/"><img src="img/roly/seed.gif" class="roly"></a>
+				<a href="https://kde.org"><img src="img/roly/kde.png" class="roly"></a>
 				<a href=https://lensdeer.neocities.org><img src=https://lensdeer.neocities.org/img/roly/lensdeer.gif class="roly"></a>
 				<a href=https://marshdeer.github.io/howlongmojang><img src=https://marshdeer.github.io/howlongmojang/img/button.gif class="roly"></a>
 			</marquee>
 			<span>
 				Last updated:<br>
 				<a href="https://github.com/MarshDeer/neocities/commits/">_UPDATE_</a>
+			</span>
 		</footer>
 	</body>
 </html>

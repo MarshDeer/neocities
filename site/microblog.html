@@ -1,5 +1,6 @@
 <!doctype HTML>
 <head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Microblog</title>
 </head>
@@ -9,17 +10,17 @@
 	article{ border-bottom: 1px dashed #d3869b; line-height: 1.2; margin: 0 0 1em;}
 	h3{ margin: 0;}
 	time{ border-radius: 2px; background-color: #ebdbb2; color: #282828;}
-	time::before{ content: "⏲ ";}
+	time::before{ content: "🕓 ";}
 	.tag{ margin-right: 1ch; border-radius: 2px;
 		background-color: #d3869b; color: #282828;}
-	.tag::before { content: "#"; font-style: italic;}
+	.tag::first-letter{ font-style: italic;}
 </style>
 <body>
 	<!-- vim: set tw=53 -->
 	<article>
 		<h3>1 bit is all you need</h3>
 		<time>2023-07-25</time>
-		<span class="tag">art</span>
+		<span class="tag">#art</span>
 		<br>
 		<p>
 		Working on this website has been such
@@ -35,7 +36,7 @@
 	<article>
 		<h3>Fun</h3>
 		<time>2023-07-22</time>
-		<span class="tag">thoughts</span>
+		<span class="tag">#thoughts</span>
 		<br>
 		<p>
 		It's raining!<br>
@@ -54,7 +55,7 @@
 	<article>
 		<h3>Hi, world!</h3>
 		<time>2023-07-21</time>
-		<span class="tag">code</span><span class="tag">update</span><br>
+		<span class="tag">#code</span><span class="tag">#update</span><br>
 		<p>
 		Hi! I just created this small
 		microblog window.  It's a single-page

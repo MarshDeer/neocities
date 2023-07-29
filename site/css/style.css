@@ -15,7 +15,8 @@
 
 	body {
 		background-color:		var(--bg0);
-		display:			grid;
+		display:			flex;
+		flex-direction:			column;
 		background-image:		url(../img/ditherbg.png);
 		background-attachment:		fixed;
 		margin:				0 auto 1em;
@@ -109,7 +110,7 @@
 
 	.window {
 		position:			relative;
-		background-color:		var(--bg0t);
+		background-color:		var(--bg0);
 		backdrop-filter:		blur(2px);
 		-webkit-backdrop-filter:	blur(2px);
 		padding:			2em 1ch 1em;
@@ -128,17 +129,28 @@
 		position:			absolute;
 		top:				0;
 		left:				0;
-		background-color:		var(--purple);
 		color:				var(--bg0);
+		display:			flex;
+		gap:				1px;
 		width:				100%;
-		text-align:			left;
-		border-radius:			3px 3px 0 0;
 	}
 
-		.titlebar::after {
-			content:		"X";
-			position:		absolute;
-			right:			0;
+		.titlebar span:first-child {
+			flex:			1;
+		}
+
+		.titlebar .maximize {
+			background-color:	var(--bg0);
+			width:			3ch;
+			text-align:		center;
+			color:			var(--fg1);
+			line-height:		1.2;
+			height:			15px;
+			border-radius:		2px;
+			text-decoration:	none;
+		}
+
+		.titlebar .close {
 			background-color:	var(--bg0);
 			width:			3ch;
 			text-align:		center;
@@ -153,19 +165,6 @@
 		image-rendering:		pixelated;
 	}
 
-	.maximize {
-		background-color:		var(--bg0);
-		width:				3ch;
-		text-align:			center;
-		color:				var(--fg1);
-		line-height:			1.2;
-		height:				15px;
-		position:			absolute;
-		top:				0;
-		right:				calc(3ch + 1px);
-		border-radius:			2px;
-		text-decoration:		none;
-	}
 
 	#intro {
 		display:			flex;
