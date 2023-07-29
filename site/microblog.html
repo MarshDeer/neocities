@@ -1,27 +1,89 @@
 <!doctype HTML>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>Microblog</title>
-</head>
+
 <style>
+	/* Font */
 	@font-face{ font-family: 'Fantasque'; src: url('font/fantasque.woff') format('woff');}
-	body{ background-color: #282828; color: #ebdbb2; font:14px fantasque, monospace; margin: 0 auto; max-width: 800px;}
+	/* Styling */
+	body{ background-color: #282828; color: #ebdbb2; font:14px fantasque, monospace; margin: 1px auto; max-width: 800px;}
 	article{ border-bottom: 1px dashed #d3869b; line-height: 1.2; margin: 0 0 1em;}
-	h3{ margin: 0;}
+	h1{ margin: 0; font-size: 17px}
 	time{ border-radius: 2px; background-color: #ebdbb2; color: #282828;}
 	time::before{ content: "🕓 ";}
-	.tag{ margin-right: 1ch; border-radius: 2px;
-		background-color: #d3869b; color: #282828;}
+	.tag{ margin-right: 1ch; border-radius: 2px; background-color: #d3869b; color: #282828;}
 	.tag::first-letter{ font-style: italic;}
+	input[type="radio"] { position: absolute; left: -9999px;}
+	nav{ display: flex; gap: 1px 2px; flex-wrap: wrap; padding: 0; margin: 0 0 1px;}
+	nav::before{ content: "Filters:"}
+	nav label{ background-color: #b16286; border-radius: 2px; color: #282828; padding: 0 0.25em; line-height: 1.2; height: 1em;}
+	/* Tags */
+	[value="all"]:checked ~ article [data-category] { display: block;}
+	[value="art"]:checked ~ article:not([data-category~="art"]),
+	[value="code"]:checked ~ article:not([data-category~="code"]),
+	[value="thoughts"]:checked ~ article:not([data-category~="thoughts"]),
+	[value="reading"]:checked ~ article:not([data-category~="reading"]),
+	[value="games"]:checked ~ article:not([data-category~="games"]),
+	[value="update"]:checked ~ article:not([data-category~="update"]) { display: none;}
 </style>
+</head>
+
 <body>
+	<nav>
+		<label for="all">∞</label>
+		<label for="art">art</label>
+		<label for="code">code</label>
+		<label for="thoughts">thoughts</label>
+		<label for="reading">reading</label>
+		<label for="games">games</label>
+		<label for="update">update</label>
+	</nav>
+
 	<!-- vim: set tw=53 -->
-	<article>
-		<h3>1 bit is all you need</h3>
+	<main id="main">
+		<!-- Tags -->
+		<input type="radio" id="all" name="categories" value="all" checked>
+		<input type="radio" id="art" name="categories" value="art">
+		<input type="radio" id="code" name="categories" value="code">
+		<input type="radio" id="thoughts" name="categories" value="thoughts">
+		<input type="radio" id="reading" name="categories" value="reading">
+		<input type="radio" id="games" name="categories" value="games">
+		<input type="radio" id="games" name="categories" value="games">
+		<input type="radio" id="update" name="categories" value="update">
+
+	<article data-category="code update">
+		<h1>Feature creep time!</h1>
+		<time>2023-07-28</time>
+		<span class="tag">#code</span><span class="tag">#update</span>
+		<p>
+		Spent most of my brainpower today
+		trying to get backgrounds to remain
+		pixel-perfect regardless of zoom
+		level. As you might notice, this was
+		a fucking failure.<br>
+		On the bright side, I also added a
+		filtering feature to the microblog,
+		and spent a while going through the
+		a11yproject checklist to hopefully
+		make this website as accessible as
+		possible! Still a WIP, however.<br>
+		Anyways, my hyperfixation on web
+		design remains strong, and I'm much
+		closer to actually being able to
+		focus on creating content for this
+		website without getting distracted by
+		developing infrastructure. Hype!
+		</p>
+	</article>
+		
+	<article data-category="art">
+		<h1>1 bit is all you need</h1>
 		<time>2023-07-25</time>
 		<span class="tag">#art</span>
-		<br>
 		<p>
 		Working on this website has been such
 		a great excuse to work on pixelart.
@@ -33,11 +95,10 @@
 		lmao.
 		</p>
 	</article>
-	<article>
-		<h3>Fun</h3>
+	<article data-category="thoughts">
+		<h1>Fun</h1>
 		<time>2023-07-22</time>
 		<span class="tag">#thoughts</span>
-		<br>
 		<p>
 		It's raining!<br>
 		I've spent most of this morning
@@ -52,8 +113,8 @@
 		or monday probably :c
 		</p>
 	</article>
-	<article>
-		<h3>Hi, world!</h3>
+	<article data-category="code update">
+		<h1>Hi, world!</h1>
 		<time>2023-07-21</time>
 		<span class="tag">#code</span><span class="tag">#update</span><br>
 		<p>
@@ -71,4 +132,6 @@
 		very soon!
 		</p>
 	</article>
+	</main>
 </body>
+</html>

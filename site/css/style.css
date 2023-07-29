@@ -47,7 +47,8 @@
 		color:				var(--purple);
 	}
 
-		p a:hover {
+		p a:hover,
+		p a:focus {
 			color:			var(--bg0);
 			background-color:	var(--purple);
 			transition:		ease-in-out 0.25s all;
@@ -78,12 +79,14 @@
 				transition:	ease-out 0.2s width;
 			}
 
-			nav a:hover {
+			nav a:hover,
+			nav a:focus {
 				background-color:unset;
 				color:		var(--purple);
 			}
 
-			nav a:hover img {
+			nav a:hover img,
+			nav a:focus img {
 				width:		64px;
 				filter:		brightness(0) saturate(100%) invert(82%) sepia(4%) saturate(7152%) hue-rotate(297deg) brightness(93%) contrast(75%);
 			}

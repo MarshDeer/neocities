@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 
-		<title>Not Found</title>
+		<title>Page not found</title>
 
 		<style>
-			body { height: 100% }
-			.window { border-color: var(--red); box-shadow: 1ch 1em var(--dred); text-align: center; width: 30ch;}
+			body { height: 100vh; justify-content: center; }
+			.window { border-color: var(--red); box-shadow: 1ch calc(1em + 2px) var(--dred), inset 0 calc(1em + 2px) var(--red); width: fit-content;}
+			.window::selection { background-color: var(--dred);}
 			.titlebar { background-color: var(--red);}
-			pre { text-align: left;}
-			footer { width: fit-content;}
+			pre { text-align: left; width: fit-content;}
+			footer.window { width: fit-content; box-shadow: 1ch 1em var(--dred);}
+			a { text-decoration: none;}
 		</style>
 	</head>
 
 	<body>
-		<section class="window">
-			<span class="titlebar">error404.sh</span>
-			<pre> Page not found! </pre>
-			<pre>(             )
+		<div class="window">
+			<div class="titlebar">
+				<span>error404.sh</span>
+				<span class="close" aria-hidden="true">X</span>
+			</div>
+			<pre>
+   Page not found!
+
+(             )
  `--(_   _)--'
       Y-Y
      /xx \
     /_    \
     `u-'.  \        ,
 	|   `._____/)</pre>
-		</section>
+		</div>
 
 		<footer class="window">
 			<a href="index.html">Go back home</a>
