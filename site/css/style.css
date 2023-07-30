@@ -229,7 +229,7 @@
 	}
 
 /* Responsive */
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 799px) {
 		body {
 			width:		calc(100% - 4ch);
 		}
