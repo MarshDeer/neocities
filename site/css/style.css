@@ -61,7 +61,6 @@
 		flex-wrap:			wrap;
 		max-width:			80%;
 		image-rendering:		pixelated;
-		height:				84px;
 		align-items:			center;
 	}
 
@@ -72,11 +71,14 @@
 			margin:			auto;
 			transition:		ease-in-out 0.15s width;
 			text-decoration:	none;
+			height:			82px;
 		}
 
 			nav a img {
 				width:	32px;
-				transition:	ease-out 0.2s width;
+				transition:	ease-out 0.2s width,
+						ease-out 0.2s margin;
+				margin-top:	1em;
 			}
 
 			nav a:hover,
@@ -89,6 +91,7 @@
 			nav a:focus img {
 				width:		64px;
 				filter:		brightness(0) saturate(100%) invert(82%) sepia(4%) saturate(7152%) hue-rotate(297deg) brightness(93%) contrast(75%);
+				margin: 	0;
 			}
 
 	main {
@@ -107,7 +110,6 @@
 		main.blog,
 		main.about {
 			grid-template-columns:	auto;
-			grid-row-gap:		calc(1em + 2px);
 			margin:			auto;
 		}
 
@@ -224,4 +226,24 @@
 	::selection {
 		background-color:		var(--dpurple);
 		color:				var(--bg0);
+	}
+
+/* Responsive */
+	@media screen and (max-width: 800px) {
+		body {
+			width:		calc(100% - 4ch);
+		}
+
+		main,
+		main.index,
+		main.links,
+		main.blog,
+		main.about {
+			grid-template-columns: 	auto;
+			width:			100%;
+		}
+
+		footer {
+			width:			unset;
+		}
 	}
