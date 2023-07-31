@@ -9,14 +9,15 @@
 
 	<body>
 		<!-- Header -->
-		<header class="window">
+		<header class="window" style="width: 90%; height: 7em">
 			<div class="titlebar">
 				<span>header.html</span>
 				<span class="button close" aria-hidden="true">X</span>
 			</div>
-			<h1> Hi! Welcome!</h1>
-			<p> This website is <s>obviously</s> still under construction. Sorry about all the broken links! I'm working on it! </p>
-			<marquee> All Cops Are Bastards, All Cats Are Beautiful, and All Cervids Are Bottoms </marquee>
+			<picture style="position: absolute; bottom: calc(-1em - 2px - 10px); left: 50%; transform: translateX(-50%);">
+				<source srcset="img/bannersmall.gif" media="(max-width: 549px)">
+				<source srcset="img/bannercut.gif" media="(max-width: 799px)">
+				<img src="img/banner.gif">
 		</header>
 
 		<!-- Navigation -->
