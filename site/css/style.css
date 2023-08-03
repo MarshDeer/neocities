@@ -116,14 +116,13 @@
 	.window {
 		position:			relative;
 		background-color:		var(--bg0);
-		backdrop-filter:		blur(2px);
-		-webkit-backdrop-filter:	blur(2px);
 		padding:			2em 1ch 1em;
 		margin:				1em auto;
 		border:				1px solid var(--purple);
 		box-shadow:			1ch calc(1em + 2px) var(--dpurple),
 						inset 0 calc(1em + 2px) var(--purple);
 		border-radius:			3px;
+		max-width:			calc(80ch + 2ch); /* in accordance to WCAG 2.0 1.4.8 */
 	}
 
 		main.index .window {
@@ -228,6 +227,21 @@
 		color:				var(--bg0);
 	}
 
+	.skipnav {
+		position:			absolute;
+		top:				calc(-5em - 3px);
+		z-index:			100;
+		transition:			ease-out 0.3s top;
+		-webkit-transition:		ease-out 0.3s top;
+		padding:			1em 1ch;
+		box-shadow:			1ch 1em var(--dred);
+		border:				1px solid var(--red);
+	}
+
+		.skipnav:focus {
+			top:			0px;
+		}
+	
 /* Responsive */
 	@media screen and (max-width: 799px) {
 		body {
@@ -245,5 +259,12 @@
 
 		footer {
 			width:			unset;
+		}
+	}
+
+/* Accessibility */
+	@media screen and (prefers-reduced-motion) {
+		* {
+			transition: none;
 		}
 	}

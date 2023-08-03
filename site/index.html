@@ -6,20 +6,25 @@
 		<meta property="og:image" content="https://lensdeer.neocities.org/scrot.png" />
 		<meta property="twitter:card" content="summary_large_image">
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
-		<title>LensDeer's hideout</title>
+		<title>LensDeer's Hideout | Index</title>
 	</head>
 
 	<body>
+		<a class="window skipnav" href="#main">Skip to main content</a>
 		<!-- Header -->
-		<header class="window" style="width: 90%; height: 7em; image-rendering: pixelated;">
+		<header class="window" style="width: 90%; height: 7em; image-rendering: pixelated; max-width: unset;">
 			<div class="titlebar">
-				<span>header.html</span>
+				<span>header.gif</span>
 				<span class="button close" aria-hidden="true">X</span>
 			</div>
-			<picture style="position: absolute; bottom: calc(-1em - 2px - 10px); left: 50%; transform: translateX(-50%);" alt="Banner: Welcome to Lensdeer's Hideout">
+			<picture style="position: absolute; bottom: calc(-1em - 2px - 10px); left: 50%; transform: translateX(-50%);">
+				<source srcset="img/bannersmall.png" media="(prefers-reduced-motion) and (max-width: 549px)">
 				<source srcset="img/bannersmall.gif" media="(max-width: 549px)">
+				<source srcset="img/bannercut.png" media="(prefers-reduced-motion) and (max-width: 799px)">
 				<source srcset="img/bannercut.gif" media="(max-width: 799px)">
-				<img src="img/banner.gif">
+				<source srcset="img/banner.png" media="(prefers-reduced-motion)">
+				<img src="img/banner.gif" alt="Banner: Welcome to Lensdeer's Hideout">
+			</picture>
 		</header>
 
 		<!-- Navigation -->
@@ -63,13 +68,16 @@
 		</nav>
 
 		<!-- Content -->
-		<main class="index">
+		<main class="index" id="main">
 			<div class="window" id="intro">
 				<div class="titlebar">
 					<span>intro.txt</span>
 					<span class="close" aria-hidden="true">X</span>
 				</div>
-				<img src="img/deer.gif" style="height: 164px; margin: auto 2ch; image-rendering: pixelated;" aria-hidden="true" alt="">
+				<picture style="height: 164px; margin: auto 2ch; image-rendering: pixelated;" aria-hidden="true" alt="">
+					<source srcset="img/deer.png" media="(prefers-reduced-motion)">
+					<img src="img/deer.gif" style="height: 164px; margin: auto 2ch; image-rendering: pixelated;">
+				</picture>
 				<p>
 					Hi! I'm Lena, a deer from somewhere in Latin America. Welcome to my homepage!<br>
 					<br>
@@ -95,10 +103,13 @@
 			<div class="window" id="microblog">
 				<div class="titlebar">
 					<span>microblog.html</span>
-					<a href="microblog.html" class="maximize">⬒</a>
+					<a href="microblog.html" class="maximize" aria-label="Open microblog in new tab">⬒</a>
 					<span class="close" aria-hidden="true">X</span>
 				</div>
 				<embed type="text/html" src="microblog.html#main" title="microblog">
+					<noframes>
+						<p>Displaying the microblog on the main page requires iframe support. You can read the microblog <a href="microblog.html">here</a> if your browser does not support iframes</p>
+					</noframes>
 			</div>
 
 			<div class="window" id="buttons">
@@ -108,7 +119,10 @@
 				</div>
 				<p>
 					<a onclick="navigator.clipboard.writeText('<a href=https://lensdeer.neocities.org><img src=https://lensdeer.neocities.org/img/roly/lensdeer.gif></a>')">
-						<img src="img/roly/lensdeer.gif" alt="lensdeer.neocities.org">
+						<picture>
+							<source srcset="img/roly/lensdeer.png" media="(prefers-reduced-motion)">
+							<img src="img/roly/lensdeer.gif" alt="lensdeer.neocities.org">
+						</picture>
 					</a>
 					<a onclick="navigator.clipboard.writeText('<a href=https://marshdeer.github.io/howlongmojang><img src=https://marshdeer.github.io/howlongmojang/img/button.gif></a>')">
 						<img src="https://marshdeer.github.io/howlongmojang/img/button.gif" alt="marshdeer.github.io/howlongmojang">

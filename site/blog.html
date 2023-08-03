@@ -6,19 +6,25 @@
 		<meta property="og:image" content="https://lensdeer.neocities.org/scrot.png" />
 		<meta property="twitter:card" content="summary_large_image">
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
-		<title>LensDeer's Blog</title>
+		<title>LensDeer's Hideout | Blog</title>
 	</head>
 
 	<body>
+		<a class="window skipnav" href="#main">Skip to main content</a>
 		<!-- Header -->
-		<header class="window" style="width: 90%; height: 7em; max-width: 470px; image-rendering: pixelated;">
+		<header class="window" style="width: 90%; height: 7em; image-rendering: pixelated;">
 			<div class="titlebar">
 				<span>header.gif</span>
 				<span class="button close" aria-hidden="true">X</span>
 			</div>
-			<picture style="position: absolute; bottom: calc(-1em - 2px - 10px); left: 50%; transform: translateX(-50%);" alt="Banner: Lensdeer's Hideout">
+			<picture style="position: absolute; bottom: calc(-1em - 2px - 10px); left: 50%; transform: translateX(-50%);">
+				<source srcset="img/bannersmall.png" media="(prefers-reduced-motion) and (max-width: 549px)">
 				<source srcset="img/bannersmall.gif" media="(max-width: 549px)">
-				<img src="img/bannercut.gif">
+				<source srcset="img/bannercut.png" media="(prefers-reduced-motion) and (max-width: 799px)">
+				<source srcset="img/bannercut.gif" media="(max-width: 799px)">
+				<source srcset="img/banner.png" media="(prefers-reduced-motion)">
+				<img src="img/banner.gif" alt="Banner: Welcome to Lensdeer's Hideout">
+			</picture>
 		</header>
 
 		<!-- Navigation -->
@@ -62,7 +68,7 @@
 		</nav>
 
 		<!-- Content -->
-		<main class="blog">
+		<main class="blog" id="main">
 			<div class="window blogindex" style="min-width: 50%;">
 				<div class="titlebar">
 					<span>/home/lena/blog/articles/</span>
