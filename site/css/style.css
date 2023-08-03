@@ -52,6 +52,7 @@
 			color:			var(--bg0);
 			background-color:	var(--purple);
 			transition:		ease-in-out 0.25s all;
+			-webkit-transition:	ease-in-out 0.25s all;
 			border-radius:		2px;
 		}
 
@@ -70,6 +71,7 @@
 			color:			var(--fg1);
 			margin:			auto;
 			transition:		ease-in-out 0.15s width;
+			-webkit-transition:	ease-in-out 0.15s width;
 			text-decoration:	none;
 			height:			82px;
 		}
@@ -77,6 +79,8 @@
 			nav a img {
 				width:	32px;
 				transition:	ease-out 0.2s width,
+						ease-out 0.2s margin;
+				-webkit-transition:ease-out 0.2s width,
 						ease-out 0.2s margin;
 				margin-top:	1em;
 			}
@@ -266,5 +270,6 @@
 	@media screen and (prefers-reduced-motion) {
 		* {
 			transition: none;
+			-webkit-transition: none;
 		}
 	}
