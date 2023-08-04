@@ -269,7 +269,7 @@
 /* Accessibility */
 	@media screen and (prefers-reduced-motion) {
 		* {
-			transition: none;
-			-webkit-transition: none;
+			transition: none !important;
+			-webkit-transition: none !important;
 		}
 	}
