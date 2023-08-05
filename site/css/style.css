@@ -282,7 +282,7 @@
 			width:			100%;
 		}
 
-		footer {
+		footer.window {
 			width:			unset;
 		}
 	}
