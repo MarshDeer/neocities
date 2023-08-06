@@ -102,12 +102,12 @@
 		width:				80%;
 	}
 
-		main.2col {
+		main.twocol {
 			grid-template-columns:	auto auto;
 			grid-row-gap:		calc(2em + 2px);
 		}
 
-		main.1col {
+		main.onecol {
 			grid-template-columns:	auto;
 			margin:			auto;
 		}
