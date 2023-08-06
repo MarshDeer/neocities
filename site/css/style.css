@@ -271,10 +271,8 @@
 		}
 
 		main,
-		main.index,
-		main.links,
-		main.blog,
-		main.about {
+		main.onecol,
+		main.twocol {
 			grid-template-columns: 	auto;
 			width:			100%;
 		}
