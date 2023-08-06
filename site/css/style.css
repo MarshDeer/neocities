@@ -100,17 +100,14 @@
 		display: 			grid;
 		margin:				1em auto;
 		width:				80%;
-		grid-template-columns:		auto auto;
 	}
 
-		main.index,
-		main.links {
+		main.2col {
 			grid-template-columns:	auto auto;
 			grid-row-gap:		calc(2em + 2px);
 		}
 
-		main.blog,
-		main.about {
+		main.1col {
 			grid-template-columns:	auto;
 			margin:			auto;
 		}
