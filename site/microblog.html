@@ -20,14 +20,14 @@
 	input[type="radio"] { position: absolute; left: -9999px;}
 	nav{ display: flex; gap: 1px 2px; flex-wrap: wrap; padding: 0; margin: 0 0 1px;}
 	nav::before{ content: "Filters:"}
-	nav label{ background-color: #b16286; border-radius: 2px; color: #282828; padding: 0 0.25em; line-height: 1.2; height: 1em;}
+	nav label{ background-color: #d3869b; border-radius: 2px; color: #282828; padding: 0 0.25em; line-height: 1.2;}
 	/* Tags */
 	[value="all"]:checked ~ article [data-category] { display: block;}
 	[value="art"]:checked ~ article:not([data-category~="art"]),
 	[value="code"]:checked ~ article:not([data-category~="code"]),
 	[value="thoughts"]:checked ~ article:not([data-category~="thoughts"]),
 	[value="reading"]:checked ~ article:not([data-category~="reading"]),
-	[value="games"]:checked ~ article:not([data-category~="games"]),
+	[value="media"]:checked ~ article:not([data-category~="media"]),
 	[value="update"]:checked ~ article:not([data-category~="update"]) { display: none;}
 </style>
 </head>
@@ -39,7 +39,7 @@
 		<label for="code">code</label>
 		<label for="thoughts">thoughts</label>
 		<label for="reading">reading</label>
-		<label for="games">games</label>
+		<label for="media">media</label>
 		<label for="update">update</label>
 	</nav>
 
@@ -51,8 +51,7 @@
 		<input type="radio" id="code" name="categories" value="code" aria-hidden:"true">
 		<input type="radio" id="thoughts" name="categories" value="thoughts" aria-hidden:"true">
 		<input type="radio" id="reading" name="categories" value="reading" aria-hidden:"true">
-		<input type="radio" id="games" name="categories" value="games" aria-hidden:"true">
-		<input type="radio" id="games" name="categories" value="games" aria-hidden:"true">
+		<input type="radio" id="media" name="categories" value="media" aria-hidden:"true">
 		<input type="radio" id="update" name="categories" value="update" aria-hidden:"true">
 
 	<article data-category="thoughts">

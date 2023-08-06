@@ -292,5 +292,6 @@
 		* {
 			transition: none !important;
 			-webkit-transition: none !important;
+			animation: none !important;
 		}
 	}
