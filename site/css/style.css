@@ -124,7 +124,7 @@
 		max-width:			calc(80ch + 2ch); /* in accordance to WCAG 2.0 1.4.8 */
 	}
 
-		main.onecol .window {
+		main.twocol .window {
 			margin:			auto;
 		}
 
