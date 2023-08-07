@@ -10,8 +10,8 @@
 	/* Font */
 	@font-face{ font-family: 'Fantasque'; src: url('font/fantasque.woff') format('woff');}
 	/* Styling */
-	body{ background-color: #282828; color: #ebdbb2; font:14px fantasque, monospace; margin: 1px auto; max-width: 800px;}
-	article{ border-bottom: 1px dashed #d3869b; line-height: 1.2; margin: 0 0 1em;}
+	body{ background-color: #282828; color: #ebdbb2; font:14px fantasque, monospace; margin: 1px auto; max-width: 800px; line-height: 1.2;}
+	article{ border-bottom: 1px dashed #d3869b; margin: 0 0 1em;}
 	h1{ margin: 0; font-size: 17px}
 	time{ border-radius: 2px; background-color: #ebdbb2; color: #282828;}
 	time::before{ content: "🕓 ";}
@@ -38,7 +38,6 @@
 		<label for="art" aria-role="button" aria-pressed="false">art</label>
 		<label for="code" aria-role="button" aria-pressed="false">code</label>
 		<label for="thoughts" aria-role="button" aria-pressed="false">thoughts</label>
-		<label for="reading" aria-role="button" aria-pressed="false">reading</label>
 		<label for="media" aria-role="button" aria-pressed="false">media</label>
 		<label for="update" aria-role="button" aria-pressed="false">update</label>
 	</nav>
@@ -50,10 +49,40 @@
 		<input type="radio" id="art" name="categories" value="art" aria-hidden:"true">
 		<input type="radio" id="code" name="categories" value="code" aria-hidden:"true">
 		<input type="radio" id="thoughts" name="categories" value="thoughts" aria-hidden:"true">
-		<input type="radio" id="reading" name="categories" value="reading" aria-hidden:"true">
 		<input type="radio" id="media" name="categories" value="media" aria-hidden:"true">
 		<input type="radio" id="update" name="categories" value="update" aria-hidden:"true">
 
+	<article data-category="thoughts">
+		<h1>Bad news and good news</h1>
+		<time>2023-08-07</time>
+		<span class="tag">#thoughts</span>
+		<p>
+		Surgery recovery started off great,
+		but then I started getting a TON of
+		anxiety that only got worse after I
+		startet actually spotting blood from
+		the incision. I have my followup
+		appointment tomorrow and my surgeon
+		said not to worry, but of course I
+		worry! Blood is supposed to be
+		<em>inside</em> the body!... At any
+		rate, this obviously has slowed down
+		the creative drive I was feeling :c.<br>
+		On the bright side, I'm finally
+		satisfied enough with this website's
+		stylesheet to be ready to call it a
+		"1.0 version" once I finally get
+		around to making the fucking links
+		page.<br>
+		Upcoming projects include an art
+		archive, a heckscaper-style OC
+		directory, writing a couple
+		tutorials, finally getting started on
+		my comic's concept art, and finally
+		putting more Passion™ into this
+		website.
+		</p>
+	</article>
 	<article data-category="thoughts">
 		<h1>I lived!</h1>
 		<time>2023-08-03</time>
