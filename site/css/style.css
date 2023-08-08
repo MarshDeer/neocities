@@ -50,7 +50,9 @@
 	}
 
 		p a:hover,
-		p a:focus {
+		p a:focus,
+		li a:hover,
+		li a:focus {
 			color:			var(--bg0);
 			background-color:	var(--purple);
 			transition:		ease-in-out 0.25s all;
