@@ -1,0 +1,355 @@
+<!doctype HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+		<link rel="icon" type="image/x-icon" href="../img/favicon/favicon.ico">
+		<meta property="og:image" content="https://lensdeer.neocities.org/scrot.png" />
+		<meta property="twitter:card" content="summary_large_image">
+		<link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+		<link href="../css/blog.css" rel="stylesheet" type="text/css" media="all">
+		<title>LensDeer's Hideout | Blog | How I added an embedded microblog to my website</title>
+	</head>
+
+	<body>
+		<a class="window skipnav" href="#main">Skip to main content</a>
+		<!-- Header -->
+		<header class="window" style="width: 90%; height: 7em; image-rendering: pixelated;">
+			<div class="titlebar">
+				<span>header.gif</span>
+				<span class="button close" aria-hidden="true">X</span>
+			</div>
+			<picture style="position: absolute; bottom: calc(-1em - 2px - 10px); left: 50%; transform: translateX(-50%);">
+				<source srcset="../img/bannersmall.png" media="(prefers-reduced-motion) and (max-width: 549px)">
+				<source srcset="../img/bannersmall.gif" media="(max-width: 549px)">
+				<source srcset="../img/bannercut.png" media="(prefers-reduced-motion)">
+				<img src="../img/bannercut.gif" alt="Banner: Lensdeer's Hideout">
+			</picture>
+		</header>
+
+		<!-- Navigation -->
+		<nav class="window">
+			<div class="titlebar">
+				<span>/home/lena/navigation/</span>
+				<span class="close" aria-hidden="true">X</span>
+			</div>
+			<a href="../index.html">
+				<img src="../img/nav/home.svg" alt=""><br>
+				Home
+			</a>
+			<a href="https://lensdeer.tumblr.com/tagged/lensdeerart">
+				<img src="../img/nav/art.svg" alt=""><br>
+				Art
+			</a>
+			<a href="https://lensdeer.tumblr.com">
+				<img src="../img/nav/tumblr.svg" alt=""><br>
+				Tumblr
+			</a>
+			<a href="https://github.com/MarshDeer">
+				<img src="../img/nav/git.svg" alt=""><br>
+				GitHub
+			</a>
+			<a href="index.html">
+				<img src="../img/nav/blog.svg" alt=""><br>
+				Blog
+			</a>
+			<a href="aboutme.html">
+				<img src="../img/nav/me.svg" alt=""><br>
+				About Me
+			</a>
+			<a href="links.html">
+				<img src="../img/nav/links.svg" alt=""><br>
+				Links
+			</a>
+			<a href="sitemap.html">
+				<img src="../img/nav/map.svg" alt=""><br>
+				Site Map
+			</a>
+		</nav>
+
+		<!-- Content -->
+		<main style="margin: auto" id="main">
+			<article class="window">
+				<div class="titlebar">
+					<span>microblogtutorial.html</span>
+					<span class="close" aria-hidden="true">X</span>
+				</div>
+				<hgroup>
+					<h1> How I added an embedded microblog to my website </h1>
+					<span> (And how you can do it too) </span>
+				</hgroup>
+
+				<p style="text-align: center;">
+					<a href="#how"> Skip to the tutorial section </a>
+				</p>
+
+				<section id="what" style="border-top: 1px dashed var(--dpurple);">
+					<h2> What even is a microblog </h2>
+					<p>
+						The term "microblog" was coined in the mid 00s to refer to the latest in a series of innovations to the blogging medium: instead of (or apart from) having a regular blog, people would have "linklogs", "photologs", "vidlogs" (or "vlogs") and such, where they would blog using those specific forms of media as a change of pace from the regular "article"-based blogs everyone had come to expect.
+					</p>
+
+					<p>
+						Eventually, sticking to a single one of these mediums became restrictive, and people started creating "tumbelogs" (Tumblr's namesake!) where they would mix and match between them as they saw fit. This naturally led to these smaller blogs becoming less structured and dropping all parts of the regular blogging experience they deemed unnecessary in favor of a fast-paced stream-of-consciousness blogging experience, which gave way to the concept of a "microblog".
+					</p>
+
+					<p>
+						According to <a href="https://book.micro.blog/what-is-microblogging/">a contemporary blogpost</a>, Microblogs were unstructured (often self-coded) websites where people would post tweet-ish length posts that could be followed using RSS or other technologies. This was very convienient for bloggers of the time, as lots of them felt pressured to only write high-quality long-form content for their full-sized blogs, and Microblogs gave them the freedom to just be casual and take the pressure off blogging.
+					</p>
+
+					<p>
+						Naturally, this led to a lot of third-party microblogging platforms —like Twitter— getting launched, which reduced the technical know-how needed to have a microblog and "democratized" access to the medium. These new platforms then decided to spend the last decade and a half crushing both traditional blogging and our attention spans under bloat and corporate greed, but I digress.
+					</p>
+
+					<p>
+						My point is that it's easy to draw parallels between the microblogs of the mid-aughts and the current handmade website movement: they were tired of the pressure of a regular blog and we are tired of algorithmic feeds; they responded to this by taking the convenient features of the era (internet search and RSS) and simplifying their medium into something reminiscent of slightly older websites, and we are taking the possiblilities of modern HTML and CSS3 and adapting them to the Web 1.0 "do it yourself" philosophy. It's sweet.  It's fitting.
+					</p>
+				</section>
+
+				<section id="why" style="border-top: 1px dashed var(--dpurple);">
+					<h2> Why you should even bother </h2>
+					<p>
+						So! All this is nice and whatever, but why should you care? And why should you go the DIY way about it?
+					</p>
+
+					<p>
+						Look, I'm not the boss of you, and even if you do decide to make a microblog for your website there are plenty alternatives to this that already have semi-widespread adoption in platforms like neocities (<a href="https://status.cafe">status.cafe</a> instantly comes to mind).  While those alternatives are likely more robust than jerry-rigging your own DIY solution, there are many advantages to writing and hosting your own:
+					</p>
+
+					<h3> It's immune to linkrot </h3>
+					<p>
+						The most important reason, in my opinion, is that relying on third-party hosts for any of your content leaves you vulnerable to linkrot, which means that whatever third-party service you are using could go offline at moment's notice, taking your blog's posts and that section of your website away with it. The indie web should push for websites to be <a href="https://jeffhuang.com/designed_to_last/">designed to last</a>, and dependence in third-party services is sadly inherently antithetical to that concept.
+					</p>
+					<p>
+						This is the also the reason you should host resources like fonts or images on your own website instead of hotlinking or hosting them on, say, Tumblr or Discord: you never know when the website you're hotlinking from might move the files or go offline, plus hotlinking uses other people's bandwidth and makes loading those resources slower for people visiting your website.
+					</p>
+
+					<h3> It has a very small attack surface </h3>
+					<p>
+						One of the main advantages of static websites is that, since they don't need server-side software beyond the actual web server, they have an extremely low vulnerability to malicious activity more harmful than, say, a DDoS attack. While using third-party code is very useful to reduce the web design workload, it also leaves you open to the possibility of the original developer getting hacked and someone inserting malicious code into your website, or to someone even doing that on purpose. Hell, one of the main issues with mainstream websites is that you can't even look for hummus recipes without getting your browser fingerprinted and your data sold to fucktons of companies.
+					</p>
+					<p>
+						In summary: Google Analytics is a vampire; don't let it into your house.
+					</p>
+
+					<h3> It's customizable and expandable </h3>
+					<p>
+						While a lot of third-party solutions do allow for some degree of customization, it's usually pretty limited, and it may prove insufficient if you (like me) have a very specific style in mind for your website. Designing your own microblog gives you full control over its code, so you can make your website look and behave exactly the way you want it to! And even if you can't get it there quite yet, you can gradually build your way there while learning more about web development in the process~
+					</p>
+
+					<h3> It's easier than you think </h3>
+					<p>
+						Finally: I know this might sound overwhelming at first, but the entire point of this is to take things at your own pace and use it as a learning opportunity. Project-based learning is probably the best way to improve your coding skills, and I promise that, even if you are an absolute beginner, whatever knowledge you already have will carry you 90% of the way there! Take back control of your internet presence, you can do it :3
+					</p>
+				</section>
+
+				<section id="how" style="border-top: 1px dashed var(--dpurple);">
+					<h2> How to actually do it </h2>
+					<section id="html">
+						<h3> The HTML skeleton </h3>
+						<p>
+							The essential part of this tutorial will be split in three steps, each of which will leave you with a gradually more refined finished product. The first of these steps is writing the HTML part of your microblog, aiming to get code simple enough that adding new articles isn't too much of a hassle.
+						</p>
+
+						<p>
+							If you finished Neocities' "Intro to HTML" tutorial, you already know most of what you will need to get something functional enough up and running, as the core of what we will be building today is just writing a small and very simple website. Since there at least as many ways to make websites as there are webmasters, you can essentially do whatever you want for this step! However, this tutorial will follow a simplified version of what I did for my own microblog.
+						</p>
+
+						<p>
+							First, create a new HTML document, and make sure to fill in the necessary information in your <code>&lt;head&gt;</code> element so the first couple lines of your file look something like this:
+						</p>
+<pre><code>&lt;!doctype HTML&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt; Microblog &lt;/title&gt;
+&lt;/head&gt;</code></pre>
+
+						<p>
+							If you want, you can change that <code>lang="en"</code> to your language's <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes?useskin=vector">ISO 639-1</a> code. It's always a good idea to add a <code>lang</code> attribute to your website's <code>&lt;html&gt;</code> element, because it helps web browsers and search engines know what to expect to find in there.
+						</p>
+
+						<p>
+							With that out of the way, let's write our first post!
+						</p>
+
+						<p>
+							Since you obviously care about making the indie web accessible to people using screenreaders or other sorts of assistive technology, it's a good idea to put your post inside an <code>&lt;article&gt;</code> element. By using a semantic HTML elements like this instead of a generic <code>&lt;div&gt;</code>, assistive software will instantly know what kind of content to expect in this section of your website, which makes it significantly easier to browse for people with disabilities and/or special use-cases.
+						</p>
+
+						<p>
+							I wanted my posts to have titles, I'm putting those inside a <code>&lt;h1&gt;</code> element so that assistive software knows that it's the article's heading. You might have heard that having multiple <code>&lt;h1&gt;</code> elements in a single website is bad practice, but browsers and assistive technologies should parse it correctly as long as the repeated <code>&lt;h1&gt;</code> elements are inside page structure elements like <code>&lt;article&gt;</code>. Even more reasons to use semantic HTML!
+						</p>
+
+						<p>
+							I also wanted my articles to have the date they were posted, so it would be easier to browse and to give some context to posts if someone were to read them in the future. I used the <code>&lt;time&gt;</code> element for this —even though it doesn't really have any specific functionality— to make the code more readable and because it's good practice to use semantic HTML elements whenever possible. Sadly, since this tutorial is mostly intended for neocities and other platforms that don't allow server-side code, there is currently no way to automatically fill this field and you will have to write down dates manually. I'm working on a way to automate it for my own use case, but that goes far beyond this tutorial's scope.
+						</p>
+
+						<p>
+							Now that we know what we're using, let's open the <code>&lt;body&gt;</code> element and build our post inside it:
+						</p>
+
+<pre><code>&lt;body&gt;
+  &lt;article&gt;
+    &lt;h1&gt; Hello, world! &lt;/h1&gt;
+    &lt;time&gt; 2023-08-06 &lt;/time&gt;
+    &lt;p&gt;
+      This is the first post on my new microblog!
+    &lt;/p&gt;
+  &lt;/article&gt;
+&lt;/body&gt;</code></pre>
+
+						<p>
+							Now, just to make sure you understood the process, add another <code>&lt;article&gt;</code> element <em>above</em> the one we just created, making sure to use the same structure as the first post.
+						</p>
+
+						<p>
+							Done already? Good! Your microblog should look something like this at this point:
+						</p>
+
+						<img src="assets/microblogtutorial_htmlscrot.jpg" alt="Screenshot of progress so far">
+
+						<p>
+							And just like that, you're done! If you want, future posts can include images, videos, or anything you want, just remember to put them <em>above</em> old posts if you want them to show up on top!
+						</p>
+
+						<p>
+							Now let's move onto making this microblog fit the rest of your website's visual style, because even though there is nothing wrong with a pure HTML website, you will likely want something a bit more polished.
+						</p>
+					</section>
+
+					<section id="css">
+						<h3> Styling with CSS </h3>
+						<p>
+							There are many ways to go about adding a stylesheet to a website, but to avoid compatibility issues with my main stylesheet, and for the purposes of this simple tutorial, we will be using a <code>&lt;style&gt;</code> element inside your document's <code>&lt;head&gt;</code>. Remember: everything we add in this section will go inside that element.
+						</p>
+
+<pre><code>&lt;!doctype HTML&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt; Microblog &lt;/title&gt;
+  &lt;style&gt;
+    [STYLESHEET GOES HERE]
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+
+						<p>
+							If you have a defined color palette for your website, it could be a good idea to create CSS variables for those colors in the <code>:root</code> element. This way, instead of typing the hexadecimal code for your colors each time you want to use them, you can just reference the variables by typing <code>var(--VARIABLENAME)</code> anywhere in the document you would usually type in a color code.
+						</p>
+
+<pre><code>:root {
+  --bg: #282828;
+  --fg: #ebdbb2;
+  --accent: #d3869b;
+}</code></pre>
+						<p>
+							Now we can start working on some basic styling. Since this blog's main purpose is to be displayed as a small iframe embedded somewhere else, there is no need to build a complicated layout. We will just style the elements we just created in the HTML section so that they jit the rest of your page's design.
+						</p>
+
+						<p>
+							Let's start by styling the <code>&lt;body&gt;</code> element. The following codeblock defines a <code>background-color</code> for the entire website, a <code>color</code> for all text, and a <code>font-family</code> to define what what font everything should be displayed with.
+						</p>
+
+<pre><code>body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: monospace;
+}</code></pre>
+
+						<p>
+							Next, we will style the <code>&lt;time&gt;</code> element to differentiate it from the text around it. In this case, I switched the <code>background-color</code> and <code>color</code> around, and added a <code>border-radius</code> to round off the corners a little bit
+						</p>
+
+<pre><code>time {
+  background-color: var(--fg);
+  color: var(--bg);
+  border-radius: 2px;
+}</code></pre>
+
+						<p>
+							To wrap up on basic styling, let's add some sort of separator between <code>&lt;article&gt;</code> elements, to make it clearer where one post ends and the next starts. In this case, I just used a dashed <code>bottom-border</code> to get a subtle separator that doesn't get in the way of the text.
+						</p>
+
+<pre><code>article {
+  border-bottom: 1px dashed var(--accent);
+}</code></pre>
+
+						<p>
+							At this point, we have added enough styling to have a serviceable enough stylesheet! Your microblog should look something like this:
+						</p>
+
+						<img src="assets/microblogtutorial_cssscrot.jpg" alt="Screenshot of progress so far">
+
+						<p>
+							This is the point where personal style and preferences take over, so you are better off using resources like <a href="https://www.w3schools.com/Css/">W3Schools</a> or the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Tutorials">MDN web docs</a> instead of following this tutorial down to the letter. Use your own CSS knowledge to iterate on the design and gradually make it more yours. With time, you will be able to build something that looks great!
+						</p>
+					</section>
+
+					<section id="embed">
+						<h3> Embedding it in your website </h3>
+						<p>
+							We're on the home stretch now. All that remains now is to insert the microblog in your website. While this step is mostly pretty simple as far as code is concerned, there are many factors that depend on your website's design, so you will have to adapt things as you go.
+						</p>
+
+						<p>
+						First thing you will have to do is actually embed the file somewhere in your website. Go to whatever part of your document you want to put your microblog in and insert an <code>&lt;embed&gt;</code> element like the one in this codeblock, making sure to actually put your microblog's <code>.html</code> file's location as the <code>src=</code> attribute's argument.
+						</p>
+
+<pre><code>&lt;embed
+  type="text/html"
+  src="microblog.html"
+  title="Microblog"
+  class="microblog"&gt;</code></pre>
+
+						<p>
+							Now, check how the microblog looks on your website. Hopefully, it will fit just fine and have the right dimensions. If not, you will have to adjust it in your <em>website's</em> stylesheet, using the <code>.microblog</code> CSS class we gave it. For instance, in my website it overflowed its container, so I set its <code>width</code> and <code>height</code> properties so that it would fill it instead of spilling everywhere.
+						</p>
+
+<pre><code>.microblog
+  width: 100%;
+  height: 100%;
+}</code></pre>
+
+						<p>
+							As an example, this is what it looked like before and after I added those properties to my stylesheet
+						</p>
+
+						<div style="display: flex; margin: 1em auto; text-align: center; gap: 1ch; max-width: 100%">
+							<div style="margin: auto">
+								<img src="assets/microblogtutorial_before.jpg" alt="Screenshot of the microblog's embed displaying wrong"><br>Before
+							</div>
+							<div style="margin: auto">
+								<img src="assets/microblogtutorial_after.jpg" alt="Screenshot of the microblog's embed displaying properly"><br>After
+							</div>
+						</div>
+
+						<p>
+							You will probably have to adjust it a little to make it properly fit your layout, but the <code>width</code> and <code>height</code> properties are always a good starting point. Remember you can use your browser's Developer Tools (press <kbd>F12</kbd>!) to debug your layout and try things out without having to push them to the live version every single time.
+						</p>
+
+						<p>
+							Aaand congratulations! The base infrastructure for the microblog is done! I hope this tutorial was actually useful to you, and that it helps you depend less on external services to keep your website up and running. If you want to check out the code for the demo microblog we created in this tutorial, you can do so <a href="assets/microblogtutorial_demo.html">here</a>, and you can read my personal microblog <a href="https://lensdeer.neocities.org/microblog.html">here</a>. If you have any questions, feel free to ask me on <a href="https://lensdeer.tumblr.com/ask">tumblr</a> while I set up a proper contact form on this website.
+						</p>
+
+						<p style="text-align: center;">
+							Good luck!
+						</p>
+
+						<p style="text-align: right;">
+							- Deer
+						</p>
+
+						<p style="text-align: center; border-top: 1px dashed var(--dpurple); padding-top: 1em;">
+							<a href="#main">Go back to the top</a>
+						</p>
+					</section>
+				</section>
+			</article>
+		</main>
+</body>

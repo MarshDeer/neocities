@@ -1,0 +1,33 @@
+pre,
+code,
+kbd {
+	font-family:				inherit;
+	margin:					auto;
+}
+
+pre,
+p code,
+p kbd {
+	border:					1px solid var(--dpurple);
+	border-radius:				3px;
+	width:					fit-content;
+	max-width:				calc(100% - 2em);
+	overflow:				scroll;
+}
+
+pre {
+	padding:				1em;
+}
+
+p code,
+p kbd {
+	padding:				0 .5ch;
+}
+
+article img {
+	margin:					auto;
+	display:				block;
+	border:					1px solid var(--dpurple);
+	border-radius:				3px;
+	max-width:				100%;
+}

@@ -36,9 +36,13 @@
 			padding:		0 1ch;
 		}
 
-	h1, h2, h3, h4, h5, h6 {
+	hgroup, h1, h2, h3, h4, h5, h6 {
 		text-align:			center;
 	}
+
+		hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
+			margin-bottom:		0;
+		}
 
 	a {
 		text-decoration:		underline dashed;
@@ -97,17 +101,18 @@
 			}
 
 	main {
-		display: 			grid;
 		margin:				1em auto;
 		width:				80%;
 	}
 
 		main.twocol {
+			display:		grid;
 			grid-template-columns:	auto auto;
 			grid-row-gap:		calc(2em + 2px);
 		}
 
 		main.onecol {
+			display:		grid;
 			grid-template-columns:	auto;
 			margin:			auto;
 		}
@@ -174,7 +179,7 @@
 		max-width:			30ch;
 	}
 
-		pre {
+		#ascii pre {
 			text-align:		left;
 			margin:			0;
 			font:			inherit;
@@ -251,17 +256,17 @@
 		}
 
 		.marquee img {
-			border:				1px solid var(--purple);
-			color:				unset;
-			background-color:		unset;
-			image-rendering:		pixelated;
-			width: 				88px;
-			height: 			31px;
+			border:			1px solid var(--purple);
+			color:			unset;
+			background-color:	unset;
+			image-rendering:	pixelated;
+			width: 			88px;
+			height: 		31px;
 		}
 
 		.marquee img:hover {
-			width: 176px;
-			height:	62px;
+			width:			calc(88px * 2);
+			height:			calc(31px * 2);
 		}
 	
 /* Responsive */
