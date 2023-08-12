@@ -7,20 +7,24 @@
 	<title>Microblog</title>
 
 <style>
+	/* Variables */
+	:root {--bg: #282828; --fg: #ebdbb2; --pnk: #d3869b;}
 	/* Font */
 	@font-face{ font-family: 'Fantasque'; src: url('font/fantasque.woff') format('woff');}
 	/* Styling */
-	body{ background-color: #282828; color: #ebdbb2; font:14px fantasque, monospace; margin: 1px auto; max-width: 800px; line-height: 1.2;}
-	article{ border-bottom: 1px dashed #d3869b; margin: 0 0 1em;}
+	body{ background-color: var(--bg); color: var(--fg); font:14px fantasque, monospace; margin: 1px auto; max-width: 800px; line-height: 1.2;}
+	article{ border-bottom: 1px dashed var(--pnk); margin: 0 0 1em;}
 	h1{ margin: 0; font-size: 17px}
-	time{ border-radius: 2px; background-color: #ebdbb2; color: #282828;}
+	time{ border-radius: 2px; background-color: var(--fg); color: var(--bg);}
 	time::before{ content: "🕓 ";}
-	.tag{ margin-right: 1ch; border-radius: 2px; background-color: #d3869b; color: #282828;}
+	.tag{ margin-right: 1ch; border-radius: 2px; background-color: var(--pnk); color: var(--bg);}
 	.tag::first-letter{ font-style: italic;}
 	input[type="radio"] { position: absolute; left: -9999px;}
 	nav{ display: flex; gap: 1px 2px; flex-wrap: wrap; padding: 0; margin: 0 0 1px;}
 	nav::before{ content: "Filters:"}
-	nav label{ background-color: #d3869b; border-radius: 2px; color: #282828; padding: 0 0.25em; line-height: 1.2;}
+	nav label{ background-color: var(--pnk); border-radius: 2px; color: var(--bg); padding: 0 0.25em; line-height: 1.2;}
+	a { text-decoration: underline dashed; color: var(--pnk);}
+	a:hover, a:focus{ color: var(--bg); background-color: var(--pnk); transition: ease-in-out 0.25s all; -webkit-transition: ease-in-out 0.25s all; border-radius: 2px;}
 	/* Tags */
 	[value="all"]:checked ~ article [data-category] { display: block;}
 	[value="art"]:checked ~ article:not([data-category~="art"]),
@@ -51,6 +55,29 @@
 		<input type="radio" id="thoughts" name="categories" value="thoughts" aria-hidden:"true">
 		<input type="radio" id="media" name="categories" value="media" aria-hidden:"true">
 		<input type="radio" id="update" name="categories" value="update" aria-hidden:"true">
+
+	<article data-category="thoughts">
+		<h1>Alive btw</h1>
+		<time>2023-08-12</time>
+		<span class="tag">#thoughts</span>
+		<p>
+		Just realized the tone of the
+		previous post sounded kinda ominous
+		to, like, just leave shit without any
+		more updates lmao.<br>
+		I'm okay. Recovery went/is going well
+		and the scar is healing nicely,
+		APPARENTLY some bleeding is fine but
+		I wasn't debriefed on it so <span aria-label="shrug">¯\_(ツ)_/¯</span><br>
+		Anyways, I added the microblog
+		tutorial to the <a href="blog/microblogtutorial.html">blog</a>,
+		and I'm currently writing another
+		post about my (mis)adventures turning
+		my laptop into a moonlight-based thin
+		client for my desktop computer. Fun
+		maybe?
+		</p>
+	</article>
 
 	<article data-category="thoughts">
 		<h1>Bad news and good news</h1>
