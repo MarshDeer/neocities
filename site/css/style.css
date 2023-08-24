@@ -36,6 +36,19 @@
 			padding:		0 1ch;
 		}
 
+		footer img {
+			color:			unset;
+			background-color:	unset;
+			image-rendering:	pixelated;
+			width: 			88px;
+			height: 		31px;
+		}
+
+		footer .marquee img:hover {
+			width:			calc(88px * 2);
+			height:			calc(31px * 2);
+		}
+
 	hgroup, h1, h2, h3, h4, h5, h6 {
 		text-align:			center;
 	}
@@ -240,7 +253,7 @@
 		display: 			flex;
 		gap:				1px;
 		width:				max-content;
-		animation:			marquee 20s linear infinite alternate;
+		animation:			marquee 10s linear infinite alternate;
 		height:				31px;
 	}
 	
@@ -251,20 +264,6 @@
 		@keyframes marquee {
 			0%{transform: translateX(0%);}
 			100%{transform: translateX(-100%);}
-		}
-
-		.marquee img {
-			border:			1px solid var(--purple);
-			color:			unset;
-			background-color:	unset;
-			image-rendering:	pixelated;
-			width: 			88px;
-			height: 		31px;
-		}
-
-		.marquee img:hover {
-			width:			calc(88px * 2);
-			height:			calc(31px * 2);
 		}
 	
 /* Responsive */
