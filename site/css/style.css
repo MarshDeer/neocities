@@ -87,12 +87,12 @@
 				margin-top:	1em;
 			}
 
-			nav a:where(hover, focus) {
+			nav a:where(:hover, :focus) {
 				background-color:unset;
 				color:		var(--purple);
 			}
 
-			nav a:where(hover, focus) img {
+			nav a:where(:hover, :focus) img {
 				width:		64px;
 				filter:		brightness(0) saturate(100%) invert(82%) sepia(4%) saturate(7152%) hue-rotate(297deg) brightness(93%) contrast(75%);
 				margin: 	0;
