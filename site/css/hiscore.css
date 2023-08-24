@@ -165,14 +165,16 @@
 		height:		var(--height);
 		border-radius:	100% / 5%;
 		background:	url(../img/hiscore/hiscorebg.png) fixed;
+		background-size: 100px;
 		color:		var(--color);
 		overflow:	scroll;
+		image-rendering: pixelated;
 		animation:	starscroll 1.5s linear infinite;
 	}
 
 		@keyframes starscroll {
 			0%   {background-position: 0 0;}
-			100% {background-position: 0 49px;}
+			100% {background-position: 0 99px;}
 		}
 
 	.content section {
