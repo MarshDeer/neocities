@@ -24,7 +24,7 @@
 	nav::before{ content: "Filters:"}
 	nav label{ background-color: var(--pnk); border-radius: 2px; color: var(--bg); padding: 0 0.25em; line-height: 1.2;}
 	a { text-decoration: underline dashed; color: var(--pnk);}
-	a:hover, a:focus{ color: var(--bg); background-color: var(--pnk); transition: ease-in-out 0.25s all; -webkit-transition: ease-in-out 0.25s all; border-radius: 2px;}
+	a:where(hover, focus) { color: var(--bg); background-color: var(--pnk); transition: ease-in-out 0.25s all; -webkit-transition: ease-in-out 0.25s all; border-radius: 2px;}
 	/* Tags */
 	[value="all"]:checked ~ article [data-category] { display: block;}
 	[value="art"]:checked ~ article:not([data-category~="art"]),

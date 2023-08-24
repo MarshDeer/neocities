@@ -6,8 +6,7 @@ kbd {
 }
 
 pre,
-p code,
-p kbd {
+p :where(code, kbd) {
 	border:					1px solid var(--dpurple);
 	border-radius:				3px;
 	width:					fit-content;
@@ -19,8 +18,7 @@ pre {
 	padding:				1em;
 }
 
-p code,
-p kbd {
+p where(code, kbd) {
 	padding:				0 .5ch;
 }
 
