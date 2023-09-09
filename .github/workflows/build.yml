@@ -19,7 +19,6 @@ jobs:
           item-author-css: h1
           item-description-css: .tag
           item-date-css: time
-          item-date-format: YYYY-MM-DD
 
       - name: Run Makefile
         run: make
