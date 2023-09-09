@@ -15,6 +15,8 @@ jobs:
           title: LensDeer's Hideout - Microblog RSS
           url: https://lensdeer.neocities.org/microblog.html
           item-title-css: h1
+          item-url-css: h1
+          item-author-css: h1
           item-description-css: .tag
           item-date-css: time
           item-date-format: YYYY - MM - DD
