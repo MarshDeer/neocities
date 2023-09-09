@@ -13,7 +13,7 @@ jobs:
         uses: tabhub/rssify@master
         with:
           title: LensDeer's Hideout - Microblog RSS
-          url: site/microblog.html
+          url: https://lensdeer.neocities.org/microblog.html
           item-title-css: h1
           item-description-css: .tag
           item-date-css: time
