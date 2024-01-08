@@ -1,0 +1,39 @@
+section {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        border-bottom: 1px dashed #b16286;
+        padding: 1em 1ch;
+        gap: 1ch;
+}
+
+section h3 {
+        grid-column: 1/3;
+        color: #d3869b;
+}
+
+section .interactiondate {
+        display: block;
+        padding: .5em 1ch;
+        color: #282828;
+        background-color: #ebdbb2;
+        width: fit-content;
+        border-radius: 2px;
+}
+
+section .interactiondate::before {
+        content: "🗓️:";
+}
+
+section .favtracks {
+        display: block;
+        padding: .5em 1ch;
+        margin-top: .5em;
+        color: #282828;
+        background-color: #d3869b;
+        width: fit-content;
+        border-radius: 2px;
+}
+
+section .favtracks::before {
+        content: "💕:";
+}
