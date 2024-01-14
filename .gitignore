@@ -1,4 +1,2 @@
-_build
-session.vim
-*.md
-*.template
+wip/
+out/
