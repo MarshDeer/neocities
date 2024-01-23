@@ -1,0 +1,101 @@
+h2 {
+	text-align: center;
+}
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 9px;
+	margin: 9px;
+}
+
+.list .item:where(:hover, :focus) img {
+	filter: brightness(.7);
+}
+
+.item img {
+	transition: .05s all;
+	margin-bottom: -4px;
+}
+
+.list a {
+	padding: 0 !important;
+}
+
+.album img {
+	width: 100px;
+	height: 100px;
+}
+
+:where(.book, .movie) img {
+	width: 100px;
+	height: 150px;
+}
+
+article {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80ch;
+	max-height: 500px;
+}
+
+.articlecontent {
+	max-height: calc(500px - 53px);
+	display: grid;
+	grid-template-areas:
+		"image data"
+		"image review"
+		"button review";
+	align-items: center;
+}
+
+.articlecontent .review {
+	grid-area: review;
+	overflow: scroll;
+	max-height: 20em;
+	margin: 1em 1ch;
+}
+
+.articlecontent img {
+	grid-area: image;
+	max-width: 200px;
+	margin: 5px;
+	padding: 0 !important;
+}
+
+.articlecontent .data {
+	grid-area: data;
+	margin: 5px 1ch;
+}
+
+.data .date::before {
+	content: "Date:";
+	color: var(--accent);
+	font-weight: bold;
+}
+
+.data .favtracks::before {
+	content: "Favorite tracks:";
+	color: var(--accent);
+	font-weight: bold;
+}
+
+.articlecontent .button {
+	grid-area: button;
+	left: 0;
+}
+
+article:not(:target) {
+	display: none;
+}
+
+article:target {
+	display: unset;
+}
+
+.container {
+	overflow: scroll;
+	height: calc(600px - 50px);
+}
