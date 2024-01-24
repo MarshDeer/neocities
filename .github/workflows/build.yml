@@ -13,9 +13,7 @@ jobs:
           python-version: '3.9'
           cache: 'pip'
         run: pip install autosite
-
-      - name: Autosite
-         run: autosite -a
+        run: autosite -a
 
       - name: Deploy
         uses: bcomnes/deploy-to-neocities@v1
