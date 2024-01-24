@@ -8,11 +8,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        uses: actions/setup-python@v5
+
+      - name: Setup
+        uses: parafoxia/pip-install@v1
         with:
-          python-version: '3.9'
-          cache: 'pip'
-        run: pip install autosite
+          packages: autosite
+
+      - name: Build
         run: autosite -a
 
       - name: Deploy
