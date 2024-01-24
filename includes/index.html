@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta property="og:image" content="home/scrot.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/globals/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="globals/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="globals/favicon/favicon-16x16.png">
+		<link rel="icon" type="image/x-icon" href="globals/favicon/favicon.ico">
+		<meta property="twitter:card" content="summary_large_image">
+		<link href="globals/doe.css" rel="stylesheet" type="text/css" media="all">
+		<title>LensDeer's Hideout</title>
+	</head>
+
+<style>
+	.introanim {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+	}
+
+	.stepone {
+		opacity: 1;
+		background-color: black;
+	}
+
+		.introanim .stepone img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+	.introanim .steptwo {
+		opacity: 0;
+	}
+
+		.introanim .steptwo pre {
+			font-family: Fantasque;
+		}
+
+		.introanim .steptwo span:not(:first-of-type)::before {
+			content: "[ OK ]";
+			color: var(--green);
+		}
+
+		.introanim .steptwo span {
+			opacity: 0;
+			animation: bootprocess .01s steps(1, end) 1 forwards;
+			animation-delay: calc(1s + var(--i) * 0.1s);
+		}
+
+			@keyframes bootprocess {
+				from {opacity: 0;}
+				to {opacity: 1;}
+			}
+
+	.introanim .stepthree {
+		text-decoration: none !important;
+		color: var(--fg1) !important;
+		font-size: 30px;
+		width: 100%;
+		height: 100%;
+		display: block;
+		top: 0;
+		position: absolute;
+	}
+
+		.introanim .stepthree .container {
+			top: 50%;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.introanim .stepthree img {
+			opacity: 0;
+			animation: doelogo 1s ease-out 1 forwards;
+			animation-delay: calc(4s + var(--i) * .5s);
+		}
+			@keyframes doelogo {
+				from { opacity: 0; transform: translateY(-50%);}
+				to { opacity: 1; transform: translateY(0%);}
+			}
+
+			.introanim .stepthree .prompttext span {
+				display: inline-block;
+				animation: prompttext 1s 1 forwards;
+				animation-delay: calc(4s + var(--i) * .1s);
+				position: relative;
+				opacity: 0;
+			}
+
+				@keyframes prompttext {
+					0% { color: var(--red); opacity: 0; top: -2em;}
+					20% { color: var(--red); opacity: 1; top: 0;}
+					30% { color: var(--orange); opacity: 1; top: -.2em;}
+					40% { color: var(--yellow); opacity: 1; top: -.3em;}
+					50% { color: var(--green); opacity: 1; top: -.2em;}
+					60% { color: var(--aqua); opacity: 1; top: 0;}
+					70% { color: var(--blue); opacity: 1; top: -.1em;}
+					80% { color: var(--pink); opacity: 1; top: 0;}
+					90% { color: var(--fg0); opacity: 1; top: 0;}
+					100% { color: var(--fg1); opacity: 1; top: 0;}
+				}
+
+	.stepone, .steptwo, .stepthree {
+		animation: steps 5s steps(1, end) 1 forwards;
+	}
+
+		@keyframes steps {
+			0% {opacity: var(--zero)}
+			20% {opacity: var(--one)}
+			40% {opacity: var(--two)}
+			60% {opacity: var(--three)}
+			80% {opacity: var(--four)}
+			100% {opacity: var(--five)}
+		}
+
+		.stepone {
+			--zero: 1;
+			--one: 0;
+			--two: 0;
+			--three: 0;
+			--four: 0;
+			--five: 0;
+		}
+
+		.steptwo {
+			--zero: 0;
+			--one: 1;
+			--two: 1;
+			--three: 1;
+			--four: 0;
+			--five: 0;
+		}
+
+		.stepthree {
+			--zero: 0;
+			--one: 0;
+			--two: 0;
+			--three: 0;
+			--four: 1;
+			--five: 1;
+		}
+
+</style>
+
+	<body>
+		<div class="DOE window pink border" style="background: var(--bg0h); display: flex;">
+			<span class="titlebar"> BLEAT </span>
+			<div class="introanim">
+
+				<div class="stepone">
+					<img src="globals/boot/bleat.png">
+				</div>
+
+				<div class="steptwo">
+					<div style="display: flex">
+<pre style="color: var(--blue)">
+ ,_.
+/   \
+| |\ \
+| | \ \
+| |  | |
+| |  | |
+| |  | |
+| | / /
+| |/ /
+\._,/
+</pre>
+<pre style="color: var(--pink)">
+   ,_.
+  / _ \
+ / / \ \
+/ /   \ \
+| |    | |
+| |    | |
+| |    | |
+\ \   / /
+ \ \_/ /
+  \,_./
+</pre>
+<pre style="color: var(--yellow)">
+,____.
+|  ___\
+| |
+| |
+| |____
+|  ____|
+| |
+| |
+| |___.
+|_____/
+</pre>
+					</div>
+					<span style="--i: 0"> Starting DOE... </span><br>
+					<span style="--i: 1"> Allocated memory</span><br>
+					<span style="--i: 2"> Set system clock </span><br>
+					<span style="--i: 3"> Tapped hoofsies on keyboard </span><br>
+					<span style="--i: 4"> Checking filesystems... </span><br>
+					<span style="--i: 5"> - /: clean </span><br>
+					<span style="--i: 6"> - /home: clean </span><br>
+					<span style="--i: 7"> - /bin: clean </span><br>
+					<span style="--i: 8"> Mounting local filesystems... </span><br>
+					<span style="--i: 9"> - Mounted / </span><br>
+					<span style="--i: 10"> - Mounted /home </span><br>
+					<span style="--i: 11"> - Mounted /bin </span><br>
+					<span style="--i: 12"> Built programs </span><br>
+					<span style="--i: 13"> Set color scheme </span><br>
+					<span style="--i: 14"> Bleated real loud </span><br>
+					<span style="--i: 15"> Loaded graphics interface </span><br>
+					<span style="--i: 16"> Reached target state </span><br>
+				</div>
+
+				<a class="stepthree" href="home/index.html">
+					<div class="container">
+						<div class="doelogo">
+							<img style="--i: 1" src="globals/boot/d.png">
+							<img style="--i: 2" src="globals/boot/o.png">
+							<img style="--i: 3" src="globals/boot/e.png">
+						</div>
+						<div class="prompttext">
+							<span style="--i: 0">C</span>
+							<span style="--i: 1">l</span>
+							<span style="--i: 2">i</span>
+							<span style="--i: 3">c</span>
+							<span style="--i: 4">k</span>
+							<span style="--i: 5"> </span>
+							<span style="--i: 6">A</span>
+							<span style="--i: 7">n</span>
+							<span style="--i: 8">y</span>
+							<span style="--i: 9">w</span>
+							<span style="--i: 10">h</span>
+							<span style="--i: 11">e</span>
+							<span style="--i: 12">r</span>
+							<span style="--i: 13">e</span>
+							<span style="--i: 14"> </span>
+							<span style="--i: 15">T</span>
+							<span style="--i: 16">o</span>
+							<span style="--i: 17"> </span>
+							<span style="--i: 18">S</span>
+							<span style="--i: 19">t</span>
+							<span style="--i: 20">a</span>
+							<span style="--i: 21">r</span>
+							<span style="--i: 22">t</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</body>
+</html>
