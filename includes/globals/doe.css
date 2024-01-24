@@ -1,0 +1,209 @@
+/* Gruvbox */
+:root {--bg0h:#1d2021;--bg0:#282828;--bg0s:#32302f;--bg1:#3c3836;--bg2:#504945;--bg3:#665c54;--bg4:#7c6f64;--gray:#928374;--fg0:#fbf1c7;--fg1:#ebdbb2;--fg2:#d5c4a1;--fg3:#bdae93;--fg4:#a89984;--red:#fb4934;--green:#b8bb26;--yellow:#fabd2f;--blue:#83a598;--pink:#d3869b;--aqua:#8ec07c;--orange:#fe8019;--dred:#cc241d;--dgreen:#98971a;--dyellow:#d79921;--dblue:#458588;--dpink:#b16286;--daqua:#689d6a;--dorange:#d65d0e;}
+
+/* Font */
+@font-face {
+	font-family: 'Fantasque';
+	src: url('fantasque.woff') format('woff');
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	background:
+		linear-gradient(
+			36deg,
+			var(--bg0h) 0% 30%,
+			var(--blue) 30% 38%,
+			var(--pink) 38% 46%,
+			var(--fg0) 46% 54%,
+			var(--pink) 54% 62%,
+			var(--blue) 62% 70%,
+			var(--bg0h) 70%
+		);
+	background-attachment: fixed;
+	backdrop-filter: brightness(.3);
+	font: 14px Fantasque;
+	color: var(--fg1);
+}
+
+.window {
+	position: absolute;
+	background: var(--bg0);
+}
+
+.border {
+	padding: 20px 3px 3px 3px;
+	border-image: var(--border);
+	border-image-slice: 20;
+	border-image-width: 20px;
+	border-image-outset: 3px;
+	border-image-repeat: stretch;
+}
+
+	.border.thin {padding: 3px;}
+	.border.gray {--border: url(borders/gray.png);}
+	.border.red {--border: url(borders/red.png);}
+	.border.orange {--border: url(borders/orange.png);}
+	.border.yellow {--border: url(borders/yellow.png);}
+	.border.green {--border: url(borders/green.png);}
+	.border.blue {--border: url(borders/blue.png);}
+	.border.pink {--border: url(borders/pink.png);}
+	.border.gray.thin {--border: url(borders/graythin.png);}
+	.border.red.thin {--border: url(borders/redthin.png);}
+	.border.orange.thin {--border: url(borders/orangethin.png);}
+	.border.yellow.thin {--border: url(borders/yellowthin.png);}
+	.border.green.thin {--border: url(borders/greenthin.png);}
+	.border.blue.thin {--border: url(borders/bluethin.png);}
+	.border.pink.thin {--border: url(borders/pinkthin.png);}
+	.gray{--accent: var(--gray); --dark: var(--bg2);}
+	.red{--accent: var(--red); --dark: var(--dred);}
+	.orange{--accent: var(--orange); --dark: var(--dorange);}
+	.yellow{--accent: var(--yellow); --dark: var(--dyellow);}
+	.green{--accent: var(--aqua); --dark: var(--daqua);}
+	.blue{--accent: var(--blue); --dark: var(--dblue);}
+	.pink{--accent: var(--pink); --dark: var(--dpink);}
+
+.DOE {
+	width: 788px;
+	height: 571px;
+	padding: 23px 6px 6px;
+	display: grid;
+	grid-template-columns: calc(2 * 73px + 18px) 1fr;
+	position: relative;
+	margin: auto;
+	top: 50%;
+	transform: translateY(-50%);
+	overflow: hidden;
+	background: url(wallpaper.png) var(--bg0h);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	box-shadow: 15px 20px 0 #1d202188;
+}
+
+main {
+	position: relative;
+}
+
+.content {
+	overflow: scroll;
+}
+
+.titlebar {
+	width: calc(100% - 34px);
+	position: absolute;
+	top: 0;
+	left: 17px;
+	color: var(--fg1);
+	text-align: center;
+	text-shadow: 1px 1px 0 var(--dark);
+}
+
+.button {
+	width: fit-content;
+	padding: .2em .5ch;
+	margin: auto;
+	display: block;
+	background: var(--accent);
+	box-shadow:
+		inset 1px 1px 0 0 var(--fg1),
+		inset -1px -1px 0 0 var(--dark);
+	color: var(--fg1);
+	text-shadow: 1px 1px 0 var(--dark);
+	text-decoration: none;
+	transition: all .05s;
+}
+
+	.button:where(:hover, :focus) {
+		background: var(--dark);
+		box-shadow:
+			inset 1px 1px 0 0 var(--bg1),
+			inset -1px -1px 0 0 var(--accent);
+		color: var(--fg1);
+		text-shadow: 1px 1px 0 var(--bg0s);
+	}
+
+nav {
+	width: fit-content;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: repeat(2, 64px);
+	grid-template-rows: repeat(5, 64px);
+	gap: 9px;
+	margin: 6px;
+}
+
+nav img {
+	width: 32px;
+	height: 32px;
+	margin: auto;
+	image-rendering: pixelated;
+	filter: drop-shadow(2px 2px 0 var(--bg0h));
+}
+
+nav a {
+	width: 56px !important;
+	height: 56px !important;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	color: var(--fg1);
+	text-decoration: underline dotted;
+	text-align: center;
+	text-shadow: 2px 2px var(--bg0h);
+	filter: drop-shadow(2px 2px 0 var(--bg0));
+	background: var(--bg0);
+	overflow: hidden;
+	transition: .05s all;
+}
+
+	nav a:where(:hover, :focus) {
+		background: var(--bg2) !important; /* Fuck CSS Specificity */
+	}
+
+.content {
+	padding: 3px;
+}
+
+p:first-child {
+	margin-top: 0;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+:where(p, li) a {
+	color: var(--accent);
+	text-decoration: underline dotted;
+}
+
+:where(p, li) a:where(:focus, :hover) {
+	color: var(--bg0);
+	background-color: var(--accent);
+	border-radius: 2px;
+}
+
+#clock {
+	position: fixed;
+	bottom: -10px;
+	left: 10px;
+	color: var(--bg0);
+	font-size: 140px;
+	line-height: 140px;
+	pointer-events: none;
+}
+
+.skipnav {
+	color: white;
+	text-decoration: underline dotted;
+	position: absolute;
+	left: 10px;
+	top: -200px;
+	transition: .2s top;
+}
+
+.skipnav:where(:focus) {
+	top: 6px;
+}

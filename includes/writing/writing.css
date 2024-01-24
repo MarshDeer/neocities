@@ -1,0 +1,12 @@
+.content {
+	height: calc(100% - 3px);
+}
+
+.content img {
+	max-width: 100%;
+	margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+}
