@@ -8,24 +8,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+        run: pip install autosite
 
-          #      - name: Generate RSS
-          #        uses: tabhub/rssify@master
-          #        with:
-          #          title: LensDeer's Hideout - Microblog RSS
-          #          url: https://lensdeer.neocities.org/microblog.html
-          #          item-title-css: h1
-          #          item-url-css: h1
-          #          item-author-css: h1
-          #          item-description-css: .tag
-          #          item-date-css: time
-
-      - name: Run Makefile
-        run: make
+      - name: Autosite
+         run: autosite -a
 
       - name: Deploy
         uses: bcomnes/deploy-to-neocities@v1
         with:
           api_token: ${{ secrets.APIKEY }}
-          dist_dir: _build
+          dist_dir: out
           cleanup: false
