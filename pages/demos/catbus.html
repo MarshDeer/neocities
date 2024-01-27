@@ -1,0 +1,547 @@
+<!-- attrib title: catbus.html -->
+<!-- attrib template: demo -->
+<!-- attrib windowtitle: catbus.html -->
+
+<style>
+	:root {
+		--catanim: .3s;
+		--catsize: 40px;
+		--catlight: #ffc022;
+		--catdark: #ff9b31;
+	}
+
+	.demo {
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-rows: 1fr 3fr;
+	}
+
+	.sky {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background: linear-gradient(#5ae, #8ae);
+	}
+
+		.sky .clouds {
+			position: absolute;
+			display: grid;
+			grid-template-columns: 1fr 3fr 1fr;
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+		}
+
+			.sky .clouds svg {
+				grid-column: var(--c);
+				width: 300%;
+				position: relative;
+				left: -100%;
+				bottom: 75%;
+			}
+
+		.sky .scroller {
+			display: grid;
+			grid-template-rows: 1fr;
+			font-size: 40px;
+			align-items: end;
+			height: 100%;
+			animation: scroller 25s linear infinite;
+			position: relative;
+		}
+
+			@keyframes scroller {
+				from {left: 100%;}
+				to {left: -178ch;}
+			}
+
+			.sky .scroller span {
+				position: relative;
+				bottom: 50%;
+				width: 1ch;
+				height: 1em;
+				display: inline-block;
+				grid-row: 1;
+				animation: textwave 1s ease-in-out infinite;
+				animation-delay: calc(.1s * var(--i));
+			}
+
+				.sky .scroller span:nth-child(even) { color: #e4eaee;}
+				.sky .scroller span:nth-child(odd) { color: #bacdd2;}
+
+			@keyframes textwave {
+				0%, 100% { bottom: .5em; transform: rotateZ(0deg);}
+				25% { transform: rotateZ(30deg);}
+				50% { bottom: calc(100% - 1.5em); transform: rotateZ(0deg);}
+				75% { transform: rotateZ(-30deg);}
+			}
+
+	.ground {
+		position: relative;
+		margin: auto;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background-image: linear-gradient(
+			#593 50%,
+			#371 50% 100%);
+		background-size: 100% 25%;
+		animation: grass 1.5s linear infinite;
+		box-shadow: inset 0px 25% 50% black;
+	}
+
+		@keyframes grass {
+			from { background-position: 0 100%;}
+			to { background-position: 0 0;}
+		}
+
+		.ground .step {
+			position: absolute;
+			height: 100%;
+			width: 15%;
+			display: grid;
+			left: 40%;
+			grid-template-rows: calc(2.5% * (var(--i))) 2.5% 1fr;
+			animation: path 2.5s ease-in-out infinite alternate;
+			animation-delay: calc(.05s * (40 - var(--i)));
+		}
+
+			@keyframes path {
+				from { left: 40%;}
+				25% { left: 10%;}
+				75% { left: 75%;}
+				to { left: 55%;}
+			}
+
+		.step .cat {
+			width: 40px;
+			height: 40px;
+			align-self: end;
+			border-radius: 100%;
+			position: relative;
+			margin: 0 auto;
+			animation: 
+				jump var(--catanim) ease-in-out infinite alternate,
+				rotate calc(2 * var(--catanim)) ease-in-out infinite alternate;
+			animation-delay: calc(.1s * (26 - var(--i)));
+		}
+
+			.step:nth-child(odd) .cat { background: var(--catdark);}
+			.step:nth-child(even) .cat { background: var(--catlight);}
+
+			.step .cat::before,
+			.step .cat::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 35%;
+				left: 50%;
+				width: 50%;
+				height: 25%;
+				border-radius: 0 100% 100% 0;
+				background: inherit;
+				transform:
+					translateY(calc(100% * var(--side)))
+					rotate(calc(20deg * var(--side)))
+					translateX(50%);
+			}
+
+				.step .cat::before {--side: 1;}
+				.step .cat::after {--side: -1;}
+
+			.cat .face {
+				transform: rotateZ(-90deg) translate(5px, -10px);
+				width: calc(1.2 * var(--catsize));
+			}
+
+			.cat .tail {
+				height: 100%;
+				transform: translateX(calc(-1 * var(--catsize))) rotateZ(90deg);
+				display: grid;
+				grid-template-rows: repeat(10, 1fr);
+			}
+
+				.cat .tail .node {
+					width: calc(var(--catsize) / 4);
+					height: calc(var(--catsize) / 4);
+					border-radius: 100%;
+					margin: -20% auto 0;
+					position: relative;
+					animation: tail calc(2 * var(--catanim)) ease-in-out infinite alternate;
+					animation-delay: calc(.1s * var(--i));
+				}
+					.node:nth-child(odd) { background: var(--catlight);}
+					.node:nth-child(even) { background: var(--catdark);}
+
+			@keyframes tail {
+				from {left: calc(-5% * var(--i));}
+				to {left: calc(5% * var(--i));}
+			}
+
+			@keyframes jump {
+				from { bottom: 0;}
+				to { bottom: 25px;}
+			}
+
+			@keyframes rotate {
+				from { transform: rotateZ(55deg);}
+				to { transform: rotateZ(125deg);}
+			}
+
+		.step .path {
+			height: 100%;
+			grid-row: 2;
+			box-shadow: 0 9px 0 #444;
+			background: var(--color);
+			border-width: 0 10px;
+			border-style: solid;
+			border-color: var(--border);
+		}
+			.step:nth-child(even) .path{ --color: #888; --border: #777;}
+			.step:nth-child(odd) .path{ --color: #aaa; --border: #999;}
+
+			.cat .path,
+			.step:has(.cat) + .step .path {
+				background:
+					linear-gradient(
+						90deg,
+						transparent 10%,
+						#0004 25% 70%,
+						transparent 90%),
+					var(--color);
+			}
+</style>
+
+<div class="demo">
+	<div class="sky">
+		<div class="clouds">
+			<svg style="--c: 1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"> <defs/> <path d="M23.45,62.3 C24.17,61.58 22.18,53.01 31.05,46.39 C39.92,39.77 45.97,43.72 46.82,43.43 C47.66,43.15 51.61,25.83 68.22,21.33 C84.83,16.83 102.15,25.27 106.23,39.35 C109.96,52.22 107.07,60.89 107.5,61.45 C107.92,62.01 115.95,61.73 120.59,69.19 C125.23,76.65 123.55,81.3 123.55,81.3 L93.99,90.45 L46.69,90.45 C46.69,90.45 5.02,79.47 4.6,77.5 C4.18,75.53 5.13,69.13 11.92,65.25 C17.82,61.88 22.18,63.57 23.45,62.3 Z" fill="#E4EAEE"/></svg>
+			<svg style="--c: 3" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"> <defs/> <path d="M23.45,62.3 C24.17,61.58 22.18,53.01 31.05,46.39 C39.92,39.77 45.97,43.72 46.82,43.43 C47.66,43.15 51.61,25.83 68.22,21.33 C84.83,16.83 102.15,25.27 106.23,39.35 C109.96,52.22 107.07,60.89 107.5,61.45 C107.92,62.01 115.95,61.73 120.59,69.19 C125.23,76.65 123.55,81.3 123.55,81.3 L93.99,90.45 L46.69,90.45 C46.69,90.45 5.02,79.47 4.6,77.5 C4.18,75.53 5.13,69.13 11.92,65.25 C17.82,61.88 22.18,63.57 23.45,62.3 Z" fill="#E4EAEE"/></svg>
+		</div>
+		<div class="scroller">
+<span style="--i: 0">G</span>
+<span style="--i: 1">r</span>
+<span style="--i: 2">e</span>
+<span style="--i: 3">e</span>
+<span style="--i: 4">t</span>
+<span style="--i: 5">i</span>
+<span style="--i: 6">n</span>
+<span style="--i: 7">g</span>
+<span style="--i: 8">s</span>
+<span style="--i: 9">!</span>
+<span style="--i: 10"> </span>
+<span style="--i: 11">T</span>
+<span style="--i: 12">r</span>
+<span style="--i: 13">y</span>
+<span style="--i: 14">i</span>
+<span style="--i: 15">n</span>
+<span style="--i: 16">g</span>
+<span style="--i: 17"> </span>
+<span style="--i: 18">m</span>
+<span style="--i: 19">y</span>
+<span style="--i: 20"> </span>
+<span style="--i: 21">h</span>
+<span style="--i: 22">a</span>
+<span style="--i: 23">n</span>
+<span style="--i: 24">d</span>
+<span style="--i: 25"> </span>
+<span style="--i: 26">a</span>
+<span style="--i: 27">t</span>
+<span style="--i: 28"> </span>
+<span style="--i: 29">s</span>
+<span style="--i: 30">i</span>
+<span style="--i: 31">l</span>
+<span style="--i: 32">l</span>
+<span style="--i: 33">y</span>
+<span style="--i: 34"> </span>
+<span style="--i: 35">C</span>
+<span style="--i: 36">S</span>
+<span style="--i: 37">S</span>
+<span style="--i: 38"> </span>
+<span style="--i: 39">a</span>
+<span style="--i: 40">n</span>
+<span style="--i: 41">i</span>
+<span style="--i: 42">m</span>
+<span style="--i: 43">a</span>
+<span style="--i: 44">t</span>
+<span style="--i: 45">i</span>
+<span style="--i: 46">o</span>
+<span style="--i: 47">n</span>
+<span style="--i: 48"> </span>
+<span style="--i: 49">d</span>
+<span style="--i: 50">e</span>
+<span style="--i: 51">m</span>
+<span style="--i: 52">o</span>
+<span style="--i: 53">s</span>
+<span style="--i: 54">.</span>
+<span style="--i: 55"> </span>
+<span style="--i: 56">T</span>
+<span style="--i: 57">h</span>
+<span style="--i: 58">i</span>
+<span style="--i: 59">s</span>
+<span style="--i: 60"> </span>
+<span style="--i: 61">w</span>
+<span style="--i: 62">o</span>
+<span style="--i: 63">u</span>
+<span style="--i: 64">l</span>
+<span style="--i: 65">d</span>
+<span style="--i: 66">'</span>
+<span style="--i: 67">v</span>
+<span style="--i: 68">e</span>
+<span style="--i: 69"> </span>
+<span style="--i: 70">b</span>
+<span style="--i: 71">e</span>
+<span style="--i: 72">e</span>
+<span style="--i: 73">n</span>
+<span style="--i: 74"> </span>
+<span style="--i: 75">t</span>
+<span style="--i: 76">r</span>
+<span style="--i: 77">i</span>
+<span style="--i: 78">v</span>
+<span style="--i: 79">i</span>
+<span style="--i: 80">a</span>
+<span style="--i: 81">l</span>
+<span style="--i: 82"> </span>
+<span style="--i: 83">w</span>
+<span style="--i: 84">i</span>
+<span style="--i: 85">t</span>
+<span style="--i: 86">h</span>
+<span style="--i: 87"> </span>
+<span style="--i: 88">J</span>
+<span style="--i: 89">a</span>
+<span style="--i: 90">v</span>
+<span style="--i: 91">a</span>
+<span style="--i: 92">s</span>
+<span style="--i: 93">c</span>
+<span style="--i: 94">r</span>
+<span style="--i: 95">i</span>
+<span style="--i: 96">p</span>
+<span style="--i: 97">t</span>
+<span style="--i: 98">,</span>
+<span style="--i: 99"> </span>
+<span style="--i: 100">b</span>
+<span style="--i: 101">u</span>
+<span style="--i: 102">t</span>
+<span style="--i: 103"> </span>
+<span style="--i: 104">I</span>
+<span style="--i: 105">'</span>
+<span style="--i: 106">m</span>
+<span style="--i: 107"> </span>
+<span style="--i: 108">b</span>
+<span style="--i: 109">u</span>
+<span style="--i: 110">i</span>
+<span style="--i: 111">l</span>
+<span style="--i: 112">t</span>
+<span style="--i: 113"> </span>
+<span style="--i: 114">d</span>
+<span style="--i: 115">i</span>
+<span style="--i: 116">f</span>
+<span style="--i: 117">f</span>
+<span style="--i: 118">e</span>
+<span style="--i: 119">r</span>
+<span style="--i: 120">e</span>
+<span style="--i: 121">n</span>
+<span style="--i: 122">t</span>
+<span style="--i: 123">.</span>
+<span style="--i: 124">.</span>
+<span style="--i: 125">.</span>
+<span style="--i: 126"> </span>
+<span style="--i: 127">B</span>
+<span style="--i: 128">L</span>
+<span style="--i: 129">E</span>
+<span style="--i: 130">A</span>
+<span style="--i: 131">T</span>
+<span style="--i: 132">!</span>
+<span style="--i: 134"> </span>
+<span style="--i: 135">H</span>
+<span style="--i: 136">e</span>
+<span style="--i: 137">a</span>
+<span style="--i: 138">v</span>
+<span style="--i: 139">i</span>
+<span style="--i: 140">l</span>
+<span style="--i: 141">y</span>
+<span style="--i: 142"> </span>
+<span style="--i: 143">i</span>
+<span style="--i: 144">n</span>
+<span style="--i: 145">s</span>
+<span style="--i: 146">p</span>
+<span style="--i: 147">i</span>
+<span style="--i: 148">r</span>
+<span style="--i: 149">e</span>
+<span style="--i: 150">d</span>
+<span style="--i: 151"> </span>
+<span style="--i: 152">b</span>
+<span style="--i: 153">y</span>
+<span style="--i: 154"> </span>
+<span style="--i: 155">t</span>
+<span style="--i: 156">h</span>
+<span style="--i: 157">e</span>
+<span style="--i: 158"> </span>
+<span style="--i: 159">5</span>
+<span style="--i: 160">1</span>
+<span style="--i: 161">1</span>
+<span style="--i: 162"> </span>
+<span style="--i: 163">B</span>
+<span style="--i: 164">u</span>
+<span style="--i: 165">s</span>
+<span style="--i: 166"> </span>
+<span style="--i: 167">T</span>
+<span style="--i: 168">I</span>
+<span style="--i: 169">C</span>
+<span style="--i: 170">-</span>
+<span style="--i: 171">8</span>
+<span style="--i: 172">0</span>
+<span style="--i: 173"> </span>
+<span style="--i: 174">d</span>
+<span style="--i: 175">e</span>
+<span style="--i: 176">m</span>
+<span style="--i: 177">o</span>
+<span style="--i: 178">.</span>
+		</div>
+
+	</div>
+
+	<div class="ground">
+		<div class="step" style="--i: 0">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 1">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 2">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 3">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 4">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 5">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 6">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 7">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 8">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 9">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 10">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 11">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 12">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 13">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 14">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 15">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 16">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 17">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 18">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 19">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 20">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 21">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 22">
+			<div class="cat">
+				<div class="tail">
+					<div class="node" style="--i: 1"></div>
+					<div class="node" style="--i: 2"></div>
+					<div class="node" style="--i: 3"></div>
+					<div class="node" style="--i: 4"></div>
+					<div class="node" style="--i: 5"></div>
+					<div class="node" style="--i: 6"></div>
+					<div class="node" style="--i: 7"></div>
+					<div class="node" style="--i: 8"></div>
+					<div class="node" style="--i: 9"></div>
+					<div class="node" style="--i: 10"></div>
+				</div>
+			</div>
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 23">
+			<div class="cat"></div>
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 24">
+			<div class="cat"></div>
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 25">
+			<div class="cat">
+				<svg class="face" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"> <defs/><path d="M114.67,70.19 C112.71,44.22 94.44,26.3 64,26.3 C33.56,26.3 15.25,45.33 13.45,71.31 C12.4,86.45 18.03,99.94 29.36,107.63 C36.82,112.7 47.24,115.51 64.13,115.51 C81.31,115.51 91.16,111.8 98.62,106.78 C111.05,98.43 115.8,85.11 114.67,70.19 Z" fill="#FFC022"/> <path d="M53.72,42.6 C46.3,23.4 30.1,10.34 23.87,8.39 C21.52,7.65 18.57,7.58 17.24,9.74 C13.88,15.19 9.58,32.69 19.09,57.52 L53.72,42.6 Z" fill="#FFC022"/> <path d="M36.12,34.21 C37.66,32.92 38.41,31.66 36.72,29.05 C34.1,25 29.39,20.27 27.56,18.82 C24.56,16.44 22.24,15.64 21.35,19.47 C19.7,26.55 19.83,36.16 21.6,41.46 C22.22,43.33 24.14,44.32 25.62,43.03 L36.12,34.21 Z" fill="#FFD1D1"/> <path d="M54.12,45.02 C55.25,45.98 57.54,45.84 58.87,44.3 C60.48,42.43 62.16,36.13 61.11,26.39 C56.44,26.56 52.02,27.23 47.9,28.36 C51.23,33.82 52.03,43.24 54.12,45.02 Z" fill="#FF9B31"/> <path d="M73.88,45.02 C72.75,45.98 70.46,45.84 69.13,44.3 C67.52,42.43 65.84,36.13 66.89,26.39 C71.56,26.56 75.98,27.23 80.1,28.36 C76.77,33.82 75.97,43.24 73.88,45.02 Z" fill="#FF9B31"/> <path d="M79.9,29.22 C87.98,16.81 99.28,8.47 103.97,6.98 C106.29,6.24 108.99,6.36 110.31,8.53 C113.63,13.98 116.44,30.77 109.89,54.28 L85.96,42.74 L79.9,29.22 Z" fill="#FFC022"/> <path d="M97.55,38.23 C99.98,40.66 101.96,42.29 103.39,43.84 C104.34,44.87 106.08,44.4 106.36,43.02 C108.81,31.22 108.03,21.16 106.36,18.52 C105.56,17.26 104.07,16.93 102.71,17.39 C100.27,18.2 94.05,22.84 89.66,29.61 C89.15,30.4 89.34,31.46 90.12,31.99 C91.7,33.06 94.46,35.13 97.55,38.23 Z" fill="#FFD1D1"/> <path d="M55.67,77.75 C55.62,74.67 60.04,73.2 64.21,73.13 C68.39,73.06 72.89,74.42 72.94,77.5 C72.99,80.58 67.72,84.63 64.4,84.63 C61.09,84.63 55.73,80.82 55.67,77.75 Z"/> <path d="M7.551,69.764 Q7.732,69.807 8.113,69.888 Q14.235,71.202 21.703,74.745 Q23.058,75.388 22.415,76.743 Q22.094,77.421 21.594,77.599 Q21.095,77.777 20.417,77.455 Q13.264,74.062 7.484,72.822 Q5.967,72.496 5.545,71.987 Q5.067,71.41 5.116,70.882 Q5.165,70.354 5.743,69.875 Q6.717,69.067 7.551,69.764 Z" fill="#9E9E9E"/> <path d="M2.406,81.444 Q9.196,79.075 20.622,81.103 Q22.099,81.365 21.837,82.842 Q21.706,83.581 21.271,83.884 Q20.836,84.188 20.098,84.057 Q9.444,82.165 3.394,84.276 Q1.978,84.77 1.484,83.354 Q1.237,82.646 1.467,82.168 Q1.698,81.691 2.406,81.444 Z" fill="#9E9E9E"/> <path d="M8.135,90.95 Q11.132,89.441 21.349,88.546 Q22.096,88.48 22.503,88.821 Q22.909,89.162 22.974,89.909 Q23.105,91.403 21.611,91.534 Q11.968,92.379 9.485,93.63 Q8.815,93.967 8.311,93.801 Q7.808,93.635 7.47,92.965 Q6.796,91.625 8.135,90.95 Z" fill="#9E9E9E"/> <path d="M121.014,69.003 Q117.924,69.302 107.674,75.153 Q106.371,75.896 105.627,74.594 Q104.884,73.291 106.186,72.547 Q116.996,66.378 120.726,66.017 Q122.219,65.872 122.363,67.366 Q122.508,68.859 121.014,69.003 Z" fill="#9E9E9E"/> <path d="M122.314,79.986 Q117.435,79.641 106.682,81.927 Q105.215,82.239 104.903,80.772 Q104.591,79.305 106.058,78.993 Q117.225,76.619 122.526,76.994 Q124.022,77.1 123.916,78.596 Q123.81,80.092 122.314,79.986 Z" fill="#9E9E9E"/> <path d="M119.949,90.464 Q115.323,88.826 105.589,88.298 Q104.091,88.217 104.172,86.719 Q104.253,85.221 105.751,85.302 Q115.917,85.854 120.951,87.636 Q122.365,88.137 121.864,89.551 Q121.363,90.965 119.949,90.464 Z" fill="#9E9E9E"/> <path d="M96.09,66.37 C95.75,71.88 92.33,74.91 88.44,74.91 C84.55,74.91 81.4,71.03 81.4,66.25 C81.4,61.47 84.68,57.54 89.05,57.78 C94.12,58.07 96.37,61.87 96.09,66.37 Z" fill="#000200"/> <path d="M46,65.81 C46.78,71.42 44.42,74.84 40.51,75.63 C36.6,76.42 33.25,73.79 32.28,68.99 C31.3,64.18 33.18,59.67 37.62,59.02 C42.77,58.27 45.36,61.22 46,65.81 Z" fill="#000200"/> <path d="M44.99,85.16 C42.42,86.83 45.46,90.7 47.24,92.01 C49.02,93.32 52.22,94.93 56.91,94.45 C62.45,93.89 64.04,89.76 64.04,89.76 C64.04,89.76 66.01,94.36 72.86,94.55 C79.81,94.74 81.96,90.98 82.9,89.86 C83.84,88.73 84.78,85.82 83.18,84.7 C81.58,83.57 80.46,84.98 78.77,87.33 C77.08,89.68 73.61,90.99 70.23,89.39 C66.85,87.79 66.66,82.35 66.66,82.35 L61.87,82.63 C61.87,82.63 61.12,87.32 58.96,88.82 C56.8,90.32 51.64,90.7 49.48,87.41 C48.53,85.95 47.15,83.75 44.99,85.16 Z"/></svg>
+			</div>
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 26">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 27">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 28">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 29">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 30">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 31">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 32">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 33">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 34">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 35">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 36">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 37">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 38">
+			<div class="path"></div>
+		</div>
+		<div class="step" style="--i: 39">
+			<div class="path"></div>
+		</div>
+	</div>
+</div>

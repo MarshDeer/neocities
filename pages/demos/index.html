@@ -1,0 +1,41 @@
+<!-- attrib title: Zachtronics Solutions Archive -->
+<!-- attrib template: default -->
+<style>
+	.demo {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 150px;
+		height: calc(150px + 1em);
+		text-decoration: underline dotted;
+		text-shadow: 1px 1px var(--bg0h);
+		color: var(--fg1);
+		text-align: center;
+		transition: .2s all;
+	}
+
+	.demo img {
+		width: 150px;
+		height: 150px;
+		margin: auto;
+	}
+
+	.demo:where(:hover, :focus) {
+		background: var(--bg2);
+	}
+
+		.demo:where(:hover, :focus) img {
+			filter: brightness(1.2);
+		}
+
+</style>
+
+<div class="window pink border" style="width: fit-content; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+<span class="titlebar">Demos</span>
+	<div class="content" style="display: grid; grid-template-columns: repeat(3, auto); gap: 9px;">
+		<a href="catbus.html" class="demo thin green border">
+			<img src="catbus.png">
+			(CSS) Catbus
+		</a>
+	</div>
+</div>
