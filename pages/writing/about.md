@@ -4,7 +4,7 @@
 
 # About Me
 
-Hi! I'm Lena. I'm on my late 20s, I [pretend to be an artist](https://lensdeer.tumblr.com/tagged/lensdeerart), I dabble in [programming](https://github.com/marshdeer) and [web design]([#root#]/home/index.html), I sometimes like to [write sophomoric-ass shit](../writing/index.html). I like playing [puzzle](../zach/index.html) and [arcade](../hiscore/index.html) videogames, and [experiencing various kinds of art](../medialog/index.html). This is my website.
+Hi! I'm Lena. I'm on my late 20s, I [pretend to be an artist](https://lensdeer.tumblr.com/tagged/lensdeerart), I dabble in [programming](https://github.com/marshdeer) and [web design]([#root#]home/index.html), I sometimes like to [write sophomoric-ass shit](../writing/index.html). I like playing [puzzle](../zach/index.html) and [arcade](../hiscore/index.html) videogames, and [experiencing various kinds of art](../medialog/index.html). This is my website.
 
 In late 2022, growing disillusioned with the modern internet's enshittification and hostility, I deleted all my remaining social media accounts and returned to [tumblr](https://lensdeer.tumblr.com) to have a more earnest online presence. Over time, however, I grew tired of Tumblr Staff's mismanagement and decided to instead create [my own website](../index.html) as a hub for all my projects.
 
