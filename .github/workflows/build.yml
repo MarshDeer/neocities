@@ -9,12 +9,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Autosite
+      - name: Dependencies
         uses: BSFishy/pip-action@v1
         with:
           packages: autosite
 
-      - name: Build
+      - name: Autosite
         run: autosite -a
 
       - name: Deploy
