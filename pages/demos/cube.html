@@ -1,0 +1,126 @@
+<!-- attrib title: cube.html -->
+<!-- attrib template: demo -->
+<!-- attrib windowtitle: cube.html -->
+
+<style>
+	.demo {
+		perspective: 300px;
+		perspective-origin: 50% 50%;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+		background: linear-gradient(var(--bg0), var(--bg0h));
+	}
+
+	.cube {
+		--thickness: 100px;
+		width: var(--thickness);
+		height: var(--thickness);
+		position: absolute;
+		animation:
+			moveX 5s linear alternate infinite,
+			moveY 3s linear alternate infinite,
+			moveZ 2s linear alternate infinite,
+			trans 3s linear alternate infinite;
+		transform-style: preserve-3d;
+		overflow: show;
+	}
+
+		@keyframes moveX {
+			from {left: 0;}
+			to {left: calc(100% - var(--thickness));}
+		}
+
+		@keyframes moveY {
+			from {bottom: 0;}
+			to {bottom: calc(100% - var(--thickness));}
+		}
+
+		@keyframes moveZ {
+			from {bottom: 0;}
+			to {bottom: calc(100% - var(--thickness));}
+		}
+
+		@keyframes trans{
+			from {transform: translateZ(calc(-1 * var(--thickness))) rotate3d(0, 0, 0, 180deg);}
+			to {transform: translateZ(calc(var(--thickness))) rotate3d(11, 17, 23, 180deg);}
+		}
+
+	.face {
+		width: var(--thickness);
+		height: var(--thickness);
+		position: absolute;
+		opacity: 0.7;
+		--tx: 0;
+		--ty: 0;
+		--tz: 0;
+		--rx: 0;
+		--ry: 0;
+		transform:
+			translate3d(var(--tx), var(--ty), var(--tz))
+			rotate3d(var(--rx), var(--ry), 0, 90deg);
+		background: var(--bg);
+	}
+
+		.top {
+			--ty: calc(var(--thickness) / 2);
+			--rx: 1;
+			--bg: var(--fg0);
+		}
+
+		.bottom {
+			--ty: calc(var(--thickness) / -2);
+			--rx: 1;
+			--bg: var(--yellow);
+		}
+
+		.left {
+			--tx: calc(var(--thickness) / -2);
+			--ry: 1;
+			--bg: var(--orange);
+		}
+
+		.right {
+			--tx: calc(var(--thickness) / 2);
+			--ry: 1;
+			--bg: var(--red);
+		}
+
+		.front {
+			--tz: calc(var(--thickness) / 2);
+			--bg: var(--aqua);
+		}
+
+		.back {
+			--tz: calc(var(--thickness) / -2);
+			--bg: var(--blue);
+		}
+
+		.text {
+			width: var(--thickness);
+			height: var(--thickness);
+			position: absolute;
+			image-rendering: pixelated;
+			background-image: url(cubetext.png);
+			background-size: auto var(--thickness);
+			animation: textscroll 11s linear infinite;
+		}
+
+			@keyframes textscroll {
+				from {background-position-x: calc(var(--thickness));}
+				to {background-position-x: calc(100%);}
+			}
+</style>
+
+<div class="demo">
+	<div class="cube">
+		<div class="top face"></div>
+		<div class="bottom face"></div>
+		<div class="left face"></div>
+		<div class="right face"></div>
+		<div class="front face"></div>
+		<div class="back face"></div>
+		<div class="text"></div>
+	</div>
+</div>
