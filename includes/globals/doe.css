@@ -24,7 +24,7 @@ body {
 		);
 	background-attachment: fixed;
 	backdrop-filter: brightness(.3);
-	font: 14px Fantasque;
+	font: 14px Fantasque, Monospace;
 	color: var(--fg1);
 }
 
