@@ -1,0 +1,54 @@
+<!-- attrib title: cube.html -->
+<!-- attrib template: demo -->
+<!-- attrib windowtitle: psxdoom.xslx -->
+
+<style>
+        .demo {
+                width: calc(100% - 15px);
+                height: 80%;
+                gap: 10px;
+                padding: 5px;
+                display: grid;
+                grid-template-rows: auto auto;
+                grid-template-columns: 2fr 1fr;
+                grid-template-areas:
+                        "gif gif"
+                        "info download";
+        }
+
+        .demo img {
+                width: 100%;
+                image-rendering: pixelated;
+                grid-area: gif;
+        }
+
+        .info {
+                grid-area: info;
+        }
+
+        h2 {
+                text-align: center;
+        }
+
+        .download {
+                grid-area: download;
+                width: 100%;
+        }
+</style>
+
+<div class="demo">
+        <img src="psxdoom.gif" class="thin green border">
+        <div class="info thin green border">
+                <h2> Instructions </h2>
+                <ol>
+                        <li> Download psxdoom.xlsx </li>
+                        <li> Open it using your Excel clone of choice </li>
+                        <li> Mash F9 to generate new frames<sup>*</sup> </li>
+                </ol>
+                <span> *: This shortcut does not work on Google Sheets </span>
+        </div>
+        <div class="download thin green border">
+                <h2> Download Demo </h2>
+                <a class="orange button" href="psxdoom.xlsx">Download psxdoom.xlsx</a>
+        </div>
+</div>
