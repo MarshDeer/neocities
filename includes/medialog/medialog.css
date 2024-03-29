@@ -28,7 +28,7 @@ h2 {
 	height: 100px;
 }
 
-:where(.book, .movie) img {
+:where(.book, .movie, .game) img {
 	width: 100px;
 	height: 150px;
 }
