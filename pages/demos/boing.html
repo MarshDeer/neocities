@@ -1,0 +1,370 @@
+<!-- attrib title: boing.html -->
+<!-- attrib template: demo -->
+<!-- attrib windowtitle: boing.html -->
+
+<style>
+	:root {
+		--diameter: 125px;
+		--horizontalduration: 5s;
+		--verticalduration: 2s;
+		--radius: calc(var(--diameter) / 2);
+		--angle: calc(360deg / 16);
+		--faceheight: calc(var(--diameter) * sin(pi / 16)); /* Hexadecagon face length formula */
+	}
+
+	.demo {
+		perspective: 500px;
+		width: calc(100% - 2px);
+		height: calc(100% - 18px);
+		position: absolute;
+		left: 1px;
+		top: 17px;
+		overflow: hidden;
+		perspective-origin: 50% 50%;
+		background: #aaa;
+	}
+
+	.background {
+		background:
+			repeating-linear-gradient(#808, #808 2px, transparent 2px, transparent 29px),
+			repeating-linear-gradient(90deg, #808, #808 2px, transparent 2px, transparent 29px);
+		background-size: 30px 30px, 30px 30px;
+		background-attachment: fixed, fixed;
+		background-position: 0 0, 0 0;
+		position: absolute;
+	}
+
+		.background.floor {
+			width: calc(30px * 20);
+			height: calc(30px * 3);
+			top: 50%;
+			left: 50%;
+			transform:
+				translate3d(-50%, -50%, -60px)
+				rotateX(90deg)
+				translateZ(-200px);
+		}
+
+		.background.back {
+			width: calc(30px * 20);
+			height: calc(30px * 14);
+			top: 50%;
+			left: 50%;
+			transform:
+				translate3d(-50%, -50%, -100px)
+				translateY(-1-60px)
+				rotateX(90deg)
+				translateZ(-200px);
+		}
+
+		.background.back {
+			width: calc(30px * 20);
+			height: calc(30px * 14);
+			top: 50%;
+			left: 50%;
+			transform:
+				translate3d(-50%, -50%, -100px)
+				translateY(-1-60px)
+				rotateX(90deg)
+				translateZ(-200px);
+		}
+
+		.background.back {
+			width: calc(30px * 20);
+			height: calc(30px * 14);
+			top: 50%;
+			left: 50%;
+			transform:
+				translate3d(-50%, -50%, -100px)
+				translateY(-10px);
+		}
+
+	.ball {
+		width: var(--diameter);
+		height: var(--diameter);
+		position: relative;
+		transform-style: preserve-3d;
+		animation: spin var(--horizontalduration) linear alternate infinite;
+		top: 5%;
+		counter-reset: slice;
+	}
+
+		@keyframes spin {
+			from {transform: rotateZ(var(--angle)) rotateY(0deg);}
+			to {transform: rotateZ(var(--angle)) rotateY(calc(-360deg * 4));}
+		}
+
+	.slice {
+		transform-style: preserve-3d;
+		position: relative;
+		counter-increment: slice;
+	}
+
+	.face {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		--shortbase: calc((2 *(var(--radius) * sin(var(--angle) * (abs(var(--i)) - 1)))) * sin(pi / 16)); /* create virtual hexadecagon and get its side length */
+		--longbase: calc((2 *(var(--radius) * sin(var(--angle) * abs(var(--i))))) * sin(pi / 16)); /* ditto but one layer down */
+		--side: abs((var(--longbase) - var(--shortbase)) / 2); /* going trapezoidal on this bitch */
+		width: var(--shortbase);
+		transform:
+			translate(-50%, 100%) /* faces are stored in the class='balls' */
+			rotateY(calc(var(--slice) * var(--angle))) /* position slice */
+			rotateZ(calc(sign(var(--i) - abs(var(--i))) * 180deg)) /* flip south hemisphere. positive numbers have sign 0, negatives have -1 */
+			rotateX(calc(abs(abs(var(--i)) - 4) * var(--angle))) /* point face normals */
+			rotateX(calc(var(--angle) / 2)) /* undo axial tilt */
+			translateZ(var(--radius)) /* mr gorbachev spherize these walls */
+			translateY(var(--faceheight)); /* tweak into position */
+		transform-origin: 50% calc(50% + var(--faceheight)); /* center of actual visible face */
+		border: 0px solid transparent;
+		border-width: 0px var(--side) var(--faceheight) var(--side);
+		border-bottom-color: var(--color);
+	}
+
+	.slice:nth-child(even) {
+		--even: red;
+		--odd: white;
+	}
+
+	.slice:nth-child(odd) {
+		--even: white;
+		--odd: red;
+	}
+
+	.face:nth-child(even) {
+		--color: var(--even);
+	}
+
+	.face:nth-child(odd) {
+		--color: var(--odd);
+	}
+
+	.shadow {
+		width: var(--diameter);
+		height: var(--diameter);
+		position: absolute;
+		left: calc(var(--radius) * 0.5);
+		top: -10px;
+		border-radius: 100%;
+		background: #3338;
+		transform: translateZ(calc(var(--radius) * -1));
+	}
+
+	.bounce {
+		transform-style: preserve-3d;
+	}
+
+	.horizontal {
+		position: relative;
+		height: calc(100% - 10px);
+		width: var(--diameter);
+		animation: horizontal var(--horizontalduration) linear alternate infinite;
+	}
+
+		@keyframes horizontal {
+			from {left: 5%;}
+			to {left: calc(100% - var(--diameter) - 5%);}
+		}
+
+	.vertical {
+		position: absolute;
+		width: var(--diameter);
+		height: var(--diameter);
+		animation: vertical var(--verticalduration) ease-in alternate infinite;
+	}
+
+		@keyframes vertical {
+			from {top: 10%;}
+			to {top: 62%;}
+		}
+
+	.compat {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform:
+			translateX(-50%);
+		width: 80%;
+		text-align: center;
+		background: var(--bg0);
+		opacity: calc(1 - abs(1));
+	}
+</style>
+
+<div class="demo">
+	<div class="background back"></div>
+	<div class="background floor"></div>
+	<div class="bounce horizontal">
+		<div class="bounce vertical">
+			<div class="ball">
+				<div class="slice" style="--slice:  1;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice:  2;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice:  3;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice:  4;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice:  5;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice:  6;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice:  7;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice:  8;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice:  9;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice: 10;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice: 11;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice: 12;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice: 13;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice: 14;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice: 15;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+				<div class="slice" style="--slice: 16;">
+					<div class="face" style="--i:  1;"></div>
+					<div class="face" style="--i:  2;"></div>
+					<div class="face" style="--i:  3;"></div>
+					<div class="face" style="--i:  4;"></div>
+					<div class="face" style="--i: -4;"></div>
+					<div class="face" style="--i: -3;"></div>
+					<div class="face" style="--i: -2;"></div>
+					<div class="face" style="--i: -1;"></div>
+				</div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+	</div>
+	<p class="compat red border">
+		<span class="titlebar">WARNING - Compatibility Error!</span>
+		This demo is currently not compatible with Chromium-based browsers.<sup><a href="https://caniuse.com/?search=sign()">[1]</a><a href="https://caniuse.com/?search=abs()">[2]</a></sup> <br>
+		<small>Please switch to <a href="https://www.mozilla.org/en-US/firefox/new/">a modern browser</a> for your own privacy and to be able to see it.</small>
+	</p>
+</div>
