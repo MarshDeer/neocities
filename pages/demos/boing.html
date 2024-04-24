@@ -91,7 +91,7 @@
 
 		@keyframes spin {
 			from {transform: rotateZ(var(--angle)) rotateY(0deg);}
-			to {transform: rotateZ(var(--angle)) rotateY(calc(-360deg * 4));}
+			to {transform: rotateZ(var(--angle)) rotateY(calc(-360deg * 2.5));}
 		}
 
 	.slice {
@@ -104,8 +104,8 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		--shortbase: calc((2 *(var(--radius) * sin(var(--angle) * (abs(var(--i)) - 1)))) * sin(pi / 16)); /* create virtual hexadecagon and get its side length */
-		--longbase: calc((2 *(var(--radius) * sin(var(--angle) * abs(var(--i))))) * sin(pi / 16)); /* ditto but one layer down */
+		--shortbase: calc((2 *(var(--radius) * sin(var(--angle) * (abs(var(--i)) - 1)))) * sin(pi / 16) + 1.5px); /* create virtual hexadecagon and get its side length */ /* TODO: that extra +1.5px is a hacky solution to cover gaps. the formula is wrong somewhere*/
+		--longbase: calc((2 *(var(--radius) * sin(var(--angle) * abs(var(--i))))) * sin(pi / 16) + 1.5px); /* ditto but one layer down */
 		--side: abs((var(--longbase) - var(--shortbase)) / 2); /* going trapezoidal on this bitch */
 		width: var(--shortbase);
 		transform:
