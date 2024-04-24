@@ -5,11 +5,11 @@
 <style>
 	:root {
 		--diameter: 125px;
-		--horizontalduration: 5s;
+		--horizontalduration: 7s;
 		--verticalduration: 2s;
 		--radius: calc(var(--diameter) / 2);
 		--angle: calc(360deg / 16);
-		--faceheight: calc(var(--diameter) * sin(pi / 16)); /* Hexadecagon face length formula */
+		--faceheight: calc(var(--diameter) * sin(pi / 16) + 1px); /* TODO: See why that extra pixel is necessary to avoid seams */
 	}
 
 	.demo {
