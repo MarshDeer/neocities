@@ -141,11 +141,11 @@
 	}
 
 	.shadow {
-		width: var(--diameter);
-		height: var(--diameter);
+		width: calc(var(--diameter) * 1.1);
+		height: calc(var(--diameter) * 1.1);
 		position: absolute;
-		left: calc(var(--radius) * 0.5);
-		top: -10px;
+		left: 0;
+		top: 10px;
 		border-radius: 100%;
 		background: #3338;
 		transform: translateZ(calc(var(--radius) * -1));
