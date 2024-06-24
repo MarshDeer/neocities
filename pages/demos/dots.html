@@ -1,0 +1,421 @@
+<!-- attrib title: dots.html -->
+<!-- attrib template: demo -->
+<!-- attrib windowtitle: dots.html -->
+<style>
+	:root {
+		--splitstrength: 100%;
+		--radius: 200px;
+		--cycleduration: 14s;
+		--dotspergroup: 16;
+		--dotsize: 10px;
+		--groups: 16;
+		--blendmode: screen;
+		--trail: #f00;
+		--center: #0f0;
+		--lead: #00f;
+	}
+
+	.demo {
+		width: 100%;
+		height: 100%;
+		background: #000;
+		position: relative;
+	}
+
+	.dot {
+		background: var(--center);
+		position: absolute;
+		animation:
+			var(--cycleduration) spread 0s linear infinite;
+		animation-composition: accumulate;
+	}
+
+		.dot, .dot::before, .dot::after {
+			border-radius: 100%;
+			width: var(--dotsize);
+			height: var(--dotsize);
+			mix-blend-mode: var(--blendmode);
+			content: "";
+		}
+
+			@keyframes spread {
+				0% {
+					transform:
+						rotateZ(calc(0deg * var(--i)))
+						translateY(0)
+						rotateZ(45deg);
+					}
+				25% {
+					transform:
+						rotateZ(calc(90deg / var(--dotspergroup) * var(--i)))
+						translateY(calc(var(--radius) / var(--dotspergroup) * var(--i)))
+						rotateZ(90deg);
+					}
+				50% {
+					transform:
+						rotateZ(calc(90deg / var(--dotspergroup) * var(--i) * 2))
+						translateY(0)
+						rotateZ(180deg);
+					}
+				75% {
+					transform:
+						rotateZ(calc(90deg / var(--dotspergroup) * var(--i) * 3))
+						translateY(calc(-1 * var(--radius) / var(--dotspergroup) * var(--i)))
+						rotateZ(270deg);
+					}
+				100% {
+					transform:
+						rotateZ(calc(90deg / var(--dotspergroup) * var(--i) * 4))
+						translateY(-0)
+						rotateZ(360deg);
+					}
+			}
+
+			@keyframes spin {
+				from {
+					transform: rotateZ(0deg);
+				}
+				to {
+					transform: rotateZ(90deg);
+				}
+			}
+
+			.dot::before, .dot::after {
+				position: absolute;
+				animation: calc(var(--cycleduration) / 4) rgbsplit 0s infinite;
+				animation-composition: replace;
+				bottom: 0;
+			}
+
+				.dot::before {
+					background: var(--trail);
+					--direction: 1;
+				}
+
+				.dot::after {
+					background: var(--lead);
+					--direction: -1;
+				}
+
+				@keyframes rgbsplit {
+					0%, 100% {bottom: calc( 0.2 * var(--direction) * var(--splitstrength) / var(--dotspergroup) * var(--i));}
+					40%, 60% {bottom: calc( 1 * var(--direction) * var(--splitstrength) / var(--dotspergroup) * var(--i));}
+				}
+
+	.group {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		mix-blend-mode: var(--blendmode);
+		transform:
+			translate(-50%, -50%)
+			rotateZ(calc(360deg / var(--groups) * var(--g)))
+	}
+
+	.button.cmyk {
+		position: absolute;
+		bottom: 4px;
+		right: 4px;
+		z-index: 9;
+	}
+
+	.demo:has(.button.cmyk:active) {
+		background: #fff;
+		--trail: #f0f;
+		--center: #ff0;
+		--lead: #0ff;
+		--blendmode: multiply;
+	}
+</style>
+
+<div class=demo>
+	<div class="group" style="--g:  0">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g:  1">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g:  2">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g:  3">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g:  4">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g:  5">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g:  6">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g:  7">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g:  8">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g:  9">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g: 10">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g: 11">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g: 12">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g: 13">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g: 14">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="group" style="--g: 15">
+		<div class="dot" style="--i: 1"></div>
+		<div class="dot" style="--i: 2"></div>
+		<div class="dot" style="--i: 3"></div>
+		<div class="dot" style="--i: 4"></div>
+		<div class="dot" style="--i: 5"></div>
+		<div class="dot" style="--i: 6"></div>
+		<div class="dot" style="--i: 7"></div>
+		<div class="dot" style="--i: 8"></div>
+		<div class="dot" style="--i: 9"></div>
+		<div class="dot" style="--i: 10"></div>
+		<div class="dot" style="--i: 11"></div>
+		<div class="dot" style="--i: 12"></div>
+		<div class="dot" style="--i: 13"></div>
+		<div class="dot" style="--i: 14"></div>
+		<div class="dot" style="--i: 15"></div>
+		<div class="dot" style="--i: 16"></div>
+	</div>
+	<div class="pink button cmyk">Toggle CMYK</div>
+</div>
