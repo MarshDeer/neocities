@@ -12,8 +12,10 @@
 		--bot: 			green;
 		--top: 			blue;
 		/* Size default */
-		--width:		480px;
-		--height:		520px;
+		--width:		80%;
+		--height:		80%;
+		--contentwidth:		calc(100% - 20px);
+		--contentheight:	calc(100% - 50px);
 		height:			100vh;
 	}
 
@@ -147,8 +149,8 @@
 	}
 
 	.scanlines {
-		width:		var(--width);
-		height:		var(--height);
+		width:		var(--contentwidth);
+		height:		var(--contentheight);
 		background:	repeating-linear-gradient(to right,
 					#0005,
 					transparent 1px,
@@ -161,8 +163,8 @@
 
 	/* ~~ Content ~~ */
 	.content {
-		width:		var(--width);
-		height:		var(--height);
+		width:		var(--contentwidth);
+		height:		var(--contentheight);
 		border-radius:	100% / 5%;
 		background:	url(img/hiscorebg.png) fixed;
 		background-size: 100px;
@@ -316,14 +318,14 @@
 			width:	100px;
 			max-width: 30vw;
 			transform: rotateZ(25deg);
-			right:	-5px;
+			right:	30px;
 			bottom:	0;
 		}
 		.sticker.pau{
 			width:	75px;
 			max-width: 25vw;
 			transform: rotateZ(20deg);
-			left:	0;
+			left:	20px;
 			top:	25%;
 		}
 
