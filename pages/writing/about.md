@@ -1,5 +1,5 @@
 <!-- attrib title: Writing | About Me -->
-<!-- attrib template: writing -->
+<!-- attrib pagetype: writing -->
 <!-- attrib windowtitle: aboutme.md -->
 
 # About Me
