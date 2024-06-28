@@ -28,7 +28,7 @@ h2 {
 	height: 100px;
 }
 
-:where(.book, .movie, .game) img {
+:where(.book, .movieshow, .game) img {
 	width: 100px;
 	height: 150px;
 }
@@ -78,6 +78,12 @@ article {
 
 .data .favtracks::before {
 	content: "Favorite tracks:";
+	color: var(--accent);
+	font-weight: bold;
+}
+
+.data .faveps::before {
+	content: "Favorite episodes:";
 	color: var(--accent);
 	font-weight: bold;
 }
