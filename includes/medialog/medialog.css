@@ -47,13 +47,15 @@ article {
 	grid-template-areas:
 		"image data"
 		"image review"
-		"button review";
+		"button button";
 	align-items: center;
 }
 
 .articlecontent .review {
 	grid-area: review;
-	overflow: scroll;
+	overflow-y: auto;
+	overflow-x: hidden;
+	min-height: 10em;
 	max-height: 20em;
 	margin: 1em 1ch;
 }
