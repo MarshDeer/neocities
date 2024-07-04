@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<!-- o~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~o -->
+<!-- | ............ doe-tumblr-theme by LensDeer ........... | -->
+<!-- | https://github.com/marshdeer/neocities/globals/tumblr | -->
+<!-- | ........... Made for MY PERSONAL USE ONLY ........... | -->
+<!-- | .... Not that it'd be of much use to anyone, lol .... | -->
+<!-- | .... Send me an ask to commission a custom theme .... | -->
+<!-- o~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~o -->
+<!---->
+<!-- JAVASCRIPT HEAVILY BORROWS FROM github.com/cornetespoir/npf-theme-base -->
+
+<head>
+	<!-- Meta -->
+		<meta charset="utf-8">
+	<!-- Embed -->
+		<title>LensDeer's Hideout | Tumblr {block:TagPage} ({lang:Posts tagged Tag}){/block:TagPage}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
+		<meta name="description" content="{MetaDescription}">
+	<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="https://lensdeer.neocities.org/globals/doe.css">
+		<link rel="stylesheet" type="text/css" href="https://lensdeer.neocities.org/globals/tumblr/doe-tumblr.css">
+	<!-- Tumblr boilerplate -->
+		{PostTypographyStyles}
+	<!-- Options -->
+		{block:Options}
+			<meta name="text:blog description" content="" />
+		{block:Options}
+</head>
+
+<style>
+	{CustomCSS}
+</style>
+
+<body>
+	<!-- ====================== BASE UI SECTION ============================ -->
+	<a class="skipnav window red thin border" href="#main">
+		Skip to content
+	</a>
+
+	<div class="DOE window pink border">
+		<span class="titlebar">BLEAT | DOE - Digital Organization Environment</span>
+		<nav>
+			<a class="border gray thin" href="https://lensdeer.neocities.org/home/index.html">
+				<img src="https://lensdeer.neocities.org/globals/icons/doe.png">
+				<span> Home </span>
+			</a>
+			<a class="border gray thin" href="https://lensdeer.tumblr.com">
+				<img src="https://lensdeer.neocities.org/globals/icons/tumblr.png">
+				<span> Tumblr </span>
+			</a>
+			<a class="border gray thin" href="https://lensdeer.tumblr.com/tagged/lensdeerart">
+				<img src="https://lensdeer.neocities.org/globals/icons/art.png">
+				<span> Art </span>
+			</a>
+			<a class="border gray thin" href="https://github.com/marshdeer">
+				<img src="https://lensdeer.neocities.org/globals/icons/git.png">
+				<span> Code </span>
+			</a>
+			<a class="border gray thin" href="https://lensdeer.neocities.org/writing/index.html">
+				<img src="https://lensdeer.neocities.org/globals/icons/blog.png">
+				<span> Writing </span>
+			</a>
+			<a class="border gray thin" href="https://lensdeer.neocities.org/demos/index.html">
+				<img src="https://lensdeer.neocities.org/globals/icons/demos.png">
+				<span> Demos </span>
+			</a>
+			<a class="border gray thin" href="https://lensdeer.neocities.org/hiscore/index.html">
+				<img src="https://lensdeer.neocities.org/globals/icons/hiscore.png">
+				<span> Scores </span>
+			</a>
+			<a class="border gray thin" href="https://lensdeer.neocities.org/zach/index.html">
+				<img src="https://lensdeer.neocities.org/globals/icons/exa.png">
+				<span> Solutions </span>
+			</a>
+			<a class="border gray thin" href="https://lensdeer.neocities.org/ocs/index.html">
+				<img src="https://lensdeer.neocities.org/globals/icons/ocs.png">
+				<span> OCs </span>
+			</a>
+			<a class="border gray thin" href="https://lensdeer.neocities.org/medialog/index.html">
+				<img src="https://lensdeer.neocities.org/globals/icons/media.png">
+				<span> Medialog </span>
+			</a>
+		</nav>
+		<time id="clock">88:88</time>
+		<script src="https://lensdeer.neocities.org/globals/clock.js"></script>
+
+	<!-- ======================== TUMBLR SECTION =========================== -->
+	<!-- Posts -->
+	<main class="window blue border" style="width: fit-content; height: 450px; left: 157px; top: 40px; z-index: 1">
+		<span class="titlebar"> Browser | {BlogURL}{block:SearchPage}search/{SearchQuery}{/block:SearchPage}{block:TagPage}tagged/{Tag}{/block:TagPage}</span>
+		<div class="content">
+			<div id="posts" class="feed {block:submitpage}inbox{/block:submitpage} {block:AskPage}inbox{/block:AskPage}">
+				{block:SearchPage}
+					<h1 style="text-align: center; color: var(--blue);">Search results for {SearchQuery}</h1>
+				{/block:SearchPage}
+				{block:TagPage}
+					<h1 style="text-align: center; color: var(--blue)">Posts tagged #{Tag}</h1>
+				{/block:TagPage}
+				{block:Posts}
+					<noscript>
+						<article class="border gray">
+							<span class="titlebar"> {block:NotReblog}Original {/block:NotReblog}Post{block:RebloggedFrom} reblogged from {ReblogParentName}{/block:RebloggedFrom} </span>
+							<div class="article-content">
+								<div class="trail-item thin border gray">
+									{Body}
+								</div>
+							</div>
+							<footer>
+								<a class="note-count info-box gray thin border" href="{Permalink}">{NoteCountWithLabel}</a>
+								<span class="post-date info-box gray thin border">{Year}/{MonthNumberWithZero}/{DayofMonthWithZero} @ {24HourWithZero}:{Minutes}:{Seconds}</span>
+								<div class="interaction-buttons gray thin border">
+									<a class="orange button" href="{Permalink}">Perma</a>
+									<a class="blue button" href="https://tumblr.com/{name}/{PostID}">View</a>
+									<a class="green button" href="https://tumblr.com/reblog/{name}/{PostID}/reblog">Reblog</a>
+								</div>
+							</footer>
+						</article>
+					</noscript>
+				{/block:Posts}
+				<!-- JAVASCRIPT VERSION APPENDS POSTS HERE -->
+			</div>
+
+			{block:PermalinkPagination}
+				<div id="post-pagination" class="thin gray border"></div>
+			{/block:PermalinkPagination}
+			{block:Pagination}
+				<div id="pagination">
+					{block:PreviousPage}<a href="{PreviousPage}" style="left: 0;" class="blue button">Previous Page</a>{/block:PreviousPage}
+					{block:NextPage}<a href="{NextPage}" style="right: 0;" class="blue button">Next Page</a>{/block:NextPage}
+				</div>
+			{/block:Pagination}
+		</div>
+	</main>
+
+	<!-- Info Box -->
+	<aside id="tumblrinfobox" class="window pink border" style="right: 12px; bottom: 12px;>">
+		<span class="titlebar"> Tumblr | Blog Info </span>
+		<div class="content">
+			<img class="pink thin border" style="grid-area: pic; padding: 0;" src={PortraitURL-128}>
+			<h1 class="title">{Title}</h1>
+			<p class="description">{text:blog description}</p>
+			<div class="buttons">
+				{block:AskEnabled}<a class="pink button" href=/ask>{AskLabel}</a>{/block:AskEnabled}
+				{block:LikesEnabled}<a class="red button" href=/likes>Likes</a>{/block:LikesEnabled}
+				<a class="blue button" href=/archive>Archive</a>
+				<a class="orange button" href="{RSS}">RSS</a>
+			</div>
+		</div>
+	</aside>
+
+	<!-- Search -->
+	<form class="window green border" id="search" action="/search" method="get" role="search">
+		<span class="titlebar">Search This Blog</span>
+		<div class="content">
+			<input type="text" name="q" placeholder="{BlogURL}search/" autocomplete=off value="{SearchQuery}"/ class="thin green border">
+			<input type="submit" value="Search!" class="green button"/>
+		</div>
+	</form>
+
+	<!-- Projects -->
+	<aside id="projects" class="window pink border">
+	<span class="titlebar">Projects</span>
+		<div class="content" style="display: flex; flex-direction: column; gap: 0px; height: calc(3*(31px + 4px); overflow: clip;">
+			<a style="text-decoration: none;" href="https://lensdeer.neocities.org">
+				<img src="https://lensdeer.neocities.org/globals/88x31.gif">
+			</a>
+			<a style="text-decoration: none;" href="https://marshdeer.github.io/howlongmojang">
+				<img src=https://marshdeer.github.io/howlongmojang/img/button.gif>
+			</a>
+			<a style="text-decoration: none;" href="https://marshdeer.github.io/root-faction-randomizer">
+				<img src=https://marshdeer.github.io/root-faction-randomizer/assets/88x31.gif>
+			</a>
+		</div>
+	</aside>
+
+	<!-- Error windows -->
+		<!-- Empty Search -->
+		{block:SearchPage}{block:NoSearchResults}
+		<div id="error" class="window red border" style="width: 25ch; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 3">
+			<span class="titlebar"> No Results </span>
+			<div class="content">
+				<p>
+					No posts found
+				</p>
+				<a class="button" href="{BlogURL}">Go Back</a>
+			</div>
+		</div>
+		{/block:NoSearchResults}{/block:SearchPage}
+
+		<!-- Empty Blog -->
+		{block:NoPosts}
+		<div id="error" class="window red border" style="width: 25ch; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 3">
+			<span class="titlebar"> No Results </span>
+			<div class="content">
+				<p>
+					No posts found
+				</p>
+				<a class="button" href="{BlogURL}">Go Back</a>
+			</div>
+		</div>
+		{/block:NoPosts}
+
+		<!-- No Javascript -->
+		<noscript>
+			<div id="error" class="window red border" style="width: 40ch; left: 165px; bottom: 20px; z-index: 0">
+				<span class="titlebar"> Javascript recommended </span>
+				<div class="content">
+					<p>
+						Hi! I programmed this theme to render posts using Tumblr's <a href="https://github.com/tumblr/docs/blob/master/npf-spec.md">NPF</a> object definitions <small>(what Yahoo meant by "next-generation PDF", believe it or not!)</small>.
+					</p>
+					<p>
+						Sadly, this forced me to make post rendering dependant on client-side Javascript. I don't like it either! I'm usually very against it, but Tumblr posts are structured in such a way that required this compromise.
+					</p>
+					<p>
+						If you see this message, you are seeing a fallback "noscript" version of the page. Some posts may render incorrectly, and JS is sadly required for the full experience.
+					</p>
+				</div>
+			</div>
+		</noscript>
+	</div>
+</body>
+
+<!-- =========================== NPF RENDERING SCRIPT ====================== -->
+<script>
+	// Set global variables
+		let user = "{name}"
+		let posts = new Array()
+		let container = document.getElementById('posts')
+		let pagination = document.getElementById('post-pagination')
+
+	// Create posts array
+	{block:Posts} // "Posts" block renders once per post in the page
+		posts.push({
+		id: {JSPostID},
+		inboxBody: {JSBody},
+		postNotes: {JSPostNotesURL},
+		{block:NoteCount} noteCount: {JSNoteCountWithLabel}, {/block:NoteCount}
+		permalink: {JSPermalink},
+		npf: JSON.parse({JSNPF}),
+		date: "{Year}/{MonthNumberWithZero}/{DayofMonthWithZero} @ {24HourWithZero}:{Minutes}:{Seconds}"
+		{block:hasTags}, tags: [{block:Tags} {JSTag}, {/block:Tags}] {/block:hasTags}
+		{block:NotReblog}
+				, titlebarText: "Original post by {name}",
+				original: true
+		{/block:NotReblog}
+		{block:PinnedPostLabel}, pinned: true {/block:PinnedPostLabel}
+		{block:RebloggedFrom}, titlebarText: "Post reblogged from {ReblogParentName}" {/block:RebloggedFrom}
+		})
+	{/block:Posts}
+</script>
+<script src="https://lensdeer.neocities.org/globals/tumblr/doe-tumblr.js"></script>
+
+</html>
