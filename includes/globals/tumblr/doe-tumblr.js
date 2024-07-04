@@ -467,8 +467,10 @@ for (const post of posts) {
 		// Assemble element
 		postButtons.append(permabutton, viewbutton, reblogbutton)
 		postInfo.append(postButtons)
-	// assemble post footer
-	article.append(postInfo)
+	// assemble post footer unless it's an inbox page
+	if (!container.classList.contains('inbox')) {
+		article.append(postInfo)
+	}
 
 	// append post activity on permalink page
 	if (permalink === window.location.href) {
