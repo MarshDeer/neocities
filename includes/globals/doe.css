@@ -7,6 +7,7 @@
 	src: url('fantasque.woff') format('woff');
 }
 
+/* Styling */
 body {
 	width: 100vw;
 	height: 100vh;
@@ -66,8 +67,8 @@ body {
 	.pink{--accent: var(--pink); --dark: var(--dpink);}
 
 .DOE {
-	width: 788px;
-	height: 571px;
+	width: calc(800px - 12px);
+	height: calc(600px - 29px);
 	padding: 23px 6px 6px;
 	display: grid;
 	grid-template-columns: calc(2 * 73px + 18px) 1fr;
@@ -137,33 +138,33 @@ nav {
 	margin: 6px;
 }
 
-nav img {
-	width: 32px;
-	height: 32px;
-	margin: auto;
-	image-rendering: pixelated;
-	filter: drop-shadow(2px 2px 0 var(--bg0h));
-}
-
-nav a {
-	width: 56px !important;
-	height: 56px !important;
-	display: flex;
-	flex-direction: column;
-	gap: 3px;
-	color: var(--fg1);
-	text-decoration: underline dotted;
-	text-align: center;
-	text-shadow: 2px 2px var(--bg0h);
-	filter: drop-shadow(2px 2px 0 var(--bg0));
-	background: var(--bg0);
-	overflow: hidden;
-	transition: .05s all;
-}
-
-	nav a:where(:hover, :focus) {
-		background: var(--bg2) !important; /* Fuck CSS Specificity */
+	nav img {
+		width: 32px;
+		height: 32px;
+		margin: auto;
+		image-rendering: pixelated;
+		filter: drop-shadow(2px 2px 0 var(--bg0h));
 	}
+
+	nav a {
+		width: 56px !important;
+		height: 56px !important;
+		display: flex;
+		flex-direction: column;
+		gap: 3px;
+		color: var(--fg1);
+		text-decoration: underline dotted;
+		text-align: center;
+		text-shadow: 2px 2px var(--bg0h);
+		filter: drop-shadow(2px 2px 0 var(--bg0));
+		background: var(--bg0);
+		overflow: hidden;
+		transition: .05s all;
+	}
+
+		nav a:where(:hover, :focus) {
+			background: var(--bg2) !important; /* Fuck CSS Specificity */
+		}
 
 .content {
 	padding: 3px;
@@ -207,6 +208,6 @@ p:last-child {
 	transition: .2s top;
 }
 
-.skipnav:where(:focus) {
-	top: 6px;
-}
+	.skipnav:where(:focus) {
+		top: 6px;
+	}
