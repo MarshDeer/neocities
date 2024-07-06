@@ -31,3 +31,14 @@
 	#projects .content a {
 		text-decoration: none;
 	}
+
+/* Responsiveness */
+@media screen and (max-width: 812px) {
+	main {
+		height: fit-content !important;
+	}
+
+	.DOE > .content {
+		overflow-y: auto !important;
+	}
+}
