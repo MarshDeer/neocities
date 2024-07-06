@@ -27,6 +27,7 @@ body {
 	backdrop-filter: brightness(.3);
 	font: 14px Fantasque, Monospace;
 	color: var(--fg1);
+	overflow: hidden;
 }
 
 .window {
@@ -69,10 +70,8 @@ body {
 .DOE {
 	width: calc(800px - 12px);
 	height: calc(600px - 29px);
-	padding: 23px 6px 6px;
-	display: grid;
-	grid-template-columns: calc(2 * 73px + 18px) 1fr;
 	position: relative;
+	padding: 23px 6px 6px;
 	margin: auto;
 	top: 50%;
 	transform: translateY(-50%);
@@ -83,20 +82,27 @@ body {
 	box-shadow: 15px 20px 0 #1d202188;
 }
 
+	.DOE > .content {
+		display: grid;
+		grid-template-columns: calc(2 * 73px + 18px) 1fr;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: auto 0;
+	}
+
 main {
 	position: relative;
 }
 
 .content {
-	overflow-y: auto;
-	overflow-x: hidden;
+	overflow: hidden auto;
 }
 
 .titlebar {
 	width: calc(100% - 34px);
 	position: absolute;
-	top: 0;
-	left: 17px;
+	inset: 0 auto auto 17px;
 	color: var(--fg1);
 	text-align: center;
 	text-shadow: 1px 1px 0 var(--dark);
@@ -191,8 +197,7 @@ p:last-child {
 
 #clock {
 	position: fixed;
-	bottom: -10px;
-	left: 10px;
+	inset: auto auto -10px 10px;
 	color: var(--bg0);
 	font-size: 140px;
 	line-height: 140px;
@@ -203,11 +208,54 @@ p:last-child {
 	color: white;
 	text-decoration: underline dotted;
 	position: absolute;
-	left: 10px;
-	top: -200px;
+	inset: -200px auto auto 10px;
 	transition: .2s top;
 }
 
 	.skipnav:where(:focus) {
 		top: 6px;
+	}
+
+/* Responsiveness */
+@media screen and (max-width: 812px) {
+	.DOE {
+		display: block;
+		width: calc(100vw - 12px - 12px) !important;
+		height: calc(100vh - 29px - 12px) !important;
+	}
+
+	.DOE > .content {
+		display: flex;
+		flex-direction: column;
+		gap: 9px;
+		width: calc(100% - 3px);
+	}
+
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	main {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		gap: 9px;
+		align-items: center;
+		justify-content: space-around;
+		padding-bottom: 3px;
+	}
+
+	.window:not(.DOE, .skipnav, article) {
+		position: relative;
+		inset: unset !important;
+		max-width: calc(100% - 12px);
+		transform: none !important;
+	}
+
+	.menu .content {
+		--columns: 2 !important;
 	}

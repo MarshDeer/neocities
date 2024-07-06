@@ -1,30 +1,36 @@
 <!-- attrib title: Writing -->
-<!-- attrib template: default -->
+<link href="[#root#]writing/writing.css" rel="stylesheet" type="text/css" media="all">
 
-<div class="window pink border" style="width: 70ch; height: 20em; top: 15px; left: 50%; transform: translateX(-50%);">
-	<span class="titlebar"> Articles </span>
-		<p>
-			<ul>
-				<li> <a href="about.html"> About Me </a> </li>
-				<li> <a href="wishlist.html"> Wishlist </a> </li>
-			</ul>
-		</p>
+<div id="blogarticles" class="window pink border">
+	<div class="content">
+		<span class="titlebar"> Blog Articles </span>
+			<p>
+				<ul>
+					<li> <a href="about.html"> About Me </a> </li>
+					<li> <a href="wishlist.html"> Wishlist </a> </li>
+				</ul>
+			</p>
+	</div>
 </div>
 
-<div class="window orange border" style="bottom: 10px; left: 0;">
-	<span class="titlebar"> RSS Feed </span>
-	<img src="[#root#]globals/rss.png">
-	<a class="button" href="feed.xml">RSS Feed</a>
-</div>
-
-<div class="window blue border" style="width: 30ch; height: 10em; bottom: 25px; right: 20px;">
+<div id="bleatsnewsletter" class="window blue border">
 	<span class="titlebar"> Bleats Newsletter </span>
-	<ol style="margin: 0;">
-		<li> <a href="bleats/1.html"> Hello, World! </a> </li>
-		<li> <a href="bleats/2.html"> New website! </a> </li>
-		<li> <a href="bleats/3.html"> Hourly Comic Day! </a> </li>
-		<li> <a href="bleats/4.html"> What schedule? </a> </li>
-		<li> <a href="bleats/5.html"> Digital and mental </a> </li>
-		<li> <a href="bleats/6.html"> Not that kind of serverless </a> </li>
-	</ol>
+	<div class="content">
+		<ol style="margin: 0;">
+			<li> <a href="bleats/1.html"> Hello, World! </a> </li>
+			<li> <a href="bleats/2.html"> New website! </a> </li>
+			<li> <a href="bleats/3.html"> Hourly Comic Day! </a> </li>
+			<li> <a href="bleats/4.html"> What schedule? </a> </li>
+			<li> <a href="bleats/5.html"> Digital and mental </a> </li>
+			<li> <a href="bleats/6.html"> Not that kind of serverless </a> </li>
+		</ol>
+	</div>
+</div>
+
+<div id="RSS" class="window orange border">
+	<span class="titlebar"> RSS Feed </span>
+	<div class="content">
+		<img src="[#root#]globals/rss.png">
+		<a class="button" href="feed.xml">Open RSS Feed</a>
+	</div>
 </div>

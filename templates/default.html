@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>LensDeer's Hideout | [#title#]</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta property="og:image" content="[#path#]scrot.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="[#root#]globals/favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="[#root#]globals/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="[#root#]globals/favicon/favicon-16x16.png">
-		<link rel="icon" type="image/x-icon" href="[#root#]globals/favicon/favicon.ico">
-		<meta property="twitter:card" content="summary_large_image">
-		<link href="[#root#]globals/doe.css" rel="stylesheet" type="text/css" media="all">
-		[pagetype=writing] <link href="[#root#]writing/writing.css" rel="stylesheet" type="text/css" media="all"> [/pagetype=]
-		[title=Media Log] <link href="[#root#]medialog/medialog.css" rel="stylesheet" type="text/css" media="all"> [/title=]
-		<title>LensDeer's Hideout | [#title#]</title>
+		<!-- Embed -->
+			<meta property="og:image" content="[#path#]scrot.png">
+			<link rel="apple-touch-icon" sizes="180x180" href="[#root#]globals/favicon/apple-touch-icon.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="[#root#]globals/favicon/favicon-32x32.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="[#root#]globals/favicon/favicon-16x16.png">
+			<link rel="icon" type="image/x-icon" href="[#root#]globals/favicon/favicon.ico">
+			<meta property="twitter:card" content="summary_large_image">
+		<!-- Stylesheets -->
+			[path=home/index.html] <link href="[#root#]home/home.css" rel="stylesheet" type="text/css" media="all"> [/path=]
+			[pagetype=menu] <link href="[#root#]globals/menu.css" rel="stylesheet" type="text/css" media="all"> [/pagetype=]
+			[pagetype=writing] <link href="[#root#]writing/writing.css" rel="stylesheet" type="text/css" media="all"> [/pagetype=]
+			[path=medialog/index.html] <link href="[#root#]medialog/medialog.css" rel="stylesheet" type="text/css" media="all"> [/path=]
+			[pagetype=demo] <link href="[#root#]demos/demos.css" rel="stylesheet" type="text/css" media="all"> [/pagetype=]
+			<link href="[#root#]globals/doe.css" rel="stylesheet" type="text/css" media="all">
 	</head>
 
 	<body>
@@ -68,14 +73,12 @@
 				<time id="clock">88:88</time>
 
 				[path!=medialog/index.html] <main id="main"> [/path!=]
-					[pagetype=demo] <div class="window pink border" style="width: 640px; height: 480px; top: 20px; right: 0px;"> [/pagetype=]
-					[pagetype=writing] <div class="window pink border" style="width: 70ch; height: calc(600px - 53px); left: 50%; top: 0; transform: translateX(-50%);"> [/pagetype=]
-						[pagetype=demo] <span class="titlebar"> [#windowtitle#] </span> [/pagetype=]
-						[pagetype=writing] <span class="titlebar"> [#windowtitle#] </span> [/pagetype=]
-						[pagetype=writing] <div class="content"> [/pagetype=]
-							[#content#]
-							[pagetype=writing] <a class="red button" style="margin: auto 0;" href="[#root#]writing/index.html">Back</a> [/pagetype=]
-							[pagetype=demo] <a href="[#root#]demos/index.html" class="red button" style="position: absolute; bottom: 4px; left: 4px; z-index: 9;">Back</a> [/pagetype=]
+					[pagetype=demo] <div class="democontainer window pink border"><span class="titlebar">[#title#]</span>[/pagetype=]
+					[pagetype=writing] <div class="writingcontainer window pink border"><span class="titlebar">[#title#]</span><div class="content"> [/pagetype=]
+					[pagetype=menu] <div class="menu window pink border"><span class="titlebar">[#title#]</span><div class="content" style="--size: [#size#]">[/pagetype=]
+						[#content#]
+						[pagetype=writing] <a class="red button" style="margin: auto 0;" href="[#root#]writing/index.html">Back</a> [/pagetype=]
+						[pagetype=demo] <a href="[#root#]demos/index.html" class="red button" style="position: absolute; bottom: 4px; left: 4px; z-index: 9;">Back</a> [/pagetype=]
 				[path!=medialog/index.html] </main> [/path!=]
 			</div>
 		</div>

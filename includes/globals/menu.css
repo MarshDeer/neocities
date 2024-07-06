@@ -1,0 +1,47 @@
+.menu {
+	width: fit-content !important;
+	inset: 50% 0 0 50% !important;
+	transform: translate(-50%, -50%) !important;
+	height: fit-content;
+}
+
+	.menu .content {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		gap: 9px;
+	}
+
+	.menu a {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: var(--size);
+		height: calc(var(--size) + 1em);
+		text-decoration: underline dotted;
+		text-shadow: 1px 1px var(--bg0h);
+		color: var(--fg1);
+		text-align: center;
+		transition: .2s all;
+	}
+
+		.menu a img {
+			width: var(--size);
+			height: var(--size);
+			margin: auto;
+		}
+
+		.menu a:where(:hover, :focus) {
+				background: var(--bg2);
+		}
+
+	a.zachgame {
+		width: 100px;
+		height: 120px;
+	}
+
+/* Responsiveness */
+@media screen and (max-width: 812px) {
+	.menu .content {
+		grid-template-columns: repeat(2, auto);
+	}
+}

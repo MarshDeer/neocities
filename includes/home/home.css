@@ -1,0 +1,33 @@
+#aboutme {
+	width: 50ch;
+	left: 80px;
+	top: 90px;
+}
+
+	#aboutme .content {
+		display: grid;
+		grid-template-columns: 106px auto;
+		align-items: center;
+	}
+
+#aboutbleat {
+	width: 45ch;
+	bottom: 10px;
+	right: 50px;
+}
+
+#projects {
+	width: fit-content;
+	right: 10px;
+	top: 10px;
+}
+
+	#projects .content {
+		display: grid;
+		grid-template-columns: repeat(3, 88px);
+		gap: 3px;
+	}
+
+	#projects .content a {
+		text-decoration: none;
+	}

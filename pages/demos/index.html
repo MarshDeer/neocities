@@ -1,57 +1,24 @@
 <!-- attrib title: Demos -->
+<!-- attrib pagetype: menu -->
+<!-- attrib size: 150px -->
 
-<style>
-	.demo {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		width: 150px;
-		height: calc(150px + 1em);
-		text-decoration: underline dotted;
-		text-shadow: 1px 1px var(--bg0h);
-		color: var(--fg1);
-		text-align: center;
-		transition: .2s all;
-	}
-
-	.demo img {
-		width: 150px;
-		height: 150px;
-		margin: auto;
-	}
-
-	.demo:where(:hover, :focus) {
-		background: var(--bg2);
-	}
-
-		.demo:where(:hover, :focus) img {
-			filter: brightness(1.2);
-		}
-
-</style>
-
-<div class="window pink border" style="width: fit-content; left: 50%; top: 50%; transform: translate(-50%, -50%);">
-<span class="titlebar">Demos</span>
-	<div class="content" style="display: grid; grid-template-columns: repeat(3, auto); gap: 9px;">
-		<a href="catbus.html" class="demo thin green border">
-			<img src="catbus.png">
-			(CSS) Catbus
-		</a>
-		<a href="cube.html" class="demo thin green border">
-			<img src="cube.png">
-			(CSS) Cube
-		</a>
-		<a href="psxdoom.html" class="demo thin green border">
-			<img src="psxdoom.png">
-			(Excel) DOOM PSX Fire
-		</a>
-		<a href="boing.html" class="demo thin green border">
-			<img src="boing.png">
-			(CSS) Boing!
-		</a>
-		<a href="dots.html" class="demo thin green border">
-			<img src="dots.png">
-			(CSS) Dots
-		</a>
-	</div>
-</div>
+<a href="catbus.html" class="thin green border">
+	<img src="catbus.png">
+	(CSS) Catbus
+</a>
+<a href="cube.html" class="item demo thin green border">
+	<img src="cube.png">
+	(CSS) Cube
+</a>
+<a href="psxdoom.html" class="item demo thin green border">
+	<img src="psxdoom.png">
+	(Excel) DOOM PSX Fire
+</a>
+<a href="boing.html" class="item demo thin green border">
+	<img src="boing.png">
+	(CSS) Boing!
+</a>
+<a href="dots.html" class="item demo thin green border">
+	<img src="dots.png">
+	(CSS) Dots
+</a>
