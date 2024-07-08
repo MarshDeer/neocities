@@ -110,6 +110,7 @@ article:target {
 @media screen and (max-width: 812px) {
 	main {
 		height: fit-content !important;
+		min-height: unset !important;
 	}
 
 	main > .window {

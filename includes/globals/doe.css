@@ -242,7 +242,8 @@ p:last-child {
 	main {
 		display: flex;
 		flex-direction: column;
-		height: 100%;
+		min-height: 100%;
+		height: fit-content;
 		gap: 9px;
 		align-items: center;
 		justify-content: space-around;
