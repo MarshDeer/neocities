@@ -33,6 +33,7 @@ body {
 .window {
 	position: absolute;
 	background: var(--bg0);
+	box-shadow: 6px 6px 0 3px #1d202188;
 }
 
 .border {
