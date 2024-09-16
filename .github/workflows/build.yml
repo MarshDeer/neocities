@@ -2,10 +2,10 @@ name: Build site
 on:
   push:
     branches:
-      - main
+      - deer
   pull_request:
     branches:
-      - main
+      - deer
 
 jobs:
   build:
