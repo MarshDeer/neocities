@@ -1,0 +1,321 @@
+/* Theming */
+	body {
+		width: 100vw;
+		height: 100vh;
+		background: url(img/bg.png);
+		font-family: monospace;
+		font-size: 24px;
+		overflow: hidden;
+	}
+
+	.overlay {
+		position: fixed;
+		bottom: 12px;
+		left: 1ch;
+		color: #aaa;
+		width: calc(100% - 2ch);
+		height: calc(100% - 12px);
+		border-radius: 5% / 90%;
+		background:
+			repeating-linear-gradient(
+				transparent 0px 2px,
+				#fff1 2px 4px
+			);
+		box-shadow:
+			-25vw 0 0 black,
+			25vw 0 0 black,
+			inset 60px 0 120px #000a,
+			inset -60px 0 120px #000a;
+		pointer-events: none;
+		margin: 0;
+		z-index: 1;
+	}
+
+	footer {
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 12px;
+		color: #fff;
+		z-index: 1;
+		width: 100%;
+		background: black;
+		text-align: center;
+	}
+
+	.window {
+		border-image-slice: 86 50 22 202;
+		border-image-width: 86px 50px 22px 202px;
+		border-image-outset: 86px 20px 20px 20px;
+		border-image-source: url(img/border.png);
+		filter: drop-shadow(10px 10px 0px #000a);
+		width: fit-content;
+	}
+
+	.window .title {
+		position: absolute;
+		top: -72px;
+		left: 6px;
+		color: #ff0;
+		font-size: 24px;
+		text-transform: uppercase;
+		font-weight: normal;
+		display: block;
+		width: 140px;
+		height: 24px;
+		margin: 0;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.window .closebutton {
+		position: absolute;
+		right: -20px;
+		top: -86px;
+		width: 38px;
+		height: 52px;
+		background: url(img/close.png);
+	}
+
+	.window .closebutton:hover {
+		background: url(img/closehover.png);
+	}
+
+	button {
+		background: none;
+		border: none;
+	}
+
+	button:hover {
+		cursor: pointer;
+	}
+
+/* Window Positions */
+	.window {
+		position: absolute;
+	}
+
+	nav {
+		position: relative !important; /* Why in fuck is this necessary? */
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#preview {
+		top: calc(86px + 10%);
+		left: 10%;
+	}
+
+	#output {
+		bottom: 10%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	#layout {
+		top: calc(86px + 25%);
+		right: 10%;
+		transform: translateY(-50%);
+	}
+
+/* Navigation */
+	nav {
+		padding: 4px;
+		background: #fff;
+		display: grid;
+		grid-template-rows: repeat(7, 1fr);
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-flow: column;
+		gap: 4px;
+		width: fit-content;
+	}
+
+	nav button {
+		display: flex;
+		gap: 4px;
+		align-items: center;
+		font-size: 24px;
+	}
+
+	nav button::before {
+		content: "";
+		width: 46px;
+		height: 46px;
+		background: url(img/icon.png);
+	}
+
+	nav button span {
+		padding: 0 4px;
+	}
+
+	nav button:where(:hover, :focus) span {
+		background: #000;
+		color: #fff;
+	}
+
+/* 3D Chip */
+	.visualizer {
+		background: black;
+		width: 210px;
+		height: 210px;
+		perspective: 500px;
+		perspective-origin: center;
+	}
+
+	.visualizer div {
+		perspective: inherit;
+		transform-style: preserve-3d;
+		transform-origin: 50% 50%;
+		top: 50%;
+		left: 50%;
+		position: absolute;
+	}
+
+	.chip {
+		--height: 100px;
+		--width: 120px;
+		--thickness: 30px;
+		--rx: 0;
+		--ry: 0;
+		--tx: 0;
+		--ty: 0;
+		--tz: 0;
+		position: relative;
+		animation: rotate 7s linear infinite;
+		width: var(--width);
+		height: var(--height);
+	}
+
+	@keyframes rotate {
+		from {
+			transform:
+				translate(-50%, -50%)
+				rotateY(0deg)
+				rotateX(-20deg)
+			;
+		}
+		to {
+			transform:
+				translate(-50%, -50%)
+				rotateY(360deg)
+				rotateX(-20deg)
+			;
+		}
+	}
+
+	.face.top,
+	.face.bottom {
+		width: var(--width);
+		height: var(--height);
+	}
+		.face.top {--tz: -1;}
+		.face.bottom {--tz: 1;}
+
+	.face.north,
+	.face.south {
+		--rx: 1;
+		width: var(--width);
+		height: var(--thickness);
+	}
+		.face.south {--ty: 1;}
+		.face.north {--ty: -1;}
+
+	.face.east,
+	.face.west {
+		--ry: 1;
+		width: var(--thickness);
+		height: var(--height);
+	}
+		.face.east {--tx: -1;}
+		.face.west {--tx: 1;}
+
+	.chip .face {
+		top: 50%;
+		left: 50%;
+		transform:
+			translate(-50%, -50%)
+			translate3d(
+				calc(var(--tx) * var(--width) / 2),
+				calc(var(--ty) * var(--height) / 2),
+				calc(var(--tz) * var(--thickness) / 2)
+			)
+			rotate3d(
+				var(--rx),
+				var(--ry),
+				0,
+				90deg
+			)
+		;
+	}
+	.chip .face.top {background: #555;}
+	.chip .face.north {background: #777;}
+	.chip .face.east {background: #444;}
+	.chip .face.south {background: #333;}
+	.chip .face.west {background: #666;}
+	.chip .face.bottom {background: #222;}
+
+	.chip .legs.top {
+		width: calc(var(--width) * 1.25);
+		height: calc(var(--height) * 0.9);
+		transform:
+			translate(-50%, -50%)
+		;
+	}
+
+	.chip .legs.west,
+	.chip .legs.east {
+		width: var(--thickness);
+		height: calc(var(--height) * 0.9);
+		transform:
+			translate(-50%, -50%)
+			translateX(calc((var(--width) * 1.25) / 2 * var(--t)))
+			translateZ(calc(var(--thickness) / 2))
+			rotateY(90deg)
+		;
+	}
+		.chip .legs.west {--t: 1}
+		.chip .legs.east {--t: -1}
+
+	.chip .legs.top > div {background: #da2;}
+	.chip .legs.west > div {background: #fc4;}
+	.chip .legs.east > div {background: #b80;}
+
+	.chip .legs :where(.one, .four) {--displacement: 0;}
+	.chip .legs :where(.two, .five) {--displacement: 1;}
+	.chip .legs :where(.three, .six) {--displacement: 2;}
+
+	.chip .legs > div {
+		height: calc((var(--height) * 0.9) / 5);
+		background: red;
+		top: calc(var(--displacement) * (var(--height) * 0.9 / 5) * 2);
+	}
+
+	.chip .legs.top > div {
+		width: calc(var(--width) * 1.25 / 2);
+	}
+
+	.chip .legs.top > :where(.four, .five, .six) {
+		left: 0;
+	}
+
+	.chip .legs:where(.east, .west) > div {
+		width: var(--thickness);
+		left: 0;
+	}
+
+/* Output */
+	#output {
+		background: red;
+		width: 100ch;
+		height: 8em;
+	}
+
+/* Layout */
+	#layout,
+	#layout img{
+		width: 453px;
+		height: 264px;
+		background: black;
+	}

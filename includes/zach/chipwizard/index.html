@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:image" content=TODO>
+		<link rel="apple-touch-icon" sizes="180x180" href="/globals/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/globals/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/globals/favicon/favicon-16x16.png">
+		<link rel="icon" type="image/x-icon" href="/globals/favicon/favicon.ico">
+		<link href="style.css" rel="stylesheet" type="text/css" media="all">
+		<title>LensDeer's Hideout | Zachtronics Solutions Archive | ChipWizard Professional</title>
+	</head>
+
+	<script>
+		function create(level) {
+			console.log(level);
+		}
+	</script>
+
+	<body>
+		<div class="overlay"></div>
+		<nav class="window">
+			<h1 class="title"> Designs </h1>
+			<a href="/home/index.html" class="closebutton" aria-label="Go back home"></a>
+			<button onclick=create(1)><span>Signal Crossover</span></button>
+			<button onclick=create(2)><span>AND Gate</span></button>
+			<button onclick=create(3)><span>OR Gate</span></button>
+			<button onclick=create(4)><span>NOT Gate</span></button>
+			<button onclick=create(5)><span>Power-on Reset</span></button>
+			<button onclick=create(6)><span>Digital Signal Mixer</span></button>
+			<button onclick=create(7)><span>Interrupt Controller</span></button>
+			<button onclick=create(8)><span>Ignition Sequencer</span></button>
+			<button onclick=create(9)><span>Equality Tester</span></button>
+			<button onclick=create(10)><span>Dual Oscillator</span></button>
+			<button onclick=create(11)><span>Safety Interlock</span></button>
+			<button onclick=create(12)><span>PWM Solenoid Driver</span></button>
+			<button onclick=create(13)><span>Electronic Lock</span></button>
+			<button onclick=create(14)><span>Motor Controller</span></button>
+			<button onclick=create(15)><span>Programmable Delay</span></button>
+			<button onclick=create(16)><span>Synchrony Detector</span></button>
+			<button onclick=create(17)><span>AND-OR Combo Gate</span></button>
+			<button onclick=create(18)><span>Switch Debouncer</span></button>
+			<button onclick=create(19)><span>Stepper Motor Driver</span></button>
+			<button onclick=create(20)><span>Serial Number ROM</span></button>
+			<button onclick=create(21)><span>Pulse Echo Detector</span></button>
+		</nav>
+
+		<section class="window" id="preview">
+			<h2 class="title"> 3D Preview </h2>
+			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute('hidden', true)"></button>
+			<div class="visualizer">
+				<div class="chip">
+					<div class="face top"></div>
+					<div class="legs top">
+						<div class="one" style="--displacement: 0;"></div>
+						<div class="two" style="--displacement: 1;"></div>
+						<div class="three" style="--displacement: 2;"></div>
+						<div class="four" style="--displacement: 0;"></div>
+						<div class="five" style="--displacement: 1;"></div>
+						<div class="six" style="--displacement: 2;"></div>
+					</div>
+					<div class="face bottom"></div>
+					<div class="face north"></div>
+					<div class="face south"></div>
+					<div class="face east"></div>
+					<div class="face west"></div>
+					<div class="legs west">
+						<div class="one" style="--displacement: 0;"></div>
+						<div class="two" style="--displacement: 1;"></div>
+						<div class="three" style="--displacement: 2;"></div>
+					</div>
+					<div class="legs east">
+						<div class="four" style="--displacement: 0;"></div>
+						<div class="five" style="--displacement: 1;"></div>
+						<div class="six" style="--displacement: 2;"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="window" id="output">
+			<h2 class="title"> Output </h2>
+			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute('hidden', true)"></button>
+		</section>
+		
+		<section class="window" id="layout">
+			<h2 class="title"> Layout </h2>
+			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute('hidden', true)"></button>
+			<img src="https://raw.githubusercontent.com/MarshDeer/zachtronics-solutions/root/Last%20Call%20BBS/ChipWizard/AND%20Gate.png">
+		</section>
+
+		<footer>
+			<span> All assets © Zachtronics </span>
+		</footer>
+	</body>
+</html>
