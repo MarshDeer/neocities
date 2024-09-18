@@ -98,7 +98,7 @@ Got an old CRT TV, broken laptop, broken computer, or old computer stuff in gene
 - [$60](https://ploopy.co/shop/adept-trackball-full-kit-preorder/)  | Ploopy Adept Trackball Kit
 - $70  | FiiO BTR3 Bluetooth DAC
 - $80  | IBM Model M Keyboard
-- [$130](https://ploopy.co/shop/headphones-full-kit-preorder/) | Ploopy Headphones Kit
+- ~~[$130](https://ploopy.co/shop/headphones-full-kit-preorder/) | Ploopy Headphones Kit~~ (Got them myself)
 - $300 | Sony WH-XM3, WH-XM4 or WH-XM5 Headphones
 - $350 | Sennheiser HD-600 Open Back Headphones
 - $400 | Steam Deck

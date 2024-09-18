@@ -98,7 +98,7 @@ Avísame si tienes una tele de tubo, notebook/computador roto o cosas de computa
 - [$60](https://ploopy.co/shop/adept-trackball-full-kit-preorder/)  | Kit de trackball Ploopy Adept
 - $70  | DAC Bluetooth FiiO BTR3
 - $80  | Teclado IBM Model M
-- [$130](https://ploopy.co/shop/headphones-full-kit-preorder/) | Kit de audífonos Ploopy
+- ~~[$130](https://ploopy.co/shop/headphones-full-kit-preorder/) | Kit de audífonos Ploopy~~ (Los compré yo)
 - $300 | Audífonos Sony WH-XM3, WH-XM4 o WH-XM5
 - $350 | Audífonos abiertos Sennheiser HD-600
 - $400 | Steam Deck
