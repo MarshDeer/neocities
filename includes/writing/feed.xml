@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+	<channel>
+		<title>LensDeer's Hideout</title>
+		<link>https://lensdeer.neocities.org</link>
+		<description> RSS feed for LensDeer's blog. </description>
+
+		<item>
+			<title>[2024 - 10 - 09] Oops?</title>
+			<link>https://lensdeer.neocities.org</link>
+			<description>
+				I quite literally just realized I never initialized
+				this RSS feed. I just kinda thought an earlier attempt at
+				automating it had succeeded and never thought much of it. Jesus
+				christ. Have this init message I guess lol. More to come.
+			</description>
+		</item>
+	</channel>
+</rss>

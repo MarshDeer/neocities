@@ -1,6 +1,6 @@
 # Lensdeer's Hideout
 
-Git repo for my personal website.
+Git repo for my personal website.  
 This website uses [AutoSite-Legacy](https://github.com/dotcomboom/AutoSite-Legacy).
 
 ## File Structure
