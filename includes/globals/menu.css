@@ -1,7 +1,7 @@
 .menu {
 	width: fit-content !important;
 	inset: 50% 0 0 50%;
-	transform: translate(-50%, -50%) !important;
+	transform: translate(-50%, -50%);
 	height: fit-content;
 }
 
