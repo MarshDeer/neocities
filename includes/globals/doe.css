@@ -113,6 +113,7 @@ main {
 	.titlebar:hover {
 		cursor: grab;
 	}
+
 	.titlebar:active {
 		cursor: move;
 	}
