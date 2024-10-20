@@ -196,6 +196,18 @@ p:last-child {
 	border-radius: 2px;
 }
 
+button.close {
+	position: absolute;
+	inset: 0 0 auto auto;
+	border: none;
+	background: transparent;
+	width: 16px;
+	height: 16px;
+}
+	button.close:hover {
+		cursor: pointer;
+	}
+
 #clock {
 	position: fixed;
 	inset: auto auto -10px 10px;
@@ -211,6 +223,7 @@ p:last-child {
 	position: absolute;
 	inset: -200px auto auto 10px;
 	transition: .2s top;
+	background: var(--bg0);
 }
 
 	.skipnav:where(:focus) {
@@ -251,7 +264,7 @@ p:last-child {
 		padding-bottom: 3px;
 	}
 
-	.window:not(.DOE, .skipnav, article) {
+	.window:not(.DOE, article) {
 		position: relative;
 		inset: unset !important;
 		max-width: calc(100% - 12px);

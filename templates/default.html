@@ -22,12 +22,12 @@
 			[pagetype!=404] <link href="[#root#]globals/doe.css" rel="stylesheet" type="text/css" media="all"> [/pagetype!=]
 	</head>
 
-	<body>
-		<a class="skipnav window red thin border" href="#main">
+	<body onload="initWM()">
+		<a class="skipnav red thin border" href="#main">
 			Skip to content
 		</a>
 
-		<div class="DOE window pink border">
+		<div class="DOE window pink border"">
 			<span class="titlebar">BLEAT | DOE - Digital Organization Environment</span>
 			<div class="content">
 				<nav>
@@ -86,5 +86,6 @@
 		</div>
 
 		<script src="[pagetype!=404][#root#][/pagetype!=]globals/clock.js"></script>
+		<script src="[pagetype!=404][#root#][/pagetype!=]globals/doewm.js"></script>
 	</body>
 </html>
