@@ -20,7 +20,7 @@
 .writingcontainer {
 	width: 70ch;
 	height: calc(600px - 53px);
-	inset: 0 auto auto 50%;
+	inset: 12px auto auto 50%;
 	transform: translateX(-50%);
 }
 
