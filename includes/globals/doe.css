@@ -110,6 +110,12 @@ main {
 	height: 1em;
 	overflow: hidden;
 }
+	.titlebar:hover {
+		cursor: grab;
+	}
+	.titlebar:active {
+		cursor: move;
+	}
 
 .button {
 	width: fit-content;
@@ -196,15 +202,15 @@ p:last-child {
 	border-radius: 2px;
 }
 
-button.close {
+button.titlebarbutton {
 	position: absolute;
-	inset: 0 0 auto auto;
+	top: 0;
 	border: none;
 	background: transparent;
 	width: 16px;
 	height: 16px;
 }
-	button.close:hover {
+	button.titlebarbutton:hover {
 		cursor: pointer;
 	}
 

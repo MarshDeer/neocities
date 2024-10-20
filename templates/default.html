@@ -22,7 +22,7 @@
 			[pagetype!=404] <link href="[#root#]globals/doe.css" rel="stylesheet" type="text/css" media="all"> [/pagetype!=]
 	</head>
 
-	<body onload="initWM()">
+	<body onload="initWM(); updateClock(); setInterval('updateClock()', 15 * 1000)">
 		<a class="skipnav red thin border" href="#main">
 			Skip to content
 		</a>
@@ -85,7 +85,6 @@
 			</div>
 		</div>
 
-		<script src="[pagetype!=404][#root#][/pagetype!=]globals/clock.js"></script>
 		<script src="[pagetype!=404][#root#][/pagetype!=]globals/doe.js"></script>
 	</body>
 </html>
