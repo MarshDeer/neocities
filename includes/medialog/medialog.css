@@ -28,14 +28,19 @@ h2 {
 	height: 100px;
 }
 
+.container {
+	height: 100%;
+	overflow-y: auto;
+}
+
 :where(.book, .movieshow, .game) img {
 	width: 100px;
 	height: 150px;
 }
 
 article {
-	inset: calc(50% + 12px) auto auto 50% !important;
-	transform: translate(-50%, -50%) !important;
+	inset: calc(50% + 12px) auto auto 50%;
+	transform: translate(-50%, -50%);
 	width: 80ch;
 	max-height: 500px;
 }
@@ -97,7 +102,7 @@ article:not(:target) {
 	display: none;
 }
 
-article:target {
+article:target:not([hidden=true]) {
 	display: unset;
 }
 
@@ -125,7 +130,7 @@ article:target {
 
 	article.window {
 		max-width: calc(100% - 18px) !important;
-		height: 100%;
+		min-height: fit-content;
 		max-height: calc(100% - 54px) !important;
 		position: fixed !important;
 		margin-top: 6px;
