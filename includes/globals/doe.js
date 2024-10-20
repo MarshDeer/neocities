@@ -1,3 +1,4 @@
+// Set up window actions
 function initWM() {
 	// Grab windows and their container
 	const windowsArray = document.querySelectorAll('.DOE .window');
@@ -42,4 +43,12 @@ function initWM() {
 			document.addEventListener('mouseup', dragEnd);
 		});
 	}
+}
+
+// Run clock
+function updateClock() {
+	let time = new Date();
+	let hours = String(time.getHours()).padStart(2,'0');
+	let minutes = String(time.getMinutes()).padStart(2,'0');
+	document.getElementById('clock').innerText = `${hours}:${minutes}`
 }
