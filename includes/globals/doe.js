@@ -16,7 +16,7 @@ function initWM() {
 			resetButton.classList.add('titlebarbutton');
 			resetButton.style.left = 0;
 			resetButton.setAttribute('aria-hidden', true);
-			resetButton.onclick = function(){this.parentNode.style.inset = ''};
+			resetButton.onclick = function(){this.parentNode.style.cssText = ''};
 
 		// Append buttons to window
 		window.append(closeButton, resetButton);
@@ -30,7 +30,8 @@ function initWM() {
 			let offsetY = e.clientY - windowY;
 			document.documentElement.style['user-select'] = 'none'; //TODO: less messy solution
 			const dragMove = (e) => {
-				window.style.inset = `${e.clientY - offsetY}px auto auto ${e.clientX - offsetX}px`;
+				window.style.inset = `${e.clientY - offsetY}px auto auto ${e.clientX - offsetX}px`
+				window.style.transform = 'none';
 			};
 			const dragEnd = () => {
 				document.removeEventListener('mousemove', dragMove);

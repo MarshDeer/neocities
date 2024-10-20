@@ -110,6 +110,12 @@ main {
 	height: 1em;
 	overflow: hidden;
 }
+	.titlebar:hover {
+		cursor: grab;
+	}
+	.titlebar:active {
+		cursor: move;
+	}
 
 .button {
 	width: fit-content;
