@@ -1,0 +1,153 @@
+<!-- attrib title: subpixels.html -->
+<!-- attrib pagetype: demo -->
+<!-- attrib windowtitle: subpixelfont.png -->
+
+<style>
+	.demo {
+		display: flex;
+		align-content: center;
+		gap: 9px;
+		height: calc(100% - 6px);
+		width: calc(100% - 6px);
+		padding: 3px;
+		image-rendering: pixelated;
+	}
+	
+	#leftcolumn {
+		display: flex;
+		flex-direction: column;
+		gap: 9px;
+	}
+	
+	#rightcolumn {
+		display: grid;
+		grid-template-areas:
+			"normaldemo png"
+			"process process"
+			"photo photo";
+		grid-template-rows: 62px auto 1fr;
+		grid-template-columns: auto 1fr;
+		gap: 9px;
+		width: 100%;
+		height: 100%;
+	}
+
+	.interactive,
+	#photo,
+	#png,
+	#process {
+		background: #000;
+	}
+
+	#zoomeddemo {
+		grid-area: zoomeddemo;
+		--width: 140px;
+		--height: 224px;
+	}
+	
+	#normaldemo {
+		grid-area: normaldemo;
+		--width: 35px;
+		--height: 56px;
+	}
+
+	.interactive {
+		width: calc(var(--width) * 3);
+		height: var(--height);
+		position: relative;
+	}
+
+	.interactive img {
+		position: absolute;
+		mix-blend-mode: screen;
+		width: var(--width);
+		display: block;
+		transition: .3s ease-in-out all;
+	}
+
+	/* extra 3px so they fit the container's padding better */
+	.interactive img.r {left: calc(3px);}
+	.interactive img.b {left: calc(2 * var(--width) + 3px);}
+	.interactive img.g,
+	.demo:has(.interactive:hover) .interactive>img {left: calc(var(--width) + 3px)}
+
+	#png {
+		grid-area: png;
+		height: 56px;
+		text-align: center;
+	}
+
+	#photo {
+		grid-area: photo;
+		width: 100%;
+		height: calc(100%);
+		padding: 0;
+		align-content: center;
+	}
+
+	#photo img {
+		width: 100%;
+		height: auto;
+	}
+
+	#text {
+		grid-area: text;
+		width: calc(140px * 3);
+		flex-grow: 1;
+	}
+
+	#text h3 {
+		margin: 0;
+		text-align: center;
+	}
+
+	#process {
+		grid-area: process;
+		width: calc(100% - 6px);
+		padding: 3px;
+	}
+
+	#process img {
+		width: 192px;
+	}
+
+</style>
+
+<div class="demo">
+	<div id="leftcolumn">
+		<section id="zoomeddemo" class="interactive thin red border">
+			<img src="assets/subpixel/r.png" class="r">
+			<img src="assets/subpixel/g.png" class="g">
+			<img src="assets/subpixel/b.png" class="b">
+		</section>
+		<section id="text" class="thin gray border" style="background: var(--bg0h);">
+			<h3> <span style="color: var(--red)">R</span><span style="color: var(--green)">G</span><span style="color: var(--blue)">B</span> Subpixel font </h3>
+			<p>
+				Despite each character in this "font" being a single pixel wide, it uses your screen's <span style="color: var(--red)">R</span><span style="color: var(--green)">G</span><span style="color: var(--blue)">B</span> subpixels to distinguishably render all 95 ASCII printing characters.
+			</p>
+			<p>
+				Each character was drawn as a 3x5 bitmap which then had each row interpreted as a 3 bit <span style="color: var(--red)">R</span><span style="color: var(--green)">G</span><span style="color: var(--blue)">B</span> value in order to render the character in a virtual 3x5 grid of subpixels.
+			</p>
+			<p>
+				Hover the separated <span style="color: var(--red)">R</span><span style="color: var(--green)">G</span><span style="color: var(--blue)">B</span> channels to see how they form the font, and click the photo to see it on a bigger size.
+			</p>
+			<p>
+				The demo might not render correctly on high ppi displays.
+			</p>
+		</section>
+	</div>
+	<div id="rightcolumn">
+		<section id="normaldemo" class="interactive thin green border">
+			<img src="assets/subpixel/r.png" class="r">
+			<img src="assets/subpixel/g.png" class="g">
+			<img src="assets/subpixel/b.png" class="b">
+		</section>
+		<a id="png" class="thin blue border" href="assets/subpixel/font.png">
+			<img src="assets/subpixel/font.png">
+		</a>
+		<img id="process" class="thin green border" src="assets/subpixel/process.png">
+		<a id="photo" class="thin red border" href="assets/subpixel/photo.jpg">
+			<img src="assets/subpixel/photo.jpg">
+		</a>
+	</div>
+</div>
