@@ -44,7 +44,7 @@
 		--width: 140px;
 		--height: 224px;
 	}
-	
+
 	#normaldemo {
 		grid-area: normaldemo;
 		--width: 35px;
@@ -109,6 +109,28 @@
 
 	#process img {
 		width: 192px;
+	}
+
+	@media screen and (max-width: 812px) {
+		.demo {
+			flex-direction: column;
+			height: fit-content;
+			width: calc(100% - 6px);
+		}
+
+		.democontainer {
+			height: fit-content;
+		}
+
+		#zoomeddemo {
+			--width: calc((100% - 6px) / 3);
+			aspect-ratio: calc(3 * 140) / 224;
+			--height: unset;
+		}
+
+		#text {
+			width: calc(100% - 6px);
+		}
 	}
 
 </style>
