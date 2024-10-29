@@ -12,43 +12,39 @@
 		<title>LensDeer's Hideout | Zachtronics Solutions Archive | ChipWizard Professional</title>
 	</head>
 
-	<script>
-		function create(level) {
-			console.log(level);
-		}
-	</script>
-
-	<body>
+	<body onload="init()">
 		<div class="overlay"></div>
 		<nav class="window">
 			<h1 class="title"> Designs </h1>
+			<div class="draghandle"></div>
 			<a href="/home/index.html" class="closebutton" aria-label="Go back home"></a>
-			<button onclick=create(1)><span>Signal Crossover</span></button>
-			<button onclick=create(2)><span>AND Gate</span></button>
-			<button onclick=create(3)><span>OR Gate</span></button>
-			<button onclick=create(4)><span>NOT Gate</span></button>
-			<button onclick=create(5)><span>Power-on Reset</span></button>
-			<button onclick=create(6)><span>Digital Signal Mixer</span></button>
-			<button onclick=create(7)><span>Interrupt Controller</span></button>
-			<button onclick=create(8)><span>Ignition Sequencer</span></button>
-			<button onclick=create(9)><span>Equality Tester</span></button>
-			<button onclick=create(10)><span>Dual Oscillator</span></button>
-			<button onclick=create(11)><span>Safety Interlock</span></button>
-			<button onclick=create(12)><span>PWM Solenoid Driver</span></button>
-			<button onclick=create(13)><span>Electronic Lock</span></button>
-			<button onclick=create(14)><span>Motor Controller</span></button>
-			<button onclick=create(15)><span>Programmable Delay</span></button>
-			<button onclick=create(16)><span>Synchrony Detector</span></button>
-			<button onclick=create(17)><span>AND-OR Combo Gate</span></button>
-			<button onclick=create(18)><span>Switch Debouncer</span></button>
-			<button onclick=create(19)><span>Stepper Motor Driver</span></button>
-			<button onclick=create(20)><span>Serial Number ROM</span></button>
-			<button onclick=create(21)><span>Pulse Echo Detector</span></button>
+			<button onclick=create(0)><span>Signal Crossover</span></button>
+			<button onclick=create(1)><span>AND Gate</span></button>
+			<button onclick=create(2)><span>OR Gate</span></button>
+			<button onclick=create(3)><span>NOT Gate</span></button>
+			<button onclick=create(4)><span>Power-on Reset</span></button>
+			<button onclick=create(5)><span>Digital Signal Mixer</span></button>
+			<button onclick=create(6)><span>Interrupt Controller</span></button>
+			<button onclick=create(7)><span>Ignition Sequencer</span></button>
+			<button onclick=create(8)><span>Equality Tester</span></button>
+			<button onclick=create(9)><span>Dual Oscillator</span></button>
+			<button onclick=create(10)><span>Safety Interlock</span></button>
+			<button onclick=create(11)><span>PWM Solenoid Driver</span></button>
+			<button onclick=create(12)><span>Electronic Lock</span></button>
+			<button onclick=create(13)><span>Motor Controller</span></button>
+			<button onclick=create(14)><span>Programmable Delay</span></button>
+			<button onclick=create(15)><span>Synchrony Detector</span></button>
+			<button onclick=create(16)><span>AND-OR Combo Gate</span></button>
+			<button onclick=create(17)><span>Switch Debouncer</span></button>
+			<button onclick=create(18)><span>Stepper Motor Driver</span></button>
+			<button onclick=create(19)><span>Serial Number ROM</span></button>
+			<button onclick=create(20)><span>Pulse Echo Detector</span></button>
 		</nav>
 
-		<section class="window" id="preview">
+		<section class="window" id="preview" hidden>
 			<h2 class="title"> 3D Preview </h2>
-			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute('hidden', true)"></button>
+			<div class="draghandle"></div>
+			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute ('hidden', true); this.parentNode.style.cssText = '';"></button>
 			<div class="visualizer">
 				<div class="chip">
 					<div class="face top"></div>
@@ -79,19 +75,23 @@
 			</div>
 		</section>
 
-		<section class="window" id="output">
+		<section class="window" id="output" hidden>
 			<h2 class="title"> Output </h2>
-			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute('hidden', true)"></button>
+			<div class="draghandle"></div>
+			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute ('hidden', true); this.parentNode.style.cssText = '';"></button>
 		</section>
-		
-		<section class="window" id="layout">
+
+		<section class="window" id="layout" hidden>
 			<h2 class="title"> Layout </h2>
-			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute('hidden', true)"></button>
-			<img src="https://raw.githubusercontent.com/MarshDeer/zachtronics-solutions/root/Last%20Call%20BBS/ChipWizard/AND%20Gate.png">
+			<div class="draghandle"></div>
+			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute ('hidden', true); this.parentNode.style.cssText = '';"></button>
+			<img src="">
 		</section>
 
 		<footer>
 			<span> All assets © Zachtronics </span>
 		</footer>
+
+		<script src="script.js"></script>
 	</body>
 </html>
