@@ -40,12 +40,12 @@ function create(target) {
 	const names = ['one', 'two', 'three', 'four', 'five', 'six'];
 	console.log(levelData[target].title);
 	// chip preview animation
-	document.getElementById('preview').removeAttribute('hidden')
-	
+	document.getElementById('preview').removeAttribute('hidden');
+
 	// layout src
-	document.querySelector('#layout img').src = `https://raw.githubusercontent.com/MarshDeer/zachtronics-solutions/root/Last%20Call%20BBS/ChipWizard/${encodeURI(levelData[target].title)}.png`;
 	document.getElementById('layout').removeAttribute('hidden')
-	
+	document.querySelector('#layout img').src = `https://raw.githubusercontent.com/MarshDeer/zachtronics-solutions/root/Last%20Call%20BBS/ChipWizard/${encodeURI(levelData[target].title)}.png`;
+
 	// output graph
 	document.getElementById('output').removeAttribute('hidden')
 	const outputGrid = document.getElementById('output');
