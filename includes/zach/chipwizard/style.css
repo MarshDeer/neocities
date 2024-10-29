@@ -202,6 +202,10 @@
 		width: var(--width);
 		height: var(--height);
 	}
+	
+	.visualizer:hover .chip {
+		animation-play-state: paused;
+	}
 
 	@keyframes rotate {
 		from {
@@ -418,5 +422,15 @@
 	#layout img{
 		width: 453px;
 		height: 264px;
-		background: black;
+		background: #000;
+	}
+
+/* Noscript */
+	#noscript {
+		width: 40ch;
+		background: #fff;
+		position: absolute;
+		inset: 50% auto auto 50%;
+		transform: translate(-50%, -50%);
+		z-index: 2;
 	}
