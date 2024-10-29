@@ -11,9 +11,9 @@
 	.overlay {
 		position: fixed;
 		bottom: 12px;
-		left: 1ch;
+		left: 0.5ch;
 		color: #aaa;
-		width: calc(100% - 2ch);
+		width: calc(100% - 1ch);
 		height: calc(100% - 12px);
 		border-radius: 5% / 90%;
 		background:
@@ -89,6 +89,21 @@
 
 	button:hover {
 		cursor: pointer;
+	}
+
+	.window .draghandle {
+		position: absolute;
+		width: 100%;
+		height: 50px;
+		top: -86px;
+	}
+
+	.window .draghandle:hover {
+		cursor: grab;
+	}
+
+	.window .draghandle:active {
+		cursor: move;
 	}
 
 /* Window Positions */
@@ -307,9 +322,95 @@
 
 /* Output */
 	#output {
-		background: red;
-		width: 100ch;
-		height: 8em;
+		background: black;
+		display: grid;
+		grid-template-rows: repeat(6, 20px);
+		height: calc(6 * 20px + 1px);
+	}
+	
+	#output[hidden] {
+		display: none; /* This is silly */
+	}
+
+	#output .row {
+		display: grid;
+		grid-template-columns: 5.5ch repeat(59, 10px) 13px;
+	}
+	
+	#output .row:not(.one) {
+		border-top: 1px solid #514e51;
+	}
+
+	#output .row .name {
+		background: #a4aaaf;
+		color: #c2cece;
+		font-size: calc(1em - 10px);
+		text-shadow: 1px 1px #474f5b;
+		margin-right: 3px;
+		box-shadow:
+			inset -1px 0 #474f5b,
+			inset 0 1px #d3e7ef,
+			3px 1px #7c7f85,
+			3px 0 #a4aaaf;
+	}
+
+	#output .row .name span {
+		display: block;
+		background: #7c7f85;
+		width: 6ch;
+		height: 14px;
+		line-height: 1;
+		padding: 0 0.5ch;
+		margin: 3px 0.5ch;
+		box-shadow:
+			inset 0 1px #474f5b,
+			inset 1px 0 #474f5b,
+			inset -1px 0 #474f5b,
+			inset 0 -1px #c2cece;
+	}
+
+	#output .row .tick {
+		--change: 0;
+		width: 100%;
+		margin: 3px 0;
+		height: 14px;
+		background-image: 
+			url(img/outputsprites.png),
+			linear-gradient(90deg, transparent 0px 8px, black 8px 9px, transparent 9px 10px),
+			repeating-linear-gradient(#222 1px, transparent 1px 2px),
+			linear-gradient(-45deg, #222 25%, transparent 25%),
+			linear-gradient(45deg, transparent 75%, #222 75%),
+			linear-gradient(-45deg, transparent 75%, #222 75%);
+		background-size:
+			auto,
+			10px 14px,
+			2px 2px,
+			2px 2px,
+			2px 2px,
+			2px 2px;
+		background-position:
+			calc(var(--side) * 10px) calc(var(--change) * 14px),
+			0 0,
+			0 0,
+			0 1px,
+			1px -1px,
+			-1px 0;
+	}
+	
+	#output .row .tick[value="0"] {--side: 1;}
+	#output .row .tick[value="1"] {--side: 0;}
+	#output .row .tick[value="0"]:has(+ .tick[value="1"]),
+	#output .row .tick[value="1"]:has(+ .tick[value="0"]) {--change: 1}
+
+	#output .row .end {
+		background: #a4aaaf;
+		border-top: 1px solid #d3e7ef;
+		margin-left: 4px;
+		box-shadow:
+			-1px 0 #494f5a,
+			-4px 1px #697177,
+			-4px 0 #a4aaaf,
+			-5px 0 #000;
 	}
 
 /* Layout */
