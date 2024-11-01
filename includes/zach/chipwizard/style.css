@@ -1,0 +1,483 @@
+/* Theming */
+	body {
+		width: 100vw;
+		height: 100vh;
+		background: url(img/bg.png);
+		font-family: monospace;
+		font-size: 24px;
+		overflow: hidden;
+	}
+
+	.overlay {
+		position: fixed;
+		bottom: 12px;
+		left: 0.5ch;
+		color: #aaa;
+		width: calc(100% - 1ch);
+		height: calc(100% - 12px);
+		border-radius: 5% / 90%;
+		background:
+			repeating-linear-gradient(
+				transparent 0px 2px,
+				#fff1 2px 4px
+			);
+		box-shadow:
+			-25vw 0 0 black,
+			25vw 0 0 black,
+			inset 60px 0 120px #000a,
+			inset -60px 0 120px #000a;
+		pointer-events: none;
+		margin: 0;
+		z-index: 1;
+	}
+
+	footer {
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 12px;
+		color: #fff;
+		z-index: 1;
+		width: 100%;
+		background: black;
+		text-align: center;
+	}
+
+	.window {
+		border-image-slice: 86 50 22 202;
+		border-image-width: 86px 50px 22px 202px;
+		border-image-outset: 86px 20px 20px 20px;
+		border-image-source: url(img/border.png);
+		filter: drop-shadow(10px 10px 0px #000a);
+		width: fit-content;
+	}
+
+	.window .title {
+		position: absolute;
+		top: -72px;
+		left: 6px;
+		color: #ff0;
+		font-size: 24px;
+		text-transform: uppercase;
+		font-weight: normal;
+		display: block;
+		width: 140px;
+		height: 24px;
+		margin: 0;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.window .closebutton {
+		position: absolute;
+		right: -20px;
+		top: -86px;
+		width: 38px;
+		height: 52px;
+		background: url(img/close.png);
+	}
+
+	.window .closebutton:hover {
+		background: url(img/closehover.png);
+	}
+
+	button {
+		background: none;
+		border: none;
+	}
+
+	button:hover {
+		cursor: pointer;
+	}
+
+	.window .draghandle {
+		position: absolute;
+		width: 100%;
+		height: 50px;
+		top: -86px;
+	}
+
+	.window .draghandle:hover {
+		cursor: grab;
+	}
+
+	.window .draghandle:active {
+		cursor: move;
+	}
+
+/* Window Positions */
+	.window {
+		position: absolute;
+	}
+
+	nav {
+		position: relative !important; /* Why in fuck is this necessary? */
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#preview {
+		top: calc(86px + 10%);
+		left: 10%;
+	}
+
+	#output {
+		bottom: 10%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	#layout {
+		top: calc(86px + 25%);
+		right: 10%;
+		transform: translateY(-50%);
+	}
+
+/* Navigation */
+	nav {
+		padding: 4px;
+		background: #fff;
+		display: grid;
+		grid-template-rows: repeat(7, 1fr);
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-flow: column;
+		gap: 4px;
+		width: fit-content;
+	}
+
+	nav button {
+		display: flex;
+		gap: 4px;
+		align-items: center;
+		font-size: 24px;
+	}
+
+	nav button::before {
+		content: "";
+		width: 46px;
+		height: 46px;
+		background: url(img/icon.png);
+	}
+
+	nav button span {
+		padding: 0 4px;
+	}
+
+	nav button:where(:hover, :focus) span {
+		background: #000;
+		color: #fff;
+	}
+
+/* 3D Chip */
+	.visualizer {
+		background: black;
+		width: 210px;
+		height: 210px;
+		perspective: 500px;
+		perspective-origin: center;
+	}
+
+	.visualizer div {
+		perspective: inherit;
+		transform-style: preserve-3d;
+		transform-origin: 50% 50%;
+		top: 50%;
+		left: 50%;
+		position: absolute;
+	}
+
+	.chip {
+		--height: 100px;
+		--width: 120px;
+		--thickness: 30px;
+		--rx: 0;
+		--ry: 0;
+		--tx: 0;
+		--ty: 0;
+		--tz: 0;
+		position: relative;
+		animation: rotate 7s linear infinite;
+		width: var(--width);
+		height: var(--height);
+	}
+	
+	.visualizer:hover .chip {
+		animation-play-state: paused;
+	}
+
+	@keyframes rotate {
+		from {
+			transform:
+				translate(-50%, -50%)
+				rotateY(0deg)
+				rotateX(-20deg)
+			;
+		}
+		to {
+			transform:
+				translate(-50%, -50%)
+				rotateY(360deg)
+				rotateX(-20deg)
+			;
+		}
+	}
+
+	.face.top,
+	.face.bottom {
+		width: var(--width);
+		height: var(--height);
+	}
+		.face.top {--tz: -1;}
+		.face.bottom {--tz: 1;}
+
+	.face.north,
+	.face.south {
+		--rx: 1;
+		width: var(--width);
+		height: var(--thickness);
+	}
+		.face.south {--ty: 1;}
+		.face.north {--ty: -1;}
+
+	.face.east,
+	.face.west {
+		--ry: 1;
+		width: var(--thickness);
+		height: var(--height);
+	}
+		.face.east {--tx: -1;}
+		.face.west {--tx: 1;}
+
+	.chip .face {
+		top: 50%;
+		left: 50%;
+		transform:
+			translate(-50%, -50%)
+			translate3d(
+				calc(var(--tx) * var(--width) / 2),
+				calc(var(--ty) * var(--height) / 2),
+				calc(var(--tz) * var(--thickness) / 2)
+			)
+			rotate3d(
+				var(--rx),
+				var(--ry),
+				0,
+				90deg
+			)
+		;
+	}
+	.chip .face.top {background: #555;}
+	.chip .face.north {background: #777;}
+	.chip .face.east {background: #444;}
+	.chip .face.south {background: #333;}
+	.chip .face.west {background: #666;}
+	.chip .face.bottom {background: #222;}
+
+	.chip .legs.top {
+		width: calc(var(--width) * 1.25);
+		height: calc(var(--height) * 0.9);
+		transform:
+			translate(-50%, -50%)
+		;
+	}
+
+	.chip .legs.west,
+	.chip .legs.east {
+		width: var(--thickness);
+		height: calc(var(--height) * 0.9);
+		transform:
+			translate(-50%, -50%)
+			translateX(calc((var(--width) * 1.25) / 2 * var(--t)))
+			translateZ(calc(var(--thickness) / 2))
+			rotateY(90deg)
+		;
+	}
+		.chip .legs.west {--t: 1}
+		.chip .legs.east {--t: -1}
+
+	.chip .legs.top > div {
+		--0: #da2;
+		--1: #ddd;
+	}
+
+	.chip .legs.west > div {
+		--0: #fc4;
+		--1: #fff;
+	}
+
+	.chip .legs.east > div {
+		--0: #b80;
+		--1: #bbb;
+	}
+
+	.chip .legs .one {animation: one;}
+	.chip .legs .two {animation: two;}
+	.chip .legs .three {animation: three;}
+	.chip .legs .four {animation: four;}
+	.chip .legs .five {animation: five;}
+	.chip .legs .six {animation: six;}
+
+	.chip .legs :where(.one, .four) {--displacement: 0;}
+	.chip .legs :where(.two, .five) {--displacement: 1;}
+	.chip .legs :where(.three, .six) {--displacement: 2;}
+
+	.chip .legs > div {
+		height: calc((var(--height) * 0.9) / 5);
+		background: var(--0);
+		animation-timing-function: step-start !important;
+		animation-duration: 6s !important;
+		animation-iteration-count: infinite !important;
+		top: calc(var(--displacement) * (var(--height) * 0.9 / 5) * 2);
+	}
+
+	.chip .legs.top > div {
+		width: calc(var(--width) * 1.25 / 2);
+	}
+
+	.chip .legs.top > :where(.four, .five, .six) {
+		left: 0;
+	}
+
+	.chip .legs:where(.east, .west) > div {
+		width: var(--thickness);
+		left: 0;
+	}
+
+/* Output */
+	#output {
+		background: black;
+		display: grid;
+		grid-template-rows: repeat(6, 20px);
+		height: calc(6 * 20px + 1px);
+	}
+	
+	#output[hidden] {
+		display: none; /* This is silly */
+	}
+
+	#output .row {
+		display: grid;
+		grid-template-columns: 5.5ch repeat(59, 10px) 13px;
+	}
+	
+	#output .row:not(.one) {
+		border-top: 1px solid #514e51;
+	}
+
+	#output .row .name {
+		background: #a4aaaf;
+		color: #c2cece;
+		font-size: calc(1em - 10px);
+		text-shadow: 1px 1px #474f5b;
+		margin-right: 3px;
+		box-shadow:
+			inset -1px 0 #474f5b,
+			inset 0 1px #d3e7ef,
+			3px 1px #7c7f85,
+			3px 0 #a4aaaf;
+	}
+
+	#output .row .name span {
+		display: block;
+		background: #7c7f85;
+		width: 6ch;
+		height: 14px;
+		line-height: 1;
+		padding: 0 0.5ch;
+		margin: 3px 0.5ch;
+		box-shadow:
+			inset 0 1px #474f5b,
+			inset 1px 0 #474f5b,
+			inset -1px 0 #474f5b,
+			inset 0 -1px #c2cece;
+	}
+
+	#output .row .tick {
+		--change: 0;
+		width: 100%;
+		margin: 3px 0;
+		height: 14px;
+		background-image: 
+			url(img/outputsprites.png),
+			linear-gradient(90deg, transparent 0px 8px, black 8px 9px, transparent 9px 10px),
+			repeating-linear-gradient(#222 1px, transparent 1px 2px),
+			linear-gradient(-45deg, #222 25%, transparent 25%),
+			linear-gradient(45deg, transparent 75%, #222 75%),
+			linear-gradient(-45deg, transparent 75%, #222 75%);
+		background-size:
+			auto,
+			10px 14px,
+			2px 2px,
+			2px 2px,
+			2px 2px,
+			2px 2px;
+		background-position:
+			calc(var(--side) * 10px) calc(var(--change) * 14px),
+			0 0,
+			0 0,
+			0 1px,
+			1px -1px,
+			-1px 0;
+	}
+	
+	#output .row .tick[value="0"] {--side: 1;}
+	#output .row .tick[value="1"] {--side: 0;}
+	#output .row .tick[value="0"]:has(+ .tick[value="1"]),
+	#output .row .tick[value="1"]:has(+ .tick[value="0"]) {--change: 1}
+
+	#output .row .end {
+		background: #a4aaaf;
+		border-top: 1px solid #d3e7ef;
+		margin-left: 4px;
+		box-shadow:
+			-1px 0 #494f5a,
+			-4px 1px #697177,
+			-4px 0 #a4aaaf,
+			-5px 0 #000;
+	}
+
+/* Layout */
+	#layout,
+	#layout img{
+		width: 453px;
+		height: 264px;
+		background: #000;
+	}
+
+/* Noscript */
+	#noscript {
+		width: 40ch;
+		background: #fff;
+		position: absolute;
+		inset: 50% auto auto 50%;
+		transform: translate(-50%, -50%);
+		z-index: 2;
+	}
+
+/* Responsiveness */
+@media screen and (max-width: 1024px) {
+	.overlay {
+		box-shadow:
+			inset 60px 0 120px #000a,
+			inset -60px 0 120px #000a;
+		border-radius: 0;
+		left: 0;
+		width: 100%;
+	}
+	
+	.window {
+		position: unset !important;
+		transform: none !important;
+	}
+	
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 120px;
+		overflow: scroll;
+		padding: 100px 0;
+	}
+}

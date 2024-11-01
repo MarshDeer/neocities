@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:image" content=TODO>
+		<link rel="apple-touch-icon" sizes="180x180" href="/globals/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/globals/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/globals/favicon/favicon-16x16.png">
+		<link rel="icon" type="image/x-icon" href="/globals/favicon/favicon.ico">
+		<link href="style.css" rel="stylesheet" type="text/css" media="all">
+		<title>LensDeer's Hideout | Zachtronics Solutions Archive | ChipWizard Professional</title>
+	</head>
+
+	<body onload="init()">
+		<div class="overlay"></div>
+
+		<noscript>
+			<div class="window" id="noscript">
+				<h2 class="title"> Error </h2>
+				<a href="/home/index.html" class="closebutton" aria-label="Go back home"></a>
+				<p>
+					This page uses vanilla JavaScript to populate all of its elements. It is not functional at all on browsers with JS disabled. Sorry about the inconveniences.
+				</p>
+				<p>
+					Close this window to go back home.
+				</p>
+			</div>
+		</noscript>
+
+		<nav class="window">
+			<h1 class="title"> Designs </h1>
+			<div class="draghandle"></div>
+			<a href="/home/index.html" class="closebutton" aria-label="Go back home"></a>
+			<button onclick=create(0)><span>Signal Crossover</span></button>
+			<button onclick=create(1)><span>AND Gate</span></button>
+			<button onclick=create(2)><span>OR Gate</span></button>
+			<button onclick=create(3)><span>NOT Gate</span></button>
+			<button onclick=create(4)><span>Power-on Reset</span></button>
+			<button onclick=create(5)><span>Digital Signal Mixer</span></button>
+			<button onclick=create(6)><span>Interrupt Controller</span></button>
+			<button onclick=create(7)><span>Ignition Sequencer</span></button>
+			<button onclick=create(8)><span>Equality Tester</span></button>
+			<button onclick=create(9)><span>Dual Oscillator</span></button>
+			<button onclick=create(10)><span>Safety Interlock</span></button>
+			<button onclick=create(11)><span>PWM Solenoid Driver</span></button>
+			<button onclick=create(12)><span>Electronic Lock</span></button>
+			<button onclick=create(13)><span>Motor Controller</span></button>
+			<button onclick=create(14)><span>Programmable Delay</span></button>
+			<button onclick=create(15)><span>Synchrony Detector</span></button>
+			<button onclick=create(16)><span>AND-OR Combo Gate</span></button>
+			<button onclick=create(17)><span>Switch Debouncer</span></button>
+			<button onclick=create(18)><span>Stepper Motor Driver</span></button>
+			<button onclick=create(19)><span>Serial Number ROM</span></button>
+			<button onclick=create(20)><span>Pulse Echo Detector</span></button>
+		</nav>
+
+		<section class="window" id="preview" hidden>
+			<h2 class="title"> 3D Preview </h2>
+			<div class="draghandle"></div>
+			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute ('hidden', true); this.parentNode.style.cssText = '';"></button>
+			<div class="visualizer">
+				<style></style>
+				<div class="chip">
+					<div class="face top"></div>
+					<div class="legs top">
+						<div class="one"></div>
+						<div class="two"></div>
+						<div class="three"></div>
+						<div class="four"></div>
+						<div class="five"></div>
+						<div class="six"></div>
+					</div>
+					<div class="face bottom"></div>
+					<div class="face north"></div>
+					<div class="face south"></div>
+					<div class="face east"></div>
+					<div class="face west"></div>
+					<div class="legs west">
+						<div class="one"></div>
+						<div class="two"></div>
+						<div class="three"></div>
+					</div>
+					<div class="legs east">
+						<div class="four"></div>
+						<div class="five"></div>
+						<div class="six"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="window" id="output" hidden>
+			<h2 class="title"> Output </h2>
+			<div class="draghandle"></div>
+			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute ('hidden', true); this.parentNode.style.cssText = '';"></button>
+		</section>
+
+		<section class="window" id="layout" hidden>
+			<h2 class="title"> Layout </h2>
+			<div class="draghandle"></div>
+			<button class="closebutton" aria-label="Close" onclick="this.parentNode.setAttribute ('hidden', true); this.parentNode.style.cssText = '';"></button>
+			<img src="">
+		</section>
+
+		<footer>
+			<span> All assets © Zachtronics </span>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>
