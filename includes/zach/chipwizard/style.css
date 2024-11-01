@@ -297,9 +297,27 @@
 		.chip .legs.west {--t: 1}
 		.chip .legs.east {--t: -1}
 
-	.chip .legs.top > div {background: #da2;}
-	.chip .legs.west > div {background: #fc4;}
-	.chip .legs.east > div {background: #b80;}
+	.chip .legs.top > div {
+		--0: #da2;
+		--1: #ddd;
+	}
+
+	.chip .legs.west > div {
+		--0: #fc4;
+		--1: #fff;
+	}
+
+	.chip .legs.east > div {
+		--0: #b80;
+		--1: #bbb;
+	}
+
+	.chip .legs .one {animation: one;}
+	.chip .legs .two {animation: two;}
+	.chip .legs .three {animation: three;}
+	.chip .legs .four {animation: four;}
+	.chip .legs .five {animation: five;}
+	.chip .legs .six {animation: six;}
 
 	.chip .legs :where(.one, .four) {--displacement: 0;}
 	.chip .legs :where(.two, .five) {--displacement: 1;}
@@ -307,7 +325,10 @@
 
 	.chip .legs > div {
 		height: calc((var(--height) * 0.9) / 5);
-		background: red;
+		background: var(--0);
+		animation-timing-function: step-start !important;
+		animation-duration: 6s !important;
+		animation-iteration-count: infinite !important;
 		top: calc(var(--displacement) * (var(--height) * 0.9 / 5) * 2);
 	}
 
