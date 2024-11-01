@@ -41,11 +41,15 @@ function create(target) {
 	const percent = [1.6, 3.2, 4.8, 6.4, 8, 9.6, 11.2, 12.8, 14.4, 16, 17.6, 19.2, 20.8, 22.4, 24, 25.6, 27.2, 28.8, 30.4, 32, 33.6, 35.2, 36.8, 38.4, 40, 41.6, 43.2, 44.8, 46.4, 48, 49.6, 51.2, 52.8, 54.4, 56, 57.6, 59.2, 60.8, 62.4, 64, 65.6, 67.2, 68.8, 70.4, 72, 73.6, 75.2, 76.8, 78.4, 80, 81.6, 83.2, 84.8, 86.4, 88, 89.6, 91.2, 92.8, 94.4];
 
 	// layout src
-	document.getElementById('layout').removeAttribute('hidden')
+	document.getElementById('layout').removeAttribute('hidden');
 	document.querySelector('#layout img').src = `https://raw.githubusercontent.com/MarshDeer/zachtronics-solutions/root/Last%20Call%20BBS/ChipWizard/${encodeURI(levelData[target].title)}.png`;
 
+	// specs text
+	document.getElementById('specification').removeAttribute('hidden');
+	document.querySelector('#specification .spec').innerText = levelData[target].spec;
+
 	// output graph and preview animation
-	document.getElementById('output').removeAttribute('hidden')
+	document.getElementById('output').removeAttribute('hidden');
 	document.getElementById('preview').removeAttribute('hidden');
 	const outputGrid = document.getElementById('output');
 		outputGrid.querySelectorAll('.row').forEach((row) => {row.remove()});

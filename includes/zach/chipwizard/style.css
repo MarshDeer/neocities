@@ -135,6 +135,11 @@
 		transform: translateY(-50%);
 	}
 
+	#specification {
+		bottom: 5%;
+		right: 10%;
+	}
+
 /* Navigation */
 	nav {
 		padding: 4px;
@@ -444,6 +449,14 @@
 		width: 453px;
 		height: 264px;
 		background: #000;
+	}
+
+/* Specification */
+	#specification .spec {
+		background: #fff;
+		padding: 1em 1ch;
+		width: 25ch;
+		font-size: smaller;
 	}
 
 /* Noscript */
