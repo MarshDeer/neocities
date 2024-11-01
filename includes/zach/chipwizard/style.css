@@ -455,3 +455,29 @@
 		transform: translate(-50%, -50%);
 		z-index: 2;
 	}
+
+/* Responsiveness */
+@media screen and (max-width: 1024px) {
+	.overlay {
+		box-shadow:
+			inset 60px 0 120px #000a,
+			inset -60px 0 120px #000a;
+		border-radius: 0;
+		left: 0;
+		width: 100%;
+	}
+	
+	.window {
+		position: unset !important;
+		transform: none !important;
+	}
+	
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 120px;
+		overflow: scroll;
+		padding: 100px 0;
+	}
+}
