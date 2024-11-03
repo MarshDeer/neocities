@@ -206,7 +206,7 @@
 				[0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0],
 				[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 			],
-			"spec":"ALARM should be high when IN_A and IN_B bouth transition from low to high in the same cycle."
+			"spec":"ALARM should be high when IN_A and IN_B both transition from low to high in the same cycle."
 		},
 		{
 			"title":"AND-OR Combo Gate",
