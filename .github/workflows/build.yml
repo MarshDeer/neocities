@@ -13,10 +13,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout
+        uses: actions/checkout@v3
 
       - name: Dependencies
-        uses: BSFishy/pip-action
+        uses: BSFishy/pip-action@v3
         with:
           packages: autosite
 
@@ -24,7 +24,7 @@ jobs:
         run: autosite -a
 
       - name: Deploy
-        uses: bcomnes/deploy-to-neocities
+        uses: bcomnes/deploy-to-neocities@v3
         with:
           api_token: ${{ secrets.APIKEY }}
           dist_dir: out
