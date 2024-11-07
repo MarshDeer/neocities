@@ -37,6 +37,14 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 }
 
+sup {
+	color: var(--accent);
+}
+
+a:hover sup {
+	color: inherit;
+}
+
 /* Responsiveness */
 @media screen and (max-width: 812px) {
 	#blogarticles,
