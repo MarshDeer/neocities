@@ -1,20 +1,22 @@
 <!-- attrib title: Writing -->
 <link href="[#root#]writing/writing.css" rel="stylesheet" type="text/css" media="all">
 
-<div id="blogarticles" class="window pink border">
+<div id="articles" class="window pink border">
+	<span class="titlebar"> Articles </span>
 	<div class="content">
-		<span class="titlebar"> Blog Articles </span>
-			<ul>
-				<li> <a href="about.html"> About Me </a> </li>
-				<li> <a href="wishlist.html"> Wishlist </a> </li>
-			</ul>
+			<a href="about.html">
+				<img src="banners/aboutme.png" class="thin pink border" alt="About Me">
+			</a>
+			<a href="wishlist.html">
+				<img src="banners/wishlist.png" class="thin pink border" alt="Wishlist">
+			</a>
 	</div>
 </div>
 
 <div id="bleatsnewsletter" class="window blue border">
 	<span class="titlebar"> Bleats Newsletter </span>
 	<div class="content">
-		<ol style="margin: 0;">
+		<ol style="margin: 0; padding: 0 3ch;">
 			<li> <a href="bleats/1.html"> Hello, World! </a> </li>
 			<li> <a href="bleats/2.html"> New website! </a> </li>
 			<li> <a href="bleats/3.html"> Hourly Comic Day! </a> </li>
@@ -28,7 +30,7 @@
 <div id="RSS" class="window orange border">
 	<span class="titlebar"> RSS Feed </span>
 	<div class="content">
-		<img src="[#root#]globals/rss.png">
+		<img src="[#root#]globals/rss.png" alt="Subscribe on RSS">
 		<a class="button" href="feed.xml">Open RSS Feed</a>
 	</div>
 </div>
