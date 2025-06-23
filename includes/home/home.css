@@ -24,7 +24,7 @@
 
 	#projects .content {
 		display: grid;
-		grid-template-columns: repeat(3, 88px);
+		grid-template-columns: repeat(4, 88px);
 		gap: 3px;
 	}
 
