@@ -20,18 +20,6 @@ Preferiría no recibir nada a algo que no esté en esta lista. No me importan lo
 
 ## Lista
 
-### Conexiones
-
-Estas personas son inspiradoras, influenciales, o importantes de alguna manera para mí. Si las conoces personalmente, me encantaría que se me las presentara CON SU CONSENTIMIENTO, DE UNA MANERA NATURAL Y NO INTRUSIVA NI TRANSACCIONAL.
-
-- [100 Rabbits](https://100r.co)
-- [Patricia Taxxon](https://www.youtube.com/channel/UCOjLfFE0TABS9bk05oH-kgw)
-- [Jan Misali](https://www.youtube.com/channel/UCJOh5FKisc0hUlEeWFBlD-w)
-- [Gray Folie](https://pluralthey.tumblr.com/)
-- [Chelsea Manning](https://es.wikipedia.org/wiki/Chelsea_Manning)
-- [Edward Snowden](https://es.wikipedia.org/wiki/Edward_Snowden)
-- [maia arson crimew](https://es.wikipedia.org/wiki/Maia_arson_crimew)
-
 ### Libros físicos
 
 Puedo conseguir cualquier ebook que quiera con facilidad, y prefiero leer digitalmente de todos modos, así que esta sección es sobre *copias físicas* de libros que son importantes para mí. Por supuesto, apreciaría si me ofrecieran libros USADOS que no estén en esta lista, pero no puedo garantizar que vaya a tener el espacio para recibirlos.
@@ -114,12 +102,6 @@ Tienes muebles o cosas que crees que me podrían gustar? Avísame y tal vez me i
 - $???? | Peluche de ciervo o cosas con ciervos en general
 - $???? | Ayuda para comprar un departamento de 2 dormitorios
 
-### Ropa
-
-Mira, en serio aprecio la intención, en serio! Pero preferiría que no me regalaran ropa sin antes preguntarme sobre la prenda en específico, y probablemente diga que no de todos modos: no me gusta participar en _fast fashion_, sea a través de comprar ropa nueva con calidad de mierda o a través de participar en la catástrofe ecológica generada por la ropa usada importada. Estoy feliz con mi closet actual, y no necesito nada más que lo que esté en esta lista
-
-- $50 | Botas de cuero Doc Martens (Talla europea 40)
-
 ### Arte
 
 - $00 | Dibuja a mi fursona! Especialmente si "no sabes dibujar"!
@@ -129,9 +111,7 @@ Mira, en serio aprecio la intención, en serio! Pero preferiría que no me regal
 - $?? | Acceso a una presentación en vivo de Poème symphonique, por György Ligeti
 - $?? | Acceso a una presentación en vivo de Four Organs, por Steve Reich
 - $?? | Acceso a una presentación en vivo de Partita for 8 Voices, por Caroline Shaw
-- $?? | Acceso a una presentacion en vivo del Show de Rocky Horror (teatro) o un shadowcast de la película
 - $?? | Acceso a un concierto en vivo de Car Seat Headrest
-- $?? | Acceso a un concierto en vivo de My Chemical Romance
 
 ### Comida
 

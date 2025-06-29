@@ -20,18 +20,6 @@ I would rather get nothing than something from outside this list. I don't care a
 
 ## The List
 
-### Connections
-
-These people are inspiring, influential, or otherwise important to me. If you somehow know them personally, it would be absolutely amazing if I could be introduced to them IN A CONSENSUAL, NOT INTRUSIVE, NOT TRANSACTIONAL AND AS NATURAL AS POSSIBLE WAY.
-
-- [100 Rabbits](https://100r.co)
-- [Patricia Taxxon](https://www.youtube.com/channel/UCOjLfFE0TABS9bk05oH-kgw)
-- [Jan Misali](https://www.youtube.com/channel/UCJOh5FKisc0hUlEeWFBlD-w)
-- [Gray Folie](https://pluralthey.tumblr.com/)
-- [Chelsea Manning](https://en.wikipedia.org/wiki/Chelsea_Manning)
-- [Edward Snowden](https://en.wikipedia.org/wiki/Edward_Snowden)
-- [maia arson crimew](https://en.wikipedia.org/wiki/Maia_arson_crimew)
-
 ### Physical Books
 
 I can easily source any ebook I want, and I prefer to read digitally, so this section is about *physical releases* of books that are important to me. Of course, I would love it if you offered USED books outside this list, but I might not have the space for them at the moment!
@@ -114,12 +102,6 @@ Got any cool furniture you think I would like? Ask me about it and I might like 
 - $???? | Deer plushies or deer paraphernalia in general
 - $???? | Help buying a 2 bedroom apartment
 
-### Fashion
-
-Look, I appreciate the intention, I really do! But I would prefer if you didn't gift me clothes without first asking me about the specific item you are planning on buying, and even then there's a huge chance I'll say no: I'm very uncomfortable about the mere idea of participating in fast fashion, be it via buying new cheap shitty clothes or via participating in the environmental catastrophe created by imported secondhand clothes. I am happy with my current wardrobe, and I don't need anything beyond the items below.
-
-- $50 | Size 40 (EU) Doctor Martens leather boots (non-vegan leather)
-
 ### Art
 
 - $00 | Draw my fursona! Especially if you don't know how to draw!
@@ -129,9 +111,7 @@ Look, I appreciate the intention, I really do! But I would prefer if you didn't 
 - $?? | Access to a live performance of Poème symphonique by György Ligeti
 - $?? | Access to a live performance of Four Organs by Steve Reich
 - $?? | Access to a live performance of Partita for 8 Voices by Caroline Shaw
-- $?? | Access to a live performance of The Rocky Horror Show (or a shadow cast of the movie)
 - $?? | Access to a live performance by Car Seat Headrest
-- $?? | Access to a live performance by My Chemical Romance
 
 ### Food
 
