@@ -1,27 +1,58 @@
 /* Index */
 #articles {
-	width: calc(250px + 6px);
-	max-height: 20em;
+	width: fit-content;
 	inset: 15px 0 0 15px;
+	height: fit-content;
 }
 
-	#articles .content{
-		display: flex;
-		flex-direction: column;
-		max-height: calc(100% - 6px);
+	#articles .content {
+		display: grid;
+		grid-template-columns: repeat(2, 250px);
+		max-height: 285px;
+		height: fit-content;
 		overflow-y: auto;
-		gap: 6px;
+		gap: 6px 9px;
+		padding-bottom: 0;
 	}
 
 	#articles a img {
 		padding: 0;
 	}
 
-#bleatsnewsletter {
-	width: 30ch;
-	height: 10em;
+#blog {
+	width: fit-content;
+	max-width: 60ch;
 	inset: auto 20px 25px auto;
 }
+
+	#blog .content {
+		overflow-y: auto;
+		height: calc(100% - 6px);
+		max-height: 15em;
+		height: fit-content;
+	}
+
+	#blog ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	
+	#blog ul time {
+		font-size: smaller;
+		background: var(--bg0h);
+		color: var(--fg4);
+		padding: 2px;
+		border-radius: 2px;
+	}
+	
+	#blog ul li {
+		border-bottom: 1px dotted var(--bg4);
+		padding: 2px;
+		display: flex;
+		justify-content: space-between;
+		gap: 1ch;
+	}
 
 #RSS {
 	inset: auto auto 10px 0;
@@ -58,7 +89,7 @@ a:hover sup {
 
 /* Responsiveness */
 @media screen and (max-width: 812px) {
-	#bleatsnewsletter {
+	#blog {
 		width: 100%;
 		height: unset;
 	}
