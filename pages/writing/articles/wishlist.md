@@ -1,5 +1,6 @@
 <!-- attrib title: Wishlist -->
 <!-- attrib pagetype: writing -->
+<!-- attrib perma: articles/wishlist.html -->
 <!-- attrib windowtitle: wishlist.md -->
 
 <img src="banners/wishlist.png" class="thin gray border" style="margin: auto; width: 500px; image-rendering: pixelated;">

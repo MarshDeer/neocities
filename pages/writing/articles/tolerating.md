@@ -1,5 +1,6 @@
 <!-- attrib title: Writing | You don't have to tolerate ads! -->
 <!-- attrib pagetype: writing -->
+<!-- attrib perma: articles/tolerating.html -->
 <!-- attrib windowtitle: tolerating.md -->
 
 <img src="banners/tolerating.png" class="thin gray border" style="margin: auto; width: 500px; image-rendering: pixelated;">

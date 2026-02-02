@@ -1,5 +1,6 @@
 <!-- attrib title: Writing | About Me -->
 <!-- attrib pagetype: writing -->
+<!-- attrib perma: articles/about.html -->
 <!-- attrib windowtitle: aboutme.md -->
 
 <img src="banners/aboutme.png" class="thin gray border" style="margin: auto; width: 500px; image-rendering: pixelated;">
