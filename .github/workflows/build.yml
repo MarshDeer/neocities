@@ -26,6 +26,6 @@ jobs:
       - name: Deploy
         uses: bcomnes/deploy-to-neocities@v3
         with:
-          api_token: ${{ secrets.APIKEY }}
+          api_key: ${{ secrets.APIKEY }}
           dist_dir: out
           cleanup: true
