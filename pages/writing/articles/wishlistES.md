@@ -2,6 +2,8 @@
 <!-- attrib pagetype: writing -->
 <!-- attrib windowtitle: wishlist.md -->
 
+<img src="banners/wishlist.png" class="thin gray border" style="margin: auto; width: 500px; image-rendering: pixelated;">
+
 # Lista de Deseos
 
 ## El propósito de esta página

@@ -2,6 +2,8 @@
 <!-- attrib pagetype: writing -->
 <!-- attrib windowtitle: aboutme.md -->
 
+<img src="banners/aboutme.png" class="thin gray border" style="margin: auto; width: 500px; image-rendering: pixelated;">
+
 # About Me
 
 Hi! I'm Lena. I'm on my late 20s, I [pretend to be an artist](https://lensdeer.tumblr.com/tagged/lensdeerart), I dabble in [programming](https://github.com/marshdeer) and [web design]([#root#]home/index.html), I sometimes like to [write sophomoric-ass shit](../writing/index.html). I like playing [puzzle](../zach/index.html) and [arcade](../hiscore/index.html) videogames, and [experiencing various kinds of art](../medialog/index.html). This is my website.
