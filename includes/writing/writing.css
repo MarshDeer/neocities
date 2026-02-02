@@ -101,7 +101,9 @@ code {
 }
 
 pre {
-	text-wrap: wrap;
+	text-wrap: wrap !important;
+	white-space: wrap !important;
+	overflow-x: auto !important;
 }
 
 pre::before {
@@ -127,6 +129,7 @@ pre::before {
 
 	#articles .content {
 		height: unset;
+		grid-template-columns: 250px;
 	}
 
 	.writingcontainer,
