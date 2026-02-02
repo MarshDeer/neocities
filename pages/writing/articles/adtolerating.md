@@ -1,8 +1,8 @@
 <!-- attrib title: Writing | You don't have to tolerate ads! -->
 <!-- attrib pagetype: writing -->
-<!-- attrib windowtitle: ads.md -->
+<!-- attrib windowtitle: adtolerating.md -->
 
-<img src="banners/ads.png" class="thin gray border" style="margin: auto; width: 500px; image-rendering: pixelated;">
+<img src="banners/adtolerating.png" class="thin gray border" style="margin: auto; width: 500px; image-rendering: pixelated;">
 
 # You don't have to tolerate ads!
 
