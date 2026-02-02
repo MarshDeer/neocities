@@ -237,6 +237,25 @@ button.titlebarbutton {
 		top: 6px;
 	}
 
+
+#ad-note {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	height: fit-content;
+	width: 40ch;
+	background: var(--bg0);
+	z-index: -1;
+}
+
+	#ad-note:where(:hover, :focus) {
+		z-index: 2;
+	}
+
+	#ad-note aside {
+		position: unset;
+	}
+
 /* Responsiveness */
 @media screen and (max-width: 812px) {
 	.DOE {
@@ -280,4 +299,8 @@ button.titlebarbutton {
 
 	.menu .content {
 		--columns: 2 !important;
+	}
+	
+	#ad-note {
+		display: none !important;
 	}

@@ -60,7 +60,7 @@
 
 /* Articles */
 .writingcontainer {
-	width: 70ch;
+	width: 80ch;
 	height: calc(600px - 53px);
 	inset: 12px auto auto 50%;
 	transform: translateX(-50%);
@@ -68,11 +68,16 @@
 
 .writingcontainer .content {
 	height: calc(100% - 3px);
+	line-height: 1.25;
 }
 
-.writingcontainer .content img {
+.writingcontainer .content img:not(.signature) {
 	max-width: 100%;
 	margin: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -85,6 +90,28 @@ sup {
 
 a:hover sup {
 	color: inherit;
+}
+
+code, pre {
+	background: var(--bg0h);
+}
+
+code {
+	box-shadow: 0 0 0 2px var(--bg0h);
+}
+
+pre {
+	text-wrap: wrap;
+}
+
+pre::before {
+	content: attr(data-lang)" - "attr(data-filename);
+	display: block;
+	width: 100%;
+	border-bottom: 2px dotted var(--accent);
+	text-align: center;
+	margin-bottom: .5em;
+	color: var(--accent);
 }
 
 /* Responsiveness */
