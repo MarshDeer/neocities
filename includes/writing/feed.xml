@@ -7,6 +7,21 @@
 		<atom:link href="https://lensdeer.neocities.org/writing/feed.xml" rel="self" type="application/rss+xml" />
 
 		<item>
+			<title>[2026 - 07 - 03] Medialog update</title>
+			<pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
+			<link>https://lensdeer.neocities.org/medialog</link>
+			<image>
+				<url>https://neocities.org/site_screenshots/39/55/lensdeer/medialog/index.html.540x405.webp</url>
+				<link>https://lensdeer.neocities.org/medialog</link>
+				<title>Medialog update</title>
+				<width>250</width>
+			</image>
+			<description>
+				Medialog update!
+			</description>
+		</item>
+
+		<item>
 			<title>[2026 - 02 - 01] You don't have to tolerate ads!</title>
 			<pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
 			<link>https://lensdeer.neocities.org/writing/articles/tolerating.html</link>
