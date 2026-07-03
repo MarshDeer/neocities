@@ -115,6 +115,23 @@ pre::before {
 	color: var(--accent);
 }
 
+kbd {
+	background: var(--bg1);
+	border: 1px solid var(--fg4);
+	padding: 2px;
+	border-radius: 3px;
+	box-shadow: 0 2px 0 0 var(--fg4);
+	top: 0;
+	cursor: pointer;
+	position: relative;
+	transition: .2s all;
+}
+
+kbd:hover {
+	box-shadow: 0 0 0 0 var(--fg0);
+	top: 2px;
+}
+
 /* Responsiveness */
 @media screen and (max-width: 812px) {
 	#blog {
